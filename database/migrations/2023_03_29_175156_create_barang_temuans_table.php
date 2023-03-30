@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('barang_temuans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id');
+            $table->foreignId('category_id');
+            $table->string('nama');
+            $table->string('slug')->unique();
+            $table->text('deskripsi');
+            $table->text('kronologi');
             $table->timestamps();
         });
     }

@@ -10,4 +10,12 @@ class Category extends Model
     use HasFactory;
 
     protected $guarded = ["id"];
+
+    public function baranghilangs(){
+        return $this->hasMany(BarangHilang::class);
+    }
+
+    public function barangtemuans(){
+        return $this->hasMany(BarangTemuan::class);
+    }
 }

@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="./css/style.css">
+        @vite('resources/css/app.css')
 
         <title> Login </title>
     </head>
@@ -35,7 +36,7 @@
                         
                         <!-- Logo Image -->
                         <div class="w-[90%] mx-auto min-[480px]:w-[75%] sm:w-[70%] md:w-[60%]">
-                            <img class="w-full" src="../src/img/loginSticker.png" alt="Logo">
+                            <img class="w-full" src="img/loginSticker.png" alt="Logo">
                         </div>
 
                         <!-- Caption -->
@@ -84,17 +85,17 @@
 
                         <!-- Logo Foundit -->
                         <div class="hidden w-[35%] mt-10 mx-auto lg:block">
-                            <img class="w-full" src="../src/img/logo.png" alt="Logo Foundit">
+                            <img class="w-full" src="img/logo.png" alt="Logo Foundit">
                         </div>
 
                         <!-- Image Background Kiri -->
                         <div class="hidden w-[100%] bottom-20 -left-[350px] -z-[1] absolute lg:block xl:w-[125%] xl:-left-[460px] 2xl:-left-[530px]">
-                            <img class="w-full" src="../src/img/loginKiri.png" alt="Background Image">
+                            <img class="w-full" src="img/loginKiri.png" alt="Background Image">
                         </div>
 
                         <!-- Image Background Kanan -->
                         <div class="hidden w-[100%] bottom-20 -right-[320px] -z-[1] absolute lg:block xl:w-[125%] xl:-right-[510px]">
-                            <img class="w-full" src="../src/img/loginKanan.png" alt="Background Image">
+                            <img class="w-full" src="img/loginKanan.png" alt="Background Image">
                         </div>
 
                     </div>

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('kronologi');
             $table->boolean('is_hilang');
             $table->boolean('is_claim');
+            $table->boolean('is_hadiah');
             $table->timestamps();
 
         });

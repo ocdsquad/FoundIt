@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        @vite('resources/css/app.css')
 
         <title> Detail Barang Hilang </title>
     </head>
@@ -22,7 +23,7 @@
 
                 <!-- Logo (Kiri) -->
                 <div class="w-[8%] ">
-                    <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                    <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
                 </div>
 
                 <!-- Navigasi Halaman (Kanan) -->
@@ -56,7 +57,7 @@
 
                     <!-- Profile User -->
                     <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                        <img class="w-full h-full" src="../src/img/tim.png" alt="Profile Dummy">
+                        <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
                     </div>
 
                     <!-- Nama User -->
@@ -108,7 +109,7 @@
                             <div class="flex">
                                 <!-- Icon Profile -->
                                 <div class="w-8 h-8 mr-3 rounded-full overflow-hidden sm:w-10 sm:h-10">
-                                    <img class="w-full h-full" src="../src/img/tim.png" alt="Profile">
+                                    <img class="w-full h-full" src="img/tim.png" alt="Profile">
                                 </div>
 
                                 <!-- Nama Profile -->
@@ -142,7 +143,7 @@
                         <div class="w-full h-[350px] rounded-t-[20px] overflow-hidden relative sm:rounded-[20px] sm:mb-5 lg:h-[400px] 2xl:h-[420px]">
                             
                             <!-- Image Barang -->
-                            <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                            <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
 
                             <!-- Card Ungu Informasi Barang -->
                             <div class="flex justify-between items-center w-full rounded-t-[20px] bg-[#8D9EFF] absolute bottom-0 sm:hidden">
@@ -285,7 +286,7 @@
 
                         <!-- Logo -->
                         <div class="w-[30%] mb-3">
-                            <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                            <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
                         </div>
 
                         <!-- Text Aside -->

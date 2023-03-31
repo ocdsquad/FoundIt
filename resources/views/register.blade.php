@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
         <link rel="stylesheet" href="./css/style.css">
+        @vite('resources/css/app.css')
 
         <title> Register </title>
     </head>
@@ -35,12 +36,12 @@
 
                         <!-- Logo Image -->
                         <div class="w-[100%] mx-auto min-[480px]:w-[80%] md:w-[65%] md:pl-5 lg:hidden">
-                            <img class="w-full" src="../src/img/registerSticker.png" alt="Logo Register">
+                            <img class="w-full" src="img/registerSticker.png" alt="Logo Register">
                         </div>
 
                         <!-- Logo Foundit -->
                         <div class="hidden w-[10%]">
-                            <img class="w-full" src="../src/img/logo.png" alt="Logo Foundit">
+                            <img class="w-full" src="img/logo.png" alt="Logo Foundit">
                         </div>
 
                     </div>
@@ -91,12 +92,12 @@
 
                         <!-- Image Background Kiri -->
                         <div class="hidden w-[200%] absolute -z-[1] bottom-12 -left-[300px] lg:block xl:w-[250%] xl:-left-[450px] 2xl:w-[230%] 2xl:-left-[450px]">
-                            <img class="w-full" src="../src/img/registerKiri.png" alt="Background Image">
+                            <img class="w-full" src="img/registerKiri.png" alt="Background Image">
                         </div>
 
                         <!-- Image Background Kanan -->
                         <div class="hidden w-[120%] absolute -z-[1] bottom-12 -right-[360px] lg:block xl:w-[150%] xl:-right-[450px]  2xl:-right-[460px]">
-                            <img class="w-full" src="../src/img/registerKanan.png" alt="Background Image">
+                            <img class="w-full" src="img/registerKanan.png" alt="Background Image">
                         </div>
 
                     </div>

@@ -27,6 +27,11 @@ Route::get('/baranghilang', function () {
     ]);
 });
 
+
+Route::get('/register',[RegisterController::class,'index'])->name('login')->middleware('guest');
+Route::post('/register',[RegisterController::class,'store']);
+
+
 Route::get('/barangtemu', [PostController::class, 'index_temu']);
 
 // Route::get('baranghilang/{slug}', function($slug){

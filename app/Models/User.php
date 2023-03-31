@@ -38,7 +38,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function baranghilangs(){
-        return $this->hasMany(BarangHilang::class);
+    public function barang(){
+        return $this->hasMany(Barang::class);
     }
 }

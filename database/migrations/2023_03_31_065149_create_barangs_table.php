@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('barang_temuans', function (Blueprint $table) {
+        Schema::create('barangs', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
             $table->foreignId('category_id');
@@ -19,7 +19,10 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('deskripsi');
             $table->text('kronologi');
+            $table->boolean('is_hilang');
+            $table->boolean('is_claim');
             $table->timestamps();
+
         });
     }
 
@@ -28,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('barang_temuans');
+        Schema::dropIfExists('barangs');
     }
 };

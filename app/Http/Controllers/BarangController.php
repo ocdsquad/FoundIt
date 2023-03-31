@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\BarangHilang;
-use App\Http\Requests\StoreBarangHilangRequest;
-use App\Http\Requests\UpdateBarangHilangRequest;
+use App\Models\Barang;
+use App\Http\Requests\StoreBarangRequest;
+use App\Http\Requests\UpdateBarangRequest;
 
-class BarangHilangController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class BarangHilangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBarangHilangRequest $request)
+    public function store(StoreBarangRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class BarangHilangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(BarangHilang $barangHilang)
+    public function show(Barang $barang)
     {
         //
     }
@@ -43,7 +43,7 @@ class BarangHilangController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(BarangHilang $barangHilang)
+    public function edit(Barang $barang)
     {
         //
     }
@@ -51,7 +51,7 @@ class BarangHilangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBarangHilangRequest $request, BarangHilang $barangHilang)
+    public function update(UpdateBarangRequest $request, Barang $barang)
     {
         //
     }
@@ -59,7 +59,7 @@ class BarangHilangController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(BarangHilang $barangHilang)
+    public function destroy(Barang $barang)
     {
         //
     }

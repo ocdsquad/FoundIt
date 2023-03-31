@@ -11,11 +11,7 @@ class Category extends Model
 
     protected $guarded = ["id"];
 
-    public function baranghilangs(){
-        return $this->hasMany(BarangHilang::class);
-    }
-
-    public function barangtemuans(){
-        return $this->hasMany(BarangTemuan::class);
+    public function barang(){
+        return $this->hasMany(Barang::class);
     }
 }

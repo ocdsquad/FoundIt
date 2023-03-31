@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BarangTemuan extends Model
+class Barang extends Model
 {
     use HasFactory;
+
     protected $guarded = ["id"];
 
     public function category(){
@@ -17,5 +18,4 @@ class BarangTemuan extends Model
     public function users(){
         return $this->belongsTo(User::class);
     }
-
 }

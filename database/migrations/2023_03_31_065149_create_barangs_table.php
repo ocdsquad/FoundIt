@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('deskripsi');
             $table->text('kronologi');
+            $table->string('lokasi');
             $table->boolean('is_hilang');
             $table->boolean('is_claim');
             $table->boolean('is_hadiah');

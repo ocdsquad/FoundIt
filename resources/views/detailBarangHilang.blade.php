@@ -150,7 +150,7 @@
 
                                 <!-- Nama Barang & Reward -->
                                 <div class="pl-4 py-[6px]">
-                                    <p class="mb-1 text-lg text-white font-montserratAlt font-bold"> Dompet Cokelat </p>
+                                    <p class="mb-1 text-lg text-white font-montserratAlt font-bold"> Dompet Coklat </p>
 
                                     <div class="flex items-center w-fit text-white">
                                         <span class="mr-1">
@@ -174,7 +174,7 @@
                         <div class="justify-between w-full mb-2 px-2 hidden sm:flex md:hidden">
 
                             <!-- Nama Barang -->
-                            <h1 class="text-2xl font-montserratAlt font-bold"> Dompet Cokelat </h1>
+                            <h1 class="text-2xl font-montserratAlt font-bold"> Dompet Coklat </h1>
 
                             <!-- Container Reward & Tanggal -->
                             <div class="flex items-center pt-2">
@@ -209,7 +209,7 @@
                         <div class="justify-between w-full mb-2 pb-6 hidden border-b border-b-[#8D9EFF] md:block lg:mb-5">
 
                             <!-- Nama Barang -->
-                            <h1 class="text-2xl font-montserratAlt font-bold lg:text-4xl"> Dompet Cokelat </h1>
+                            <h1 class="text-2xl font-montserratAlt font-bold lg:text-4xl"> {{ $barang->nama }} </h1>
 
                             <!-- Container Reward & Tanggal -->
                             <div class="flex items-center pt-2 lg:flex-row-reverse lg:justify-end lg:gap-2">
@@ -225,7 +225,7 @@
                                     <p class="text-sm font-poppins font-light"> Berhadiah </p>
                                 </div>
 
-                                <p class="text-sm text-[#244CA5] font-poppins font-light"> 28.12.2023, 11:47 PM </p>
+                                <p class="text-sm text-[#244CA5] font-poppins font-light"> {{ $barang->created_at }} </p>
                             </div>
 
                         </div>
@@ -234,7 +234,7 @@
                         <div class="w-full">
                             <h1 class="mb-2 text-lg font-montserratAlt font-semibold sm:text-xl lg:w-fit lg:pb-2 lg:border-b-2 lg:border-b-[#244CA5] lg:text-lg lg:text-[#244CA5]"> Deskripsi Barang </h1>
 
-                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal">{{ $barang->deskripsi }}</p>
                         </div>
 
                         <!-- Garis Pembatas -->
@@ -246,7 +246,7 @@
                         <div class="w-full mb-5">
                             <h1 class="mb-1 text-lg font-montserratAlt font-semibold sm:text-xl lg:w-fit lg:pb-2 lg:border-b-2 lg:border-b-[#244CA5] lg:text-lg lg:text-[#244CA5]"> Kronologi Kehilangan </h1>
 
-                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal"> {{ $barang->kronologi }}</p>
                         </div>
 
                     </div>

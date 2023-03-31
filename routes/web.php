@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Barang;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LibraryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('searchBarangTemuan');
+    return view('home');
 });
+
+
+Route::get('/baranghilang', function () {
+    return view('searchBarangHilang', [
+        'barangs' => Barang::all()
+    ]);
+});
+
+Route::get('/barangtemu', [PostController::class, 'index_temu']);
+
+// Route::get('baranghilang/{slug}', function($slug){
+//     return view('detailBarangHilang', [
+//         "barang" => Barang::find($slug)
+//     ]);
+// });
+
+Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilang']);
+Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);

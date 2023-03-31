@@ -21,9 +21,10 @@ class BarangFactory extends Factory
             'slug'=> $this->faker->slug(),
             'deskripsi' => collect($this->faker->paragraphs(mt_rand(5,10)))->map(fn($p)=>"<p>$p</p>")->implode(''),
             'kronologi' => collect($this->faker->paragraphs(mt_rand(5,10)))->map(fn($p)=>"<p>$p</p>")->implode(''),
+            'lokasi' => $this->faker->sentence(2),
             'user_id' => mt_rand(1,3),
             'category_id' => mt_rand(1,3),
-            'is_hilang' => false,
+            'is_hilang' => mt_rand(0,1),
             'is_claim' => false,
             'is_hadiah' => false
         ];

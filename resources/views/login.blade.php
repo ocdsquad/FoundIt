@@ -16,6 +16,13 @@
     </head>
 
     <body class="bg-[#B9E0FF]">
+        @if(session()->has('success'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
     
         <!-- Login -->
         <section class="py-5 lg:py-0 overflow-hidden">
@@ -81,7 +88,7 @@
                         </form>
 
                         <!-- To Register -->
-                        <p class="mt-3 font-poppins font-bold text-[11px] text-center sm:text-xs md:text-sm "> Belum punya akun ? <a href="Register.html" class="text-[#8D72E1] cursor-pointer"> Daftar Sekarang </a> </p>
+                        <p class="mt-3 font-poppins font-bold text-[11px] text-center sm:text-xs md:text-sm "> Belum punya akun ? <a href="/register" class="text-[#8D72E1] cursor-pointer"> Daftar Sekarang </a> </p>
 
                         <!-- Logo Foundit -->
                         <div class="hidden w-[35%] mt-10 mx-auto lg:block">

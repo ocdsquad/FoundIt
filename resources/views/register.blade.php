@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="./css/style.css">
         @vite('resources/css/app.css')
 
-        <title> Register </title>
+        <title> {{ $title }} </title>
     </head>
 
     <body class="bg-[#B9E0FF]">
@@ -58,37 +58,43 @@
                             <p class= "font-poppins font-light text-center text-sm sm:text-base"> Buat akunmu dan coba cari barang <br> kamu disini ! </p>
                         </div>
 
-                        <form class="w-full">
-
+                        <form action="/register" method="post" class="w-full">
+                            @csrf
+                            
                             <!-- Nama Pengguna -->
                             <div class="w-full mb-2 sm:mb-5">
                                 <label class="text-xs font-semibold sm:text-sm md:text-base" for="username"> Nama Pengguna </label>
 
-                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="username">
+                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl " type="text" id="username" name="username" required>
+
+                                {{-- @error('username')
+                                <p>{{ $message }}</p>
+                                    
+                                @enderror --}}
                             </div>
 
                             <!-- Email / No Telepon -->
                             <div class="w-full mb-2 sm:mb-5">
-                                <label class="text-xs font-semibold sm:text-sm md:text-base" for="email"> Email / No.Telepon </label>
+                                <label class="text-xs font-semibold sm:text-sm md:text-base" for="email"> Email </label>
 
-                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="email">
+                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="email" name="email" required>
                             </div>
 
                             <!-- Password -->
                             <div class="w-full mb-2">
                                 <label class="text-xs font-semibold sm:text-sm md:text-base" for="password"> Kata Sandi </label>
 
-                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="password">
+                                <input type="password"class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="password" name="password" required>
                             </div>
 
                             <p class="px-2 mb-4 text-[10px] text-center font-poppins font-medium min-[480px]:text-[11px]">Dengan mendaftar, saya menyetujui <span class="text-[#8D72E1]">Syarat dan Ketentuan</span> serta <span class="text-[#8D72E1]">Kebijakan Privasi</span>.</p>
 
-                            <button class="w-full py-[14px] font-poppins font-semibold text-white bg-[#8D72E1] rounded-xl block md:text-lg"> MASUK </button>
+                            <button type="submit" class="w-full py-[14px] font-poppins font-semibold text-white bg-[#8D72E1] rounded-xl block md:text-lg"> Daftar </button>
 
                         </form>
 
                         <!-- To Login -->
-                        <p class="mt-5 text-center text-sm font-poppins font-medium"> Sudah Punya Akun? <a href="Login.html" class="text-[#8D72E1]">Login Sekarang!</a> </p>
+                        <p class="mt-5 text-center text-sm font-poppins font-medium"> Sudah Punya Akun? <a href="/login" class="text-[#8D72E1]">Login Sekarang!</a> </p>
 
                         <!-- Image Background Kiri -->
                         <div class="hidden w-[200%] absolute -z-[1] bottom-12 -left-[300px] lg:block xl:w-[250%] xl:-left-[450px] 2xl:w-[230%] 2xl:-left-[450px]">

@@ -326,7 +326,7 @@
                                     <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at }} </p>
                                 </div>
 
-                                <a href="/baranghilang/{{ $barang->id }}">Detail barang</a>
+                                <a href="/baranghilang/{{ $barang->slug }}">Detail barang</a>
 
                                 <!-- Reward / No Reward -->
                                 <div class="flex justify-end items-center w-full">

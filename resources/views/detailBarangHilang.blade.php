@@ -234,7 +234,7 @@
                         <div class="w-full">
                             <h1 class="mb-2 text-lg font-montserratAlt font-semibold sm:text-xl lg:w-fit lg:pb-2 lg:border-b-2 lg:border-b-[#244CA5] lg:text-lg lg:text-[#244CA5]"> Deskripsi Barang </h1>
 
-                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal">{{ $barang->deskripsi }}</p>
+                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal">{!! $barang->deskripsi !!}</p>
                         </div>
 
                         <!-- Garis Pembatas -->
@@ -246,7 +246,7 @@
                         <div class="w-full mb-5">
                             <h1 class="mb-1 text-lg font-montserratAlt font-semibold sm:text-xl lg:w-fit lg:pb-2 lg:border-b-2 lg:border-b-[#244CA5] lg:text-lg lg:text-[#244CA5]"> Kronologi Kehilangan </h1>
 
-                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal"> {{ $barang->kronologi }}</p>
+                            <p class="text-sm text-justify text-[#1D2A30] font-poppins font-normal"> {!! $barang->kronologi !!}</p>
                         </div>
 
                     </div>

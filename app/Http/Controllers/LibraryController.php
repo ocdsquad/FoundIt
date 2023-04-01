@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 
 class LibraryController extends Controller
 {
-    public function show_hilang($slug){
+    public function show_hilang(Barang $barang){
         return view('detailBarangHilang', [
-            "barang" => Barang::find($slug)
+            "barang" => $barang
         ]);
     }
 
-    public function show_temu($slug){
+    public function show_temu(Barang $barang){
         return view('detailBarangTemuan', [
-            "barang" => Barang::find($slug)
+            "barang" => $barang
         ]);
     }
 }

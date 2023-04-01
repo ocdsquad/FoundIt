@@ -250,6 +250,92 @@
                     <!-- Slider Found Item -->
                     <div class="flex gap-5 w-full py-3 overflow-x-auto lg:gap-6">
 
+                        @foreach ($barangs as $barang)
+                        @if ($barang->is_hilang == false)
+                        <!-- Card Found Item -->
+                        <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
+
+                            <!-- Image Container -->
+                            <div class="w-full h-[130px] relative">  
+                                <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                            </div>
+
+                            <!-- Deskripsi Kehilangan -->
+                            <div class="w-full px-2 py-3">
+
+                                <!-- Nama Barang -->
+                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> {{ $barang->nama }}  </h1>
+
+                                <!-- Location Barang -->
+                                <div class="flex items-center w-full mb-[5px]">
+                                    <span class="mr-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                        </svg>
+                                    </span> 
+
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->lokasi }} </p>
+                                </div>
+
+                                <!-- Tanggal Barang -->
+                                <div class="flex items-center w-full">
+                                    <span class="mr-[5px]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                                        </svg>  
+                                    </span>
+    
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at }} </p>
+                                </div>
+                            </div>
+
+                            <a href="/barangtemu/{{ $barang->slug }}">Detail Barang</a>
+
+                        </div>
+                        @endif
+                        @endforeach
+
+                        {{-- <!-- Card Found Item -->
+                        <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
+
+                            <!-- Image Container -->
+                            <div class="w-full h-[130px] relative">  
+                                <img class="w-full h-full" src="img/dompetPutih.png" alt="Gambar Barang">
+                            </div>
+
+                            <!-- Deskripsi Kehilangan -->
+                            <div class="w-full px-2 py-3">
+
+                                <!-- Nama Barang -->
+                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> Dompet Pink </h1>
+
+                                <!-- Location Barang -->
+                                <div class="flex items-center w-full mb-[5px]">
+                                    <span class="mr-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                                        </svg>
+                                    </span> 
+
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> Bank Mandiri Telkom </p>
+                                </div>
+
+                                <!-- Tanggal Barang -->
+                                <div class="flex items-center w-full">
+                                    <span class="mr-[5px]">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
+                                        </svg>  
+                                    </span>
+    
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> 29 / 03 / 2023 </p>
+                                </div>
+                            </div>
+
+                        </div>
+
                         <!-- Card Found Item -->
                         <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
 
@@ -335,46 +421,6 @@
 
                             <!-- Image Container -->
                             <div class="w-full h-[130px] relative">  
-                                <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
-                            </div>
-
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> Dompet Cokelat </h1>
-
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                                        </svg>
-                                    </span> 
-
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> Bank Mandiri Telkom </p>
-                                </div>
-
-                                <!-- Tanggal Barang -->
-                                <div class="flex items-center w-full">
-                                    <span class="mr-[5px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
-                                        </svg>  
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> 29 / 03 / 2023 </p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <!-- Card Found Item -->
-                        <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
-
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px] relative">  
                                 <img class="w-full h-full" src="img/dompetPutih.png" alt="Gambar Barang">
                             </div>
 
@@ -408,47 +454,7 @@
                                 </div>
                             </div>
 
-                        </div>
-
-                        <!-- Card Found Item -->
-                        <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
-
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px] relative">  
-                                <img class="w-full h-full" src="img/dompetPutih.png" alt="Gambar Barang">
-                            </div>
-
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> Dompet Pink </h1>
-
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                                        </svg>
-                                    </span> 
-
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> Bank Mandiri Telkom </p>
-                                </div>
-
-                                <!-- Tanggal Barang -->
-                                <div class="flex items-center w-full">
-                                    <span class="mr-[5px]">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[15px] h-[15px]">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
-                                        </svg>  
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> 29 / 03 / 2023 </p>
-                                </div>
-                            </div>
-
-                        </div>
+                        </div> --}}
 
                     </div>
 
@@ -477,6 +483,9 @@
                     <!-- Slider Lost Item -->
                     <div class="flex gap-5 w-full py-3 overflow-x-auto lg:gap-7">
 
+                        @foreach ($barangs as $barang)
+                        @if ($barang->is_hilang==true)
+                        
                         <!-- Card Lost Item -->
                         <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
 
@@ -489,7 +498,7 @@
                             <div class="w-full p-2">
 
                                 <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> Dompet Cokelat </h1>
+                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> {{ $barang->nama }}t </h1>
 
                                 <!-- Tanggal Barang -->
                                 <div class="flex items-center w-full mb-3">
@@ -499,8 +508,10 @@
                                         </svg>  
                                     </span>
     
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> 29 / 03 / 2023 </p>
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at }} </p>
                                 </div>
+
+                                <a href="/baranghilang/{{ $barang->slug }}">Detail Barang</a>
 
                                 <!-- Berhadiah / Tidak Berhadiah -->
                                 <div class="flex justify-end items-center w-full">
@@ -511,8 +522,10 @@
                             </div>
 
                         </div>
+                        @endif  
+                        @endforeach
 
-                        <!-- Card Lost Item -->
+                        {{-- <!-- Card Lost Item -->
                         <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
 
                             <!-- Image Container -->
@@ -629,9 +642,9 @@
                                 </div>
                             </div>
 
-                        </div>
+                        </div> --}}
 
-                    </div>
+                    </div> 
 
                 </div>
             </div>

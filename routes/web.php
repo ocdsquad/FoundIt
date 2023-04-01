@@ -19,7 +19,9 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        'barangs' => Barang::all()
+    ]);
 });
 
 Route::get('/', function () {

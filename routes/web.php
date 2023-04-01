@@ -22,12 +22,19 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/', function () {
+    return view('home');
+});
+
 
 Route::get('/baranghilang', function () {
     return view('searchBarangHilang', [
-        'barangs' => Barang::all()
+        'barangs' => Barang::where('is_hilang', false)->paginate(7)->withQueryString()
+    
     ]);
 });
+
+
 
 
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');

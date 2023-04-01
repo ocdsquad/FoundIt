@@ -23,6 +23,13 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
         @endif
+        @if(session()->has('loginError'))
+
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+          {{ session('loginError') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+        @endif
     
         <!-- Login -->
         <section class="py-5 lg:py-0 overflow-hidden">
@@ -65,25 +72,25 @@
                         </div>
 
                         <!-- Form -->
-                        <form class="w-full">
-
+                        <form action="/login" method="post" class="w-full">
+                            @csrf
                             <!-- Email / No Telepon -->
                             <div class="w-full mb-5">
-                                <label class="text-xs font-semibold sm:text-sm md:text-base" for="email"> Email / No.Telepon </label>
+                                <label class="text-xs font-semibold sm:text-sm md:text-base" for="email"> Email </label>
 
-                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="email">
+                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="email" name="email">
                             </div>
 
                             <!-- Password -->
                             <div class="w-full">
                                 <label class="text-xs font-semibold sm:text-sm md:text-base" for="password"> Kata Sandi </label>
 
-                                <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="password">
+                                <input type="password" class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="password" name="password">
 
                                 <p class="mt-2 font-poppins font-semibold text-[10px] text-right text-[#8D9EFF] sm:text-xs md:text-sm"> Lupa Password ? </p>
                             </div>
 
-                            <button class="w-full mt-5 py-[14px] font-poppins font-semibold text-white bg-[#8D72E1] rounded-xl block md:text-lg"> MASUK </button>
+                            <button type="submit" class="w-full mt-5 py-[14px] font-poppins font-semibold text-white bg-[#8D72E1] rounded-xl block md:text-lg"> MASUK </button>
 
                         </form>
 

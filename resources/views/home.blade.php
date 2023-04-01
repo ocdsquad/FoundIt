@@ -63,8 +63,19 @@
                     <!-- Nama User -->
                     <p class="text-lg font-montserrat font-semibold"> Reza </p>
 
-                </div>
+                    
 
+                </div>
+                @auth
+                <form action="/logout" method="post">
+                    @csrf
+                    
+                <button type="submit" class="flex items-center w-[15%]">Logout</button>
+
+                   
+
+                </form>
+                @endauth
             </div>
         </header>
 

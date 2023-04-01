@@ -16,13 +16,14 @@
 
     <body>
 
+
         <!-- Desktop Navigation Bar -->
         <header class="w-full fixed bg-white shadow-kategori hidden lg:block z-10">
             <div class="container flex justify-between w-full ">
 
                 <!-- Logo (Kiri) -->
                 <div class="w-[8%] ">
-                    <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                 </div>
 
                 <!-- Navigasi Halaman (Kanan) -->
@@ -56,7 +57,7 @@
 
                     <!-- Profile User -->
                     <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                        <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
+                        <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
                     </div>
 
                     <!-- Nama User -->
@@ -108,7 +109,7 @@
                             <div class="flex">
                                 <!-- Icon Profile -->
                                 <div class="w-8 h-8 mr-3 rounded-full overflow-hidden sm:w-10 sm:h-10">
-                                    <img class="w-full h-full" src="img/tim.png" alt="Profile">
+                                    <img class="w-full h-full" src="/img/tim.png" alt="Profile">
                                 </div>
 
                                 <!-- Nama Profile -->
@@ -142,7 +143,7 @@
                         <div class="w-full h-[350px] rounded-t-[20px] overflow-hidden relative sm:rounded-[20px] sm:mb-5 lg:h-[400px] 2xl:h-[420px]">
                             
                             <!-- Image Barang -->
-                            <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                            <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
 
                             <!-- Card Ungu Informasi Barang -->
                             <div class="flex justify-between items-center w-full rounded-t-[20px] bg-[#8D9EFF] absolute bottom-0 sm:hidden">
@@ -285,7 +286,7 @@
 
                         <!-- Logo -->
                         <div class="w-[30%] mb-3">
-                            <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
+                            <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                         </div>
 
                         <!-- Text Aside -->

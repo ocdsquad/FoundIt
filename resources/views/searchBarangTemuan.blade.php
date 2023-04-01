@@ -728,6 +728,7 @@
                         </a>
 
                     </div>
+                {{ $barangs->links() }}
 
                 </div>
             </div>

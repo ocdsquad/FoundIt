@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class LibraryController extends Controller
 {
+
     public function show_hilang(Barang $barang){
         return view('detailBarangHilang', [
             "barang" => $barang

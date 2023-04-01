@@ -15,7 +15,7 @@ class PostController extends Controller
     public function index_temu()
     {
         return view('searchBarangTemuan', [
-            'barangs' => Barang::all()
+            'barangs' => Barang::where('is_hilang', false)->paginate(7)->withQueryString()
         ]);
 
         

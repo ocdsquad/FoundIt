@@ -67,14 +67,16 @@
 
                 </div>
                 @auth
-                <form action="/logout" method="post">
-                    @csrf
-                    
-                <button type="submit" class="flex items-center w-[15%]">Logout</button>
+                    <form action="/logout" method="post">
+                        @csrf
+                        
+                        <button type="submit" class="flex items-center w-[15%]">Logout</button>
+                    </form>
+                @else
+                <div class="flex items-center w-[15%]">
+                    <a href="/login"> Login</a>
 
-                   
-
-                </form>
+                </div>
                 @endauth
             </div>
         </header>

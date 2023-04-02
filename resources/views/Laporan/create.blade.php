@@ -47,25 +47,30 @@
         <label for="image" class="form-label">Jenis Barang</label>
         <br>
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check" name="is_hilang" id="hilang" value="1" autocomplete="off">
-            <label class="btn btn-outline-primary" for="hilang">hilang</label>
+
+            <div id="hilang-barang">
+                <input type="radio" class="btn-check" name="is_hilang" id="hilang" value="1" autocomplete="off">
+                <label class="btn btn-outline-primary" for="hilang">hilang</label>
+            </div>
           
-            <input type="radio" class="btn-check" name="is_hilang" id="temuan" value="0" autocomplete="off">
-            <label class="btn btn-outline-primary" for="temuan">temuan</label>
+            <div id="temu-barang">
+                <input type="radio" class="btn-check" name="is_hilang" id="temuan" value="0" autocomplete="off">
+                <label class="btn btn-outline-primary" for="temuan">temuan</label>
+            </div>
         </div>
         <br>
         <br>
 
-        <div class="mb-3" >
+        <div id="lokasi" class="mb-3" >
             <label for="lokasi" class="form-label">Lokasi</label>
-            <input type="text" class="form-control hidden" id="lokasi" name="lokasi">
-        </select>
+            <input type="text" class="form-control hidden" name="lokasi">
         </div>
         
     
-        <label for="image" class="form-label">Apakah ada hadiahnya?</label>
-        <br>
+        
         <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="hadiah">
+            <label for="image" class="form-label">Apakah ada hadiahnya?</label>
+            <br>
             <input type="radio" class="btn-check" name="is_hadiah" id="ya_hadiah" value="1" autocomplete="off">
             <label class="btn btn-outline-primary" for="ya_hadiah">Yup, Beri hadiah</label>
           
@@ -89,18 +94,24 @@
           .then(data =>slug.value = data.slug)
     });
 
-    
-    const temu = document.querySelector('#temuan')
-    const hilang = document.querySelector('#hilang')
     const lokasi = document.querySelector('#lokasi')
     const hadiah = document.querySelector('#hadiah')
+    
+    const temu = document.querySelector("#temu-barang");
+    const hilang = document.querySelector("#hilang-barang");
 
-    temu.addEventListener('click', function(){
-        lokasi.classList.remove('hidden')
+    lokasi.style.display = "none"
+    hadiah.style.display = "none"
+
+    temu.addEventListener("click", () => {
+        lokasi.style.display = "block"
+        hadiah.style.display = "none"
     })
 
-
-
+    hilang.addEventListener("click", () => {
+        lokasi.style.display = "none"
+        hadiah.style.display = "block"
+    })
 
 
 </script>

@@ -19,13 +19,12 @@
 
     <body>
 
-        {{-- @if(session()->has('success'))
-
-        <div class="alert alert-success alert-dismissible fade show col-md-8" role="alert">
-          {{ session('success') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-        @endif --}}
+        @if(session()->has('success'))
+            <script>
+                var msg = '{{Session::get('success')}}';
+                alert(msg);
+            </script>
+        @endif
 
         <!-- Desktop Navigation Bar -->
         <header class="w-full fixed bg-white shadow-kategori hidden lg:block z-10">

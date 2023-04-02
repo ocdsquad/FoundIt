@@ -13,11 +13,11 @@
 </head>
 <body>
 
-<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Create New Post</h1>
+<div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Tambah Laporan Barang</h1>
 </div>
 
-<div class="col-lg-8">
+<div class="d-flex justify-content-center">
     <form action="/Laporan" method="post" class="mb-5" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
@@ -55,11 +55,18 @@
         </div>
         <br>
         <br>
+
+        {{-- @if ($request['is_hilang'] == 0) --}}
         <div class="mb-3">
             <label for="lokasi" class="form-label">Lokasi</label>
             <input type="text" class="form-control" id="lokasi" name="lokasi">
         </select>
-        </div> 
+        </div>
+        {{-- @else    
+        <input type="hidden" class="form-control" id="lokasi" name="lokasi">
+        </select>
+        </div>
+        @endif --}}
         <br>            
         <button type="submit" class="btn btn-primary">Create Post</button>
     </form>

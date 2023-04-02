@@ -19,10 +19,10 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('deskripsi');
             $table->text('kronologi');
-            $table->string('lokasi');
+            $table->string('lokasi')->nullable();
             $table->boolean('is_hilang');
-            $table->boolean('is_claim');
-            $table->boolean('is_hadiah');
+            $table->boolean('is_claim')->default(0);
+            $table->boolean('is_hadiah')->nullable();
             $table->timestamps();
 
         });

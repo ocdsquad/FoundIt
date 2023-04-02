@@ -39,7 +39,7 @@
                 <div class="flex justify-around items-center w-[75%] ">
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> About Us </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Laporan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/Laporan/create"> Laporan </a>
 
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="/baranghilang"> Barang Hilang </a>
 

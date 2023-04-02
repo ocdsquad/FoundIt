@@ -37,7 +37,6 @@ class LaporanController extends Controller
             'slug' => 'required|unique:barangs',
             'deskripsi' => 'required|unique:barangs',
             'kronologi' => 'required',
-            'lokasi' => 'required',
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;

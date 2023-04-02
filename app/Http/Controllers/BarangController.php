@@ -13,18 +13,16 @@ class BarangController extends Controller
      */
     public function index()
     {
+        $barang = Barang::latest()->where('is_hilang',true);
 
-        return view('home');
-        // $barang = Barang::latest()->where('is_hilang',true);
+        if(request('search')){
+            $barang->where('nama', 'like','%'. request('search') . '%');
+        }
 
-        // if(request('search')){
-        //     $barang->where('nama', 'like','%'. request('search') . '%');
-        // }
-
-        // return view('searchBarangHilang', [
-        //     'barangs' => $barang->paginate(5)->withQueryString()
+        return view('searchBarangHilang', [
+            'barangs' => $barang->paginate(5)->withQueryString()
         
-        // ]);
+        ]);
     }
 
     /**

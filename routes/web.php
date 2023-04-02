@@ -25,7 +25,9 @@ Route::get('/', function () {
     ]);
 });
 
-
+Route::get('/admin', function () {
+    return view('admin/halmBarangHilang');
+});
 
 
 Route::get('/baranghilang', [BarangController::class,'index']);

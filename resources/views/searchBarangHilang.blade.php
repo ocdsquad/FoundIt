@@ -32,9 +32,9 @@
 
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Laporan </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Chatting </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Barang Hilang </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Settings </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Barang Temuan </a>
 
                     <form class="w-[35%] relative xl:w-[28%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
@@ -827,8 +827,8 @@
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
                                 <a href="#"> About us </a>
                                 <a href="#"> Laporan </a>
-                                <a href="#"> Chatting </a>
-                                <a href="#"> Settings </a>
+                                <a href="#"> Barang Hilang </a>
+                                <a href="#"> Barang Temuan </a>
                             </div>
 
                             <!-- Garis -->

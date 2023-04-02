@@ -718,7 +718,7 @@
                     <!-- Pagination -->
                     <div class="flex items-center justify-center gap-2 w-full mt-4 text-sm font-poppins font-bold lg:mt-16">
 
-                        <!-- Arrow Kiri -->
+                        {{-- <!-- Arrow Kiri -->
                         <a href="" class="text-lg">
                             <svg class="w-3 h-3 text-[#1D2A30]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
@@ -728,18 +728,18 @@
                         <a href="" class="px-3 py-[4px] border rounded-lg text-white bg-[#8D9EFF]"> 1 </a>
                         <a href="" class="px-3 py-[4px] border rounded-lg"> 2 </a>
                         <a href="" class="px-3 py-[4px] border rounded-lg"> 3 </a>
-                        <div class="d-flex justify-content-end">
+                        <div class="d-flex justify-content-end"> --}}
 
                             {{ $barangs->links() }}
 
-                        </div>
+                        {{-- </div> --}}
 
                         <!-- Arrow Kanan -->
-                        <a href="" class="text-lg">
+                        {{-- <a href="" class="text-lg">
                             <svg class="w-3 h-3 text-[#1D2A30]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                               </svg>                              
-                        </a>
+                        </a> --}}
 
                     </div>
                     

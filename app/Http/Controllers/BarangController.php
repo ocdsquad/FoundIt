@@ -13,7 +13,18 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+
+
+        $barang = Barang::latest();
+
+        if(request('search')){
+            $barang->where('nama', 'like','%'. request('search') . '%');
+        }
+
+        return view('searchBarangHilang', [
+            'barangs' => $barang->paginate(7)->withQueryString()
+        
+        ]);
     }
 
     /**

@@ -36,12 +36,12 @@
 
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Settings </a>
 
-                    <form class="w-[35%] relative xl:w-[28%]">
-                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
+                    <form action="/baranghilang" class="w-[35%] relative xl:w-[28%]">
+                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barang!">
 
-                        <label for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                        <button type="submit"for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
                             <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                        </label>
+                        </button>
                     </form>
                 </div>
 
@@ -213,17 +213,20 @@
                             <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Aksesoris </p>
                         </div>
 
+                        
                         <!-- All Item -->
                         <div class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#244CA5] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                            
 
                             <div class="pl-2 pt-2 sm:pl-0 sm:pt-0">
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="2" />  <path d="M4 13h3l3 3h4l3 -3h3" /></svg>
                             </div>
-
-                            <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> All Item </p>
+                            
+                            <a href="/baranghilang" class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> All Item </a>
                         </div>
-
+                        
                     </div>
+                     
 
                 </div>
             </div>

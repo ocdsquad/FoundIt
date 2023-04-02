@@ -4,6 +4,7 @@ use App\Models\Barang;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\RegisterController;
 
@@ -24,17 +25,10 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/', function () {
-    return view('home');
-});
 
 
-Route::get('/baranghilang', function () {
-    return view('searchBarangHilang', [
-        'barangs' => Barang::where('is_hilang', false)->paginate(7)->withQueryString()
-    
-    ]);
-});
+
+Route::get('/baranghilang', [BarangController::class,'index']);
 
 
 

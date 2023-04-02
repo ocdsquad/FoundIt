@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class LaporanController extends Controller
 {
@@ -31,31 +32,36 @@ class LaporanController extends Controller
     public function store(Request $request)
     {   
 
-        // dd($request);
-        $validatedData = $request->validate([
-            'nama' => 'required|max:255',
-            'slug' => 'required|unique:barangs',
-            'deskripsi' => 'required|unique:barangs',
-            'kronologi' => 'required',
-        ]);
+        return $request->file('image')->store('post-images');
 
-        $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['category_id'] = 1;
+        // $validatedData = $request->validate([
+        //     'nama' => 'required|max:255',
+        //     'slug' => 'required|unique:barangs',
+        //     'deskripsi' => 'required|unique:barangs',
+        //     'kronologi' => 'required'
+        // ]);
 
-        if($request["is_hilang"] == "1"){
-            $validatedData['is_hilang'] = 1;
-        } else {
-            $validatedData['is_hilang'] = 0;
-        }
+        // $validatedData['user_id'] = auth()->user()->id;
+        // $validatedData['category_id'] = 1;
+
+        // if($request["is_hilang"] == "1"){
+        //     $validatedData['is_hilang'] = 1;
+        // } else {
+        //     $validatedData['is_hilang'] = 0;
+        // }
+
         
+        // if($request->file('image')){
+        //     $validatedData['image'] = $request->file('image')->store('post-images');
+        // }
 
 
-        $validatedData['is_claim'] = 0;
-        $validatedData['is_hadiah'] = 1;
+        // $validatedData['is_claim'] = 0;
+        // $validatedData['is_hadiah'] = 1;
 
-        Barang::create($validatedData);
+        // Barang::create($validatedData);
 
-        return redirect('/')->with('success', 'Barang kamu berhasil ditambahkan!');
+        // return redirect('/')->with('success', 'Barang kamu berhasil ditambahkan!');
     }
 
     /**
@@ -88,5 +94,10 @@ class LaporanController extends Controller
     public function destroy(Barang $barang)
     {
         //
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(Barang::class, 'slug', $request->nama);
+        return response()->json(['slug' => $slug]);
     }
 }

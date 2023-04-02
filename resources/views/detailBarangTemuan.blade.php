@@ -21,19 +21,19 @@
             <div class="container flex justify-between w-full ">
 
                 <!-- Logo (Kiri) -->
-                <div class="w-[8%] ">
-                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
-                </div>
+                <a href="/"class="w-[8%] ">
+                    <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
+                </a>
 
                 <!-- Navigasi Halaman (Kanan) -->
                 <div class="flex justify-around items-center w-[75%] ">
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> About Us </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Laporan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/Laporan/create"> Laporan </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Barang Hilang </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/baranghilang"> Barang Hilang </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Barang Temuan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/barangtemu"> Barang Temuan </a>
 
                     <form class="w-[35%] relative xl:w-[28%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
@@ -372,9 +372,9 @@
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
                                 <a href="#"> About us </a>
-                                <a href="#"> Laporan </a>
-                                <a href="#"> Barang Hilang </a>
-                                <a href="#"> Barang Temuan </a>
+                                <a href="/Laporan/create"> Laporan </a>
+                                <a href="/baranghilang"> Barang Hilang </a>
+                                <a href="/barangtemu"> Barang Temuan </a>
                             </div>
 
                             <!-- Garis -->

@@ -57,4 +57,5 @@ Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilan
 Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);
 
 Route::resource('/Laporan', LaporanController::class);
+Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 

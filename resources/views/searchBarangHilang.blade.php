@@ -22,9 +22,9 @@
             <div class="container flex justify-between w-full ">
 
                 <!-- Logo (Kiri) -->
-                <div class="w-[8%] ">
+                <a href="/"class="w-[8%] ">
                     <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
-                </div>
+                </a>
 
                 <!-- Navigasi Halaman (Kanan) -->
                 <div class="flex justify-around items-center w-[75%] ">
@@ -294,7 +294,7 @@
                     <!-- Item Card Container -->
                     <div class="grid grid-cols-2 w-full md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                         @foreach ($barangs as $barang)
-                        @if (!$barang->is_hilang)  
+                        @if ($barang->is_hilang)  
                         
                         <!-- Card -->
                         <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[80%] md:w-[90%] xl:w-[90%]">

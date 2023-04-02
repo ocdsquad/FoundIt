@@ -151,13 +151,13 @@
 
                     <!-- Search Bar -->
                     <div class="w-[60%] absolute -bottom-12 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[3]">
-                        <form class="w-full relative">
+                        <form action="/baranghilang"class="w-full relative">
                             
                             <input id="search" name="search" class="w-full px-5 py-3 text-base placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl xl:py-5 xl:px-7" type="text" placeholder="Cari barang kamu yang hilang !">
 
-                            <label for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2 sm:p-1.5">
+                            <button type="submit" for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2 sm:p-1.5">
                                 <svg class="w-6 h-6 text-white md:w-7 md:h-7"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                            </label>
+                            </button type="submit">
 
                         </form>
                     </div>
@@ -254,7 +254,7 @@
                     <div class="flex gap-5 w-full py-3 overflow-x-auto lg:gap-6">
 
                         @foreach ($barangs as $barang)
-                        @if ($barang->is_hilang == false)
+                        @if (!$barang->is_hilang)
                         <!-- Card Found Item -->
                         <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
 
@@ -487,7 +487,7 @@
                     <div class="flex gap-5 w-full py-3 overflow-x-auto lg:gap-7">
 
                         @foreach ($barangs as $barang)
-                        @if ($barang->is_hilang==true)
+                        @if ($barang->is_hilang)
                         
                         <!-- Card Lost Item -->
                         <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
@@ -501,7 +501,7 @@
                             <div class="w-full p-2">
 
                                 <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> {{ $barang->nama }}t </h1>
+                                <h1 class="mb-2 text-base font-poppins font-semibold lg:text-lg"> {{ $barang->nama }}</h1>
 
                                 <!-- Tanggal Barang -->
                                 <div class="flex items-center w-full mb-3">

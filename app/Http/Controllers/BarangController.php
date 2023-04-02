@@ -15,14 +15,14 @@ class BarangController extends Controller
     {
 
 
-        $barang = Barang::latest();
+        $barang = Barang::latest()->where('is_hilang',true);
 
         if(request('search')){
             $barang->where('nama', 'like','%'. request('search') . '%');
         }
 
         return view('searchBarangHilang', [
-            'barangs' => $barang->paginate(7)->withQueryString()
+            'barangs' => $barang->paginate(5)->withQueryString()
         
         ]);
     }

@@ -109,7 +109,7 @@
 
                     <!-- Search Bar -->
                     <div class="w-[88%] absolute -bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-bottom-11 md:w-[83%]">
-                        <form class="w-full relative">
+                        <form action="/baranghilang" class="w-full relative">
                             
                             <input id="search" name="search" class="w-full px-5 py-3 text-xs placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl sm:py-4 sm:text-sm" type="text" placeholder="Cari barang kamu yang hilang !">
 
@@ -738,8 +738,8 @@
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
                                 <a href="#"> About us </a>
                                 <a href="#"> Laporan </a>
-                                <a href="#"> Chatting </a>
-                                <a href="#"> Settings </a>
+                                <a href="/baranghilang"> Barang Hilang </a>
+                                <a href="/barangtemu"> Barang Temu </a>
                             </div>
 
                             <!-- Garis -->

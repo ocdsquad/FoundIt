@@ -23,7 +23,7 @@
 
                 <!-- Logo (Kiri) -->
                 <a href="/"class="w-[8%] ">
-                    <img class="w-full" src="img/logoLain.png" alt="Logo Foundit">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                 </a>
 
                 <!-- Navigasi Halaman (Kanan) -->
@@ -143,7 +143,11 @@
                         <div class="w-full h-[350px] rounded-t-[20px] overflow-hidden relative sm:rounded-[20px] sm:mb-5 lg:h-[400px] 2xl:h-[420px]">
                             
                             <!-- Image Barang -->
-                            <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
+                            @if ($barang->image)
+                            <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
+                            @else
+                            <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                            @endif 
 
                             <!-- Card Ungu Informasi Barang -->
                             <div class="flex justify-between items-center w-full rounded-t-[20px] bg-[#8D9EFF] absolute bottom-0 sm:hidden">

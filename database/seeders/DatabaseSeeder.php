@@ -21,6 +21,26 @@ class DatabaseSeeder extends Seeder
 
         \App\Models\User::factory(3)->create();
 
+        \App\Models\Category::create([
+            'nama' => 'Elektronik',
+            'slug' => 'elektronik'
+        ]);
+
+        \App\Models\Category::create([
+            'nama' => 'Kendaraan',
+            'slug' => 'kendaraan'
+        ]);
+
+        \App\Models\Category::create([
+            'nama' => 'Aksesoris',
+            'slug' => 'aksesoris'
+        ]);
+
+        \App\Models\Category::create([
+            'nama' => 'Lainnya',
+            'slug' => 'lainnya'
+        ]);
+
         \App\Models\Barang::factory(25)->create();
     }
 }

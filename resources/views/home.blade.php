@@ -266,8 +266,13 @@
                         <div class="flex-shrink-0 w-[45%] bg-white rounded-xl shadow-barang overflow-hidden sm:w-[35%] md:w-[28%] lg:w-[20%] xl:w-[18%]">
 
                             <!-- Image Container -->
-                            <div class="w-full h-[130px] relative">  
+                            <div class="w-full h-[130px] relative">
+                                @if ($barang->image)
+                                <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
+                                @else
                                 <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                                @endif  
+                                
                             </div>
 
                             <!-- Deskripsi Kehilangan -->
@@ -501,7 +506,11 @@
 
                             <!-- Image Container -->
                             <div class="w-full h-[130px] relative">  
+                                @if ($barang->image)
+                                <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
+                                @else
                                 <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                                @endif  
                             </div>
 
                             <!-- Deskripsi Kehilangan -->

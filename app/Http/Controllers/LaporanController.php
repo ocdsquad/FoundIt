@@ -3,28 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
-use App\Http\Requests\StoreBarangRequest;
-use App\Http\Requests\UpdateBarangRequest;
+use Illuminate\Http\Request;
 
-class BarangController extends Controller
+class LaporanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        return view('home');
-        // $barang = Barang::latest()->where('is_hilang',true);
-
-        // if(request('search')){
-        //     $barang->where('nama', 'like','%'. request('search') . '%');
-        // }
-
-        // return view('searchBarangHilang', [
-        //     'barangs' => $barang->paginate(5)->withQueryString()
-        
-        // ]);
+        return view('home', [
+            'barangs' => Barang::all()
+        ]);
     }
 
     /**
@@ -38,27 +28,35 @@ class BarangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBarangRequest $request)
-    {
+    public function store(Request $request)
+    {   
+
+        // dd($request);
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
-            'slug' => 'unique',
-            'deskripsi' => 'required|unique:posts',
+            'slug' => 'required|unique:barangs',
+            'deskripsi' => 'required|unique:barangs',
             'kronologi' => 'required',
             'lokasi' => 'required',
         ]);
 
-        $validatedData['user_id'] = 1;
+        $validatedData['user_id'] = auth()->user()->id;
         $validatedData['category_id'] = 1;
-        $validatedData['is_hilang'] = 1;
-        $validatedData['is_claim'] = 1;
+
+        if($request["is_hilang"] == "1"){
+            $validatedData['is_hilang'] = 1;
+        } else {
+            $validatedData['is_hilang'] = 0;
+        }
+        
+
+
+        $validatedData['is_claim'] = 0;
         $validatedData['is_hadiah'] = 1;
 
         Barang::create($validatedData);
 
-        return redirect('/Laporan');
-
-
+        return redirect('/')->with('success', 'Barang kamu berhasil ditambahkan!');
     }
 
     /**
@@ -80,7 +78,7 @@ class BarangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBarangRequest $request, Barang $barang)
+    public function update(Request $request, Barang $barang)
     {
         //
     }

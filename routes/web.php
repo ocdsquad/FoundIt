@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\RegisterController;
 
@@ -54,3 +55,6 @@ Route::get('/barangtemu', [PostController::class, 'index_temu']);
 
 Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilang']);
 Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);
+
+Route::resource('/Laporan', LaporanController::class);
+

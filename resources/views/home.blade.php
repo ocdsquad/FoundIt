@@ -8,7 +8,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" 
+        crossorigin="anonymous">
         <link rel="stylesheet" href="./css/style.css">
         @vite('resources/css/app.css')
 
@@ -16,6 +18,14 @@
     </head>
 
     <body>
+
+        {{-- @if(session()->has('success'))
+
+        <div class="alert alert-success alert-dismissible fade show col-md-8" role="alert">
+          {{ session('success') }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif --}}
 
         <!-- Desktop Navigation Bar -->
         <header class="w-full fixed bg-white shadow-kategori hidden lg:block z-10">
@@ -124,7 +134,6 @@
             </div>
         </section>
         <!-- Section Atas (Header) End -->
-
 
         <!-- Home Opening Section  -->
         <section class="pt-36 hidden lg:block">
@@ -737,7 +746,7 @@
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
                                 <a href="#"> About us </a>
-                                <a href="#"> Laporan </a>
+                                <a href="/Laporan/create"> Laporan </a>
                                 <a href="/baranghilang"> Barang Hilang </a>
                                 <a href="/barangtemu"> Barang Temu </a>
                             </div>

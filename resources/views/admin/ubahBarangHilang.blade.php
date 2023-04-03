@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
 
     <link href="/dist/output.css" rel="stylesheet">
     <!-- Poppins -->
@@ -18,7 +19,7 @@
         <div class="mx-10 flex justify-between">
             <!-- Kiri -->
             <div class="w-1/3 flex justify-between items-center">
-                <img src="../img/LogoFoundIT.png" alt="logo" class="w-1/4 py-3 ">
+                <img src="img/logo.png" alt="logo" class="w-1/4 py-3 ">
             </div>
 
             <!-- Tengah -->

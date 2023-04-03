@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @vite('resources/css/app.css')
+
     <link href="/dist/output.css" rel="stylesheet">
     <!-- Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;0,800;1,300&family=Poppins&display=swap" rel="stylesheet">
@@ -16,12 +18,7 @@
             <div class="mx-10 flex justify-between">
                 <!-- Kiri -->
                 <div class="w-1/3 flex justify-between items-center">
-                    <img src="../img/LogoFoundIT.png" alt="logo" class="w-1/4 scale-75">
-                    
-                    <div class="w-2/3 flex ml-16">
-                        <p class=" text-sm font-pop cursor-pointer">+ Tambah Data User</p>
-    
-                    </div>
+                    <img src="img/logo.png" alt="logo" class="w-1/4 scale-75">
                 </div>
     
                 <div class="w-2/3 flex justify-between">
@@ -45,7 +42,7 @@
                     <div class="w-1/3 flex items-center justify-end">
                         <div class=" w-36 h-8 flex items-center border border-purple rounded-2xl">
                             <div class="flex mx-auto ">
-                                <img src="../img/profile.jpeg" alt="" class="w-5 rounded-full items-center">
+                                <img src="img/profileDummy.png" alt="" class="w-5 rounded-full items-center">
                                 <p class="ml-3 text-xs font-pop">Admin Foundit.</p>
                             </div>
                         </div>
@@ -79,25 +76,32 @@
                     </thead>
 
                     <tbody class="text-xs font-pop">
-                        <tr>
-                            <td class="border text-center">1</td>
-                            <td class="border text-center">1301198076</td>
-                            <td class="border text-center">Ahmad Alfarel</td>
-                            <td class="border text-center">S1 Informatika
-                            </td>
-                            <td class="border text-center">082110998765</td>
-                            <td class="border">
-                                <img src="../img/barangHilang.png" alt="KTM" width="120" class="py-4 mx-auto
-                                ">
-                            </td>
+                        @foreach ($users as $user)
+                            <tr>
+                                <td class="border text-center">{{ $user->id }}</td>
+                                <td class="border text-center">1301198076</td>
+                                <td class="border text-center">Ahmad Alfarel</td>
+                                <td class="border text-center">S1 Informatika
+                                </td>
+                                <td class="border text-center">{{ $user-> email }}</td>
+                                <td class="border">
+                                    <img src="img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                    ">
+                                </td>
 
-                            <td class="border py-2">
-                                <a href="ubahDataMahasiswa.html">
-                                    <button class="block mx-auto px-4 py-1 text-white bg-[#1D4ED8] rounded-lg shadow-md hover:opacity-80 transition-all ease-in-out duration-500">Ubah</button>
-                                </a>
-                                <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
-                            </td>
-                        </tr>
+                                <td class="border py-2">
+                                    <a href="/delete{{ $user -> id }}">
+                                        <button class="block mx-auto px-4 py-1 text-white bg-[#1D4ED8] rounded-lg shadow-md hover:opacity-80 transition-all ease-in-out duration-500">Ubah</button>
+                                    </a>
+
+                                    <a href="/delete{{ $user -> id }}">
+                                        <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
+                                    </a>
+                                    
+                                </td>
+                            </tr>
+                        @endforeach
+        
                     </tbody>
                 </table>
 

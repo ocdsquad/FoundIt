@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barang;
 use Illuminate\Http\Request;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class LaporanController extends Controller
 {
@@ -31,12 +32,12 @@ class LaporanController extends Controller
     public function store(Request $request)
     {   
 
-        // dd($request);
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'slug' => 'required|unique:barangs',
+            'image' => 'image|file|max:1024',
             'deskripsi' => 'required|unique:barangs',
-            'kronologi' => 'required',
+            'kronologi' => 'required'
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;
@@ -47,7 +48,11 @@ class LaporanController extends Controller
         } else {
             $validatedData['is_hilang'] = 0;
         }
+
         
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
 
 
         $validatedData['is_claim'] = 0;
@@ -88,5 +93,10 @@ class LaporanController extends Controller
     public function destroy(Barang $barang)
     {
         //
+    }
+
+    public function checkSlug(Request $request){
+        $slug = SlugService::createSlug(Barang::class, 'slug', $request->nama);
+        return response()->json(['slug' => $slug]);
     }
 }

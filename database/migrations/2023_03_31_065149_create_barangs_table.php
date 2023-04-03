@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('nama');
             $table->string('slug')->unique();
+            $table->string('image')->nullable();
             $table->text('deskripsi');
             $table->text('kronologi');
             $table->string('lokasi')->nullable();

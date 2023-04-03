@@ -303,7 +303,11 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px] relative">  
+                                @if ($barang->image)
+                                <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
+                                @else
                                 <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                                @endif 
                             </div>
 
                             <!-- Label -->

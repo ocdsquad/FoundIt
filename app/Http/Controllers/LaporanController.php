@@ -40,11 +40,12 @@ class LaporanController extends Controller
             'slug' => 'required|unique:barangs',
             'image' => 'image|file|max:1024',
             'deskripsi' => 'required|unique:barangs',
-            'kronologi' => 'required'
+            'kronologi' => 'required',
+            'category_id' => 'required'
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['category_id'] = 1;
+        
 
         if($request["is_hilang"] == "1"){
             $validatedData['is_hilang'] = 1;

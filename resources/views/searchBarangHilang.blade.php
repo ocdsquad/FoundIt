@@ -80,7 +80,7 @@
 
                     <!-- Icon Panah -->
                     <div class="w-fit">
-                        <a href="Home.html">
+                        <a href="/">
                             <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                             </svg>                                            
@@ -125,7 +125,7 @@
 
                     <!-- Barang Hilang -->
                     <div class="w-1/2">
-                        <a href="SearchBarangHilang.html">
+                        <a href="/baranghilang">
                             <h2 class="py-1 text-base text-center text-[#8D72E1] font-montserrat font-semibold tracking-wide">Barang Hilang</h2>
                         </a>
 
@@ -159,13 +159,13 @@
                             <div class="flex items-center">
 
                                 <!-- Search Bar -->
-                                <form class="w-[65%] mr-3 relative">
+                                <form action=""class="w-[65%] mr-3 relative">
                     
                                     <input id="search" name="search" class="w-full px-5 py-3 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl xl:text-base" type="text" placeholder="All item">
     
-                                    <label for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
+                                    <button type="submit" for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
                                         <svg class="w-5 h-5 text-white"  width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                                    </label>
+                                    </button>
                                 </form>
                                 
                                 <!-- Dropdown -->
@@ -173,7 +173,7 @@
 
                                     <select name="jenis-barang" id="jenis-barang" class="w-full pl-2 py-3 rounded-xl text-sm text-white font-poppins font-medium bg-[#8D9EFF] focus:outline-none appearance-none cursor-pointer">
 
-                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="SearchBarangHilang.html"> Barang Hilang </a> </option>
+                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
 
                                         <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
 
@@ -203,24 +203,27 @@
         <!-- Barang Hilang Section -->
         <section class="pt-32 pb-28 relative xl:pt-20">
             <div class="container">
+                <form action="">
+                    @csrf
                 <div class="flex flex-wrap ">
-
+                    
                     <!-- Dropdown Filter Barang (viewport desktop) -->
                     <div class="justify-between w-full mb-10 px-3 hidden lg:flex">
-
+                    
+                        
                         <!-- Status, Jenis, dan Tanggal -->
                         <div class="flex justify-between w-[60%]">
 
                             <!-- Dropdown Status -->
                             <div class="w-[30%] relative">
-
+                                
                                 <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Status Barang</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="SearchBarangHilang.html"> Barang Hilang </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="/barangtemu"> Barang Temu </a> </option>
 
 
                                 </select>
@@ -240,7 +243,7 @@
 
                                     <option disabled selected value="">Jenis Barang</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="SearchBarangHilang.html"> Barang Hilang </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
 
                                     <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
 
@@ -274,7 +277,7 @@
 
                                     <option disabled selected value="">Sort By</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="SearchBarangHilang.html"> Barang Hilang </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
 
                                     <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
 
@@ -290,6 +293,7 @@
                             </div>
 
                         </div>
+                    </form>
 
                     </div>
 

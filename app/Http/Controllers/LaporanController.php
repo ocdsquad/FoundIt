@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use \Cviebrock\EloquentSluggable\Services\SlugService;
 
@@ -23,7 +24,9 @@ class LaporanController extends Controller
      */
     public function create()
     {
-        return view('Laporan.create');
+        return view('Laporan.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**

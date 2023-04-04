@@ -163,7 +163,7 @@
 
                             <button type="submit" for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2 sm:p-1.5">
                                 <svg class="w-6 h-6 text-white md:w-7 md:h-7"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                            </button type="submit">
+                            </button>
 
                         </form>
                     </div>

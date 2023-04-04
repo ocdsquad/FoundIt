@@ -17,6 +17,9 @@ class BarangController extends Controller
 
         if(request('search')){
             $barang->where('nama', 'like','%'. request('search') . '%');
+
+
+            
         }
 
         return view('searchBarangHilang', [

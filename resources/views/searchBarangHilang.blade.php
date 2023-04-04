@@ -221,9 +221,9 @@
 
                                     <option disabled selected value="">Status Barang</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="claim">Claimed </option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="/barangtemu"> Barang Temu </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="unclaimed"> Unclaimed </option>
 
 
                                 </select>
@@ -237,17 +237,21 @@
                             </div>
 
                             <!-- Dropdown Jenis -->
-                            <div class="w-[30%] relative">
+                            <div class="w-[30%] relative mx-3">
 
                                 <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Jenis Barang</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
-
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
-
-
+                                    @foreach ($categories as $category)
+                                        @if (old('category_id') == $category->id)
+                                            
+                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}" selected>{{ $category->nama }}</option>
+                                        @else
+                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}">{{ $category->nama }}</option>
+                                        
+                                        @endif
+                                    @endforeach
                                 </select>
 
                                 <span class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
@@ -259,27 +263,22 @@
                             </div>
 
                             <!-- Dropdown Tanggal -->
-                            <div class="w-[30%] relative">
+                            <div class="w-[30%] relative mx-3">
 
                                 <input type="date" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] cursor-pointer">
 
                             </div>
 
-                        </div>
-
-                        <!-- Sort by -->
-                        <div class="flex justify-end items-center w-[40%]">
-
                             <!-- Sort By -->
-                            <div class="w-[30%] relative">
+                            <div class="w-[30%] relative mx-3">
 
                                 <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Sort By</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="latest">  Latest </option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="oldest"> Oldest </option>
 
 
                                 </select>
@@ -289,10 +288,20 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </svg>                                          
                                 </span>
-
+                                
                             </div>
 
                         </div>
+
+                        <!-- Sort by -->
+                        <div class="flex justify-end items-center w-[40%]">
+
+                            
+                            <button class="w-[20%] relative mx-2 px-3 py-[7px] rounded-xl text-sm text-white font-poppins font-medium border border-[#060214] bg-[#8D9EFF] focus:outline-none appearance-none cursor-pointer" type="submit">
+                                apply
+                            </button>
+                        </div>
+                        
                     </form>
 
                     </div>

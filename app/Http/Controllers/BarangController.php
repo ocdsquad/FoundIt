@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Category;
 use App\Http\Requests\StoreBarangRequest;
 use App\Http\Requests\UpdateBarangRequest;
 
@@ -23,7 +24,8 @@ class BarangController extends Controller
         }
 
         return view('searchBarangHilang', [
-            'barangs' => $barang->paginate(5)->withQueryString()
+            'barangs' => $barang->paginate(5)->withQueryString(),
+            'categories'=> Category::all()
         
         ]);
     }

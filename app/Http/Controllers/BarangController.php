@@ -36,8 +36,8 @@ class BarangController extends Controller
             return $q->where('is_claim', $request->status);
         });
 
-        if(request('search')){
-            $barang->where('nama', 'like','%'. request('search') . '%');
+        if($request->search){
+            $barang->where('nama', 'like','%'. $request->search . '%');
             
         }
 

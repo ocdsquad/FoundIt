@@ -23,11 +23,7 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'barangs' => Barang::all()
-    ]);
-});
+Route::get('/', [LibraryController::class, 'home']);
 
 Route::get('/baranghilang', [BarangController::class,'index']);
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');

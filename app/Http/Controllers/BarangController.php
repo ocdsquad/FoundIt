@@ -5,21 +5,39 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\Category;
 use App\Http\Requests\StoreBarangRequest;
-use App\Http\Requests\UpdateBarangRequest;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $barang = Barang::latest()->where('is_hilang',true);
+
+        if($request->sort ==='latest'){
+
+            $barang = Barang::latest()->where('is_hilang',true);
+        }else{
+            
+            $barang = Barang::oldest()->where('is_hilang',true);
+        }
+
+        $barang->when($request->jenis, function($q) use ($request){
+            return $q->where('category_id', $request->jenis);
+        });
+        
+        $barang->when($request->tanggal, function($q) use ($request){
+            return $q->whereDate('created_at', $request->tanggal.'%');
+        });
+
+        $barang->when($request->status, function($q) use ($request){
+            return $q->where('is_claim', $request->status);
+        });
 
         if(request('search')){
             $barang->where('nama', 'like','%'. request('search') . '%');
-
-
             
         }
 

@@ -337,7 +337,7 @@
                                         </svg>  
                                     </span>
 
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at }} </p>
+                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at->format('d-m-Y') }} </p>
                                 </div>
 
                             </div>

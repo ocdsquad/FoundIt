@@ -217,13 +217,13 @@
                             <!-- Dropdown Status -->
                             <div class="w-[30%] relative">
                                 
-                                <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
+                                <select name="status" id="status" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Status Barang</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="claim">Claimed </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="1">Claimed </option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="unclaimed"> Unclaimed </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="0"> Unclaimed </option>
 
 
                                 </select>
@@ -239,7 +239,7 @@
                             <!-- Dropdown Jenis -->
                             <div class="w-[30%] relative mx-3">
 
-                                <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
+                                <select name="jenis" id="jenis" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Jenis Barang</option>
 
@@ -265,14 +265,14 @@
                             <!-- Dropdown Tanggal -->
                             <div class="w-[30%] relative mx-3">
 
-                                <input type="date" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] cursor-pointer">
+                                <input type="date" name="tanggal" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] cursor-pointer">
 
                             </div>
 
                             <!-- Sort By -->
                             <div class="w-[30%] relative mx-3">
 
-                                <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
+                                <select name="sort" id="sort" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Sort By</option>
 
@@ -342,7 +342,7 @@
                                         </svg>  
                                     </span>
 
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at }} </p>
+                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at->format('d-m-Y') }} </p>
                                 </div>
 
                                 <a href="/baranghilang/{{ $barang->slug }}">Detail barang</a>

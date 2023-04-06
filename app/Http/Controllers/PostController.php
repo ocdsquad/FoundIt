@@ -19,7 +19,7 @@ class PostController extends Controller
 
         if($request->sort ==='latest'){
 
-            $barang = Barang::latest()->where('is_hilang',false);
+            $barang = Barang::latest()->latest()->where('is_hilang',false);
         }else{
             
             $barang = Barang::oldest()->where('is_hilang',false);
@@ -38,8 +38,7 @@ class PostController extends Controller
         });
 
         if($request->search){
-            $barang->where('nama', 'like','%'. $request->search . '%');
-            
+            $barang->where('nama', 'like','%'. $request->search  . '%');
         }
 
         return view('searchBarangTemuan', [

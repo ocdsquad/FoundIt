@@ -60,7 +60,13 @@ class LaporanController extends Controller
 
 
         $validatedData['is_claim'] = 0;
-        $validatedData['is_hadiah'] = 1;
+
+        if($request["is_hadiah"] == "1"){
+            $validatedData['is_hadiah'] = 1;
+        } else {
+            $validatedData['is_hadiah'] = 0;
+        }
+        
 
         Barang::create($validatedData);
 

@@ -43,12 +43,12 @@
 
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="/barangtemu"> Barang Temuan </a>
 
-                    <form action="/baranghilang" class="w-[35%] relative xl:w-[28%]">
-                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
+                    <form action="/" class="w-[35%] relative xl:w-[28%]" >
+                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barang!">
 
-                        <button type="submit" for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                        <button type="submit"for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
                             <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                        </submit>
+                        </button>
                     </form>
                 </div>
 
@@ -116,13 +116,13 @@
 
                     <!-- Search Bar -->
                     <div class="w-[88%] absolute -bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-bottom-11 md:w-[83%]">
-                        <form action="/baranghilang" class="w-full relative">
+                        <form class="w-full relative">
                             
                             <input id="search" name="search" class="w-full px-5 py-3 text-xs placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl sm:py-4 sm:text-sm" type="text" placeholder="Cari barang kamu yang hilang !">
 
-                            <label for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2 sm:p-1.5">
+                            <button type="submit" for="search" class="p-1 bg-[#8D9EFF] rounded-lg absolute top-1/2 right-3 -translate-y-1/2 sm:p-1.5">
                                 <svg class="w-6 h-6 text-white md:w-7 md:h-7"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                            </label>
+                            </button>
 
                         </form>
                     </div>
@@ -157,7 +157,7 @@
 
                     <!-- Search Bar -->
                     <div class="w-[60%] absolute -bottom-12 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[3]">
-                        <form action="/baranghilang"class="w-full relative">
+                        <form class="w-full relative">
                             
                             <input id="search" name="search" class="w-full px-5 py-3 text-base placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl xl:py-5 xl:px-7" type="text" placeholder="Cari barang kamu yang hilang !">
 
@@ -301,7 +301,7 @@
                                         </svg>  
                                     </span>
     
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at->format('d-m-Y') }} </p>
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at }} </p>
                                 </div>
                             </div>
 
@@ -527,7 +527,7 @@
                                         </svg>  
                                     </span>
     
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at->format('d-m-Y') }} </p>
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at }} </p>
                                 </div>
 
                                 <a href="/baranghilang/{{ $barang->slug }}">Detail Barang</a>

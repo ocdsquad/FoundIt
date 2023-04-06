@@ -41,9 +41,9 @@
                     <form class="w-[35%] relative xl:w-[28%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
 
-                        <button type="submit" for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                        <label for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
                             <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                        </submit>
+                        </label>
                     </form>
                 </div>
 
@@ -217,13 +217,13 @@
                             <!-- Dropdown Status -->
                             <div class="w-[30%] relative">
                                 
-                                <select name="status" id="status" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
+                                <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Status Barang</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="1">Claimed </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="0"> Unclaimed </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="/barangtemu"> Barang Temu </a> </option>
 
 
                                 </select>
@@ -237,21 +237,17 @@
                             </div>
 
                             <!-- Dropdown Jenis -->
-                            <div class="w-[30%] relative mx-3">
+                            <div class="w-[30%] relative">
 
-                                <select name="jenis" id="jenis" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
+                                <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Jenis Barang</option>
 
-                                    @foreach ($categories as $category)
-                                        @if (old('category_id') == $category->id)
-                                            
-                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}" selected>{{ $category->nama }}</option>
-                                        @else
-                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}">{{ $category->nama }}</option>
-                                        
-                                        @endif
-                                    @endforeach
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
+
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
+
+
                                 </select>
 
                                 <span class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
@@ -263,22 +259,27 @@
                             </div>
 
                             <!-- Dropdown Tanggal -->
-                            <div class="w-[30%] relative mx-3">
+                            <div class="w-[30%] relative">
 
-                                <input type="date" name="tanggal" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] cursor-pointer">
+                                <input type="date" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] cursor-pointer">
 
                             </div>
 
-                            <!-- Sort By -->
-                            <div class="w-[30%] relative mx-3">
+                        </div>
 
-                                <select name="sort" id="sort" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
+                        <!-- Sort by -->
+                        <div class="flex justify-end items-center w-[40%]">
+
+                            <!-- Sort By -->
+                            <div class="w-[30%] relative">
+
+                                <select name="jenis-barang" id="jenis-barang" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
                                     <option disabled selected value="">Sort By</option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="latest">  Latest </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="lostItem"> <a href="/baranghilang"> Barang Hilang </a> </option>
 
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="oldest"> Oldest </option>
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="foundItem"> <a href="SearchBarangTemu.html"> Barang Temu </a> </option>
 
 
                                 </select>
@@ -288,20 +289,10 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </svg>                                          
                                 </span>
-                                
+
                             </div>
 
                         </div>
-
-                        <!-- Sort by -->
-                        <div class="flex justify-end items-center w-[40%]">
-
-                            
-                            <button class="w-[20%] relative mx-2 px-3 py-[7px] rounded-xl text-sm text-white font-poppins font-medium border border-[#060214] bg-[#8D9EFF] focus:outline-none appearance-none cursor-pointer" type="submit">
-                                apply
-                            </button>
-                        </div>
-                        
                     </form>
 
                     </div>
@@ -342,7 +333,7 @@
                                         </svg>  
                                     </span>
 
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at->format('d-m-Y') }} </p>
+                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->created_at }} </p>
                                 </div>
 
                                 <a href="/baranghilang/{{ $barang->slug }}">Detail barang</a>

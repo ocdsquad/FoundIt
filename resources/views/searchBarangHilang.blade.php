@@ -113,7 +113,7 @@
 
                     <!-- Barang Temuan -->
                     <div class="w-1/2">
-                        <a href="SearchBarangTemu.html">
+                        <a href="/barangtemu">
                             <h2 class="py-1 text-base text-center text-[#BDC1C2] font-montserrat font-semibold tracking-wide">Barang Temuan</h2>
                         </a>
 

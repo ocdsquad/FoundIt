@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Barang;
+use App\Models\Category;
 use App\Http\Requests\StorePostRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdatePostRequest;
 
 class PostController extends Controller
@@ -12,17 +14,37 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index_temu()
+    public function index_temu(Request $request)
     {
 
-        $barang = Barang::where('is_hilang', false);
+        if($request->sort ==='latest'){
 
-        if(request('search')){
-            $barang->where('nama', 'like','%'. request('search'). '%');
+            $barang = Barang::latest()->where('is_hilang',false);
+        }else{
+            
+            $barang = Barang::oldest()->where('is_hilang',false);
+        }
+
+        $barang->when($request->jenis, function($q) use ($request){
+            return $q->where('category_id', $request->jenis);
+        });
+        
+        $barang->when($request->tanggal, function($q) use ($request){
+            return $q->whereDate('created_at', $request->tanggal.'%');
+        });
+
+        $barang->when($request->status, function($q) use ($request){
+            return $q->where('is_claim', $request->status);
+        });
+
+        if($request->search){
+            $barang->where('nama', 'like','%'. $request->search . '%');
             
         }
+
         return view('searchBarangTemuan', [
-            'barangs' => $barang->paginate(7)->withQueryString()
+            'barangs' => $barang->paginate(7)->withQueryString(),
+            'categories' => Category::all()
         ]);
 
         

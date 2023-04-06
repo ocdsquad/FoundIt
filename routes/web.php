@@ -24,11 +24,19 @@ use App\Http\Controllers\RegisterController;
 */
 
 Route::get('/', function () {
+    
+    $barang = Barang::all();
+
+    if(request('search')){
+        $barang->where('nama', 'like','%'. request('search') . '%');
+    }
+
     return view('home', [
-        'barangs' => Barang::all()
+        'barangs' => $barang
     ]);
 });
 
+// Route::get('/', [LibraryController::class,'home']);
 Route::get('/baranghilang', [BarangController::class,'index']);
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'auth']);

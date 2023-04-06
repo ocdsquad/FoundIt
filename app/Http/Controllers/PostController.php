@@ -14,8 +14,15 @@ class PostController extends Controller
      */
     public function index_temu()
     {
+
+        $barang = Barang::latest()->where('is_hilang', false);
+
+        if(request('search')){
+            $barang->where('nama', 'like','%'. request('search') . '%');
+        }
+
         return view('searchBarangTemuan', [
-            'barangs' => Barang::where('is_hilang', false)->paginate(7)->withQueryString()
+            'barangs' => $barang->paginate(7)->withQueryString()
         ]);
 
         

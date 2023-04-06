@@ -19,4 +19,19 @@ class LibraryController extends Controller
             "barang" => $barang
         ]);
     }
+
+    public function home(){
+        
+        // dd(request('search'));
+
+        $barang = Barang::all();
+
+        if(request('search')){
+            $barang->where('nama', 'like','%'. request('search') . '%');
+        }
+
+        return view('home', [
+            'barangs' => $barang
+        ]);
+    }
 }

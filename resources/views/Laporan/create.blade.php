@@ -93,11 +93,13 @@
             <input type="radio" class="btn-check" name="is_hadiah" id="tidak_hadiah" value="0" autocomplete="off">
             <label class="btn btn-outline-primary" for="tidak_hadiah">Maaf, belum ada</label>
         </div>
+                  
+        <button type="submit" class="btn btn-primary mb-3">Create Post</button>
         <br>
-
-        <br>            
-        <button type="submit" class="btn btn-primary">Create Post</button>
+        <a href="/" class="mt-3">Back to Home</a>
     </form>
+
+    
 </div>
 
 <script>

@@ -146,7 +146,7 @@
                             @if ($barang->image)
                             <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
                             @else
-                            <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
+                            <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             @endif 
 
                             <!-- Card Ungu Informasi Barang -->

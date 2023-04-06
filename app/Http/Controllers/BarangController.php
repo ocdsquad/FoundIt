@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Barang;
+use App\Models\Category;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreBarangRequest;
 use App\Http\Requests\UpdateBarangRequest;
 
@@ -13,17 +15,33 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barang = Barang::latest()->where('is_hilang',true);
+        if($request->sort ==='latest'){
 
-        if(request('search')){
-            $barang->where('nama', 'like','%'. request('search') . '%');
-
-
+            $barang = Barang::latest()->where('is_hilang',true);
+        }else{
             
+            $barang = Barang::oldest()->where('is_hilang',true);
+        }
+
+        $barang->when($request->jenis, function($q) use ($request){
+            return $q->where('category_id', $request->jenis);
+        });
+        
+        $barang->when($request->tanggal, function($q) use ($request){
+            return $q->whereDate('created_at', $request->tanggal.'%');
+        });
+
+        $barang->when($request->status, function($q) use ($request){
+            return $q->where('is_claim', $request->status);
+        });
+
+        if($request->search){
+            $barang->where('nama', 'like','%'. $request->search  . '%');
         }
 
         return view('searchBarangHilang', [
-            'barangs' => $barang->paginate(5)->withQueryString()
+            'barangs' => $barang->paginate(5)->withQueryString(),
+            'categories'=> Category::all()
         
         ]);
     }

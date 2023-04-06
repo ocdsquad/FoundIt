@@ -19,7 +19,7 @@ class PostController extends Controller
 
         if($request->sort ==='latest'){
 
-            $barang = Barang::latest()->latest()->where('is_hilang',false);
+            $barang = Barang::latest()->where('is_hilang',false);
         }else{
             
             $barang = Barang::oldest()->where('is_hilang',false);

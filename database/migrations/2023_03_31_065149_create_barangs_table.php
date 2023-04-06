@@ -22,7 +22,7 @@ return new class extends Migration
             $table->text('kronologi');
             $table->string('lokasi')->nullable();
             $table->boolean('is_hilang');
-            $table->boolean('is_claim')->default(0);
+            $table->boolean('is_claim');
             $table->boolean('is_hadiah')->nullable();
             $table->timestamps();
 

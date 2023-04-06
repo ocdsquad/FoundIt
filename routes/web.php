@@ -23,40 +23,23 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', function () {
-    
-    $barang = Barang::all();
-
-    if(request('search')){
-        $barang->where('nama', 'like','%'. request('search') . '%');
-    }
-
-    return view('home', [
-        'barangs' => $barang
-    ]);
-});
+Route::get('/', [LibraryController::class,'home']);
 
 // Route::get('/', [LibraryController::class,'home']);
 Route::get('/baranghilang', [BarangController::class,'index']);
-<<<<<<< Updated upstream
-=======
 Route::get('/barangtemu', [PostController::class, 'index_temu']);
 
 
 
->>>>>>> Stashed changes
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::get('/register',[RegisterController::class,'index'])->middleware('guest');
 Route::post('/register',[RegisterController::class,'store']);
-<<<<<<< Updated upstream
 Route::get('/barangtemu', [PostController::class, 'index_temu']);
-=======
 
 
 
->>>>>>> Stashed changes
 
 // Route::get('baranghilang/{slug}', function($slug){
 //     return view('detailBarangHilang', [

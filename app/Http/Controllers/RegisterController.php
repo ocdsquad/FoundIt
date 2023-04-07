@@ -24,6 +24,8 @@ class RegisterController extends Controller
         ]);
 
         $validatedData['password'] = Hash::make($validatedData['password']);
+        $validatedData['is_verif'] = false;
+        $validatedData['is_tolak'] = false;
 
         User::create($validatedData);
 

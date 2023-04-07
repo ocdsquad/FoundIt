@@ -42,5 +42,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Barang::factory(25)->create();
+
+        //admin
+        \App\Models\Admin::create([
+            "email" => "admin123@gmail.com",
+            "password" => bcrypt(123456)
+        ]);
     }
 }

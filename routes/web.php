@@ -11,6 +11,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminDataUserController;
 use App\Http\Controllers\AdminBarangTemuController;
@@ -66,11 +67,7 @@ Route::get('/admin/datauser', function () {
     ]);
 });
 
-Route::get('/admin/home', function () {
-    return view('admin.homeAdmin',[
-        'users' => User::all()
-    ]);
-});
+Route::get('/admin/home', [AdminHomeController::class, 'index']);
 
 
 
@@ -85,6 +82,10 @@ Route::get('/admin/barangtemu', function () {
         'barangs' => Barang::all()
     ]);
 });
+
+//route verifikasi
+Route::post('/admin/verif/{user:id}', [AdminHomeController::class, 'verif']);
+Route::post('/admin/tolak/{user:id}', [AdminHomeController::class, 'tolak']);
 
 Route::get('/admin/login', [AdminLoginController::class, 'index']);
 Route::post('/admin/login', [AdminLoginController::class, 'auth']);

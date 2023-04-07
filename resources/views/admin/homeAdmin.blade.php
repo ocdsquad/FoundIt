@@ -73,7 +73,7 @@
                             <th class="border">NIM</th>
                             <th class="border">Nama Mahasiswa</th>
                             <th class="border">Jurusan</th>
-                            <th class="border">No Telepon</th>
+                            <th class="border">Email</th>
                             <th class="border">Identitas</th>
                             <th class="border">Aksi</th>
                         </tr>
@@ -81,25 +81,81 @@
 
                     <tbody class="text-xs font-pop">
                         @foreach ($users as $user)
-                            <tr>
-                                <td class="border text-center">{{ $user -> id }}</td>
-                                <td class="border text-center">1301198076</td>
-                                <td class="border text-center">Ahmad Alfarel</td>
-                                <td class="border text-center">S1 Informatika</td>
-                                <td class="px-2 border text-center">
-                                    {{ $user -> email }}
-                                </td>
+                            @if ($user -> is_verif == false && $user -> is_tolak == false)
+                                <tr>
+                                    <td class="border text-center">{{ $user -> id }}</td>
+                                    <td class="border text-center">1301198076 {{ $user -> created_at }}</td>
+                                    <td class="border text-center">Ahmad Alfarel</td>
+                                    <td class="border text-center">S1 Informatika </td>
+                                    <td class="px-2 border text-center">
+                                        {{ $user -> email }}
+                                    </td>
 
-                                <td class="border">
-                                    <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
-                                    ">
-                                </td>
+                                    <td class="border">
+                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        ">
+                                    </td>
 
-                                <td class="border py-2">
-                                    <button class="block mx-auto px-3 py-1 text-white bg-[#1D4ED8] rounded-lg shadow-md hover:opacity-80 transition-all ease-in-out duration-500">Terima</button>
-                                    <button class="block mx-auto my-1 px-4 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Tolak</button>
-                                </td>
-                            </tr>
+                                    <td class="border py-2">
+                                        <form action="/admin/verif/{{ $user-> id }}" method="post">
+                                            @csrf
+                                            <button class="block mx-auto px-3 py-1 text-white bg-[#1D4ED8] rounded-lg shadow-md hover:opacity-80 transition-all ease-in-out duration-500">Terima</button>
+                                        </form>
+
+                                        <form action="/admin/tolak/{{ $user-> id }}" method="post">
+                                            @csrf
+                                            <button class="block mx-auto my-1 px-4 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Tolak</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @elseif ($user -> is_verif == true)
+                                <tr>
+                                    <td class="border text-center">{{ $user -> id }}</td>
+                                    <td class="border text-center relative">1301198076 {{ $user -> created_at }}
+                                        <p class="w-[40%] px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0">Disetujui</p>
+                                    </td>
+                                    <td class="border text-center">Ahmad Alfarel {{$user->is_verif}}</td>
+                                    <td class="border text-center">S1 Informatika </td>
+                                    <td class="px-2 border text-center">
+                                        {{ $user -> email }}
+                                    </td>
+
+                                    <td class="border">
+                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        ">
+                                    </td>
+
+                                    <td class="border py-2 relative">
+                                        <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>
+                                        
+                                        <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
+                                    </td>
+                                </tr>
+                            @else
+                                <tr> 
+                                    <td class="border text-center">{{ $user -> id }}</td>
+                                    <td class="border text-center relative">1301198076 {{ $user -> created_at }}
+                                        <p class="w-[40%] px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Tidak Disetujui</p>
+                                    </td>
+                                    <td class="border text-center">Ahmad Alfarel {{$user->is_verif}}</td>
+                                    <td class="border text-center">S1 Informatika </td>
+                                    <td class="px-2 border text-center">
+                                        {{ $user -> email }}
+                                    </td>
+
+                                    <td class="border">
+                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        ">
+                                    </td>
+
+                                    <td class="border py-2">
+
+                                        <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>
+                                        
+                                        <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </tbody>
                 </table>

@@ -11,6 +11,10 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminLoginController;
+use App\Http\Controllers\AdminDataUserController;
+use App\Http\Controllers\AdminBarangTemuController;
+use App\Http\Controllers\AdminBarangHilangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,44 +59,37 @@ Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug'])
 
 // Admin
 
-Route::get('/loginAdmin', [AdminController::class,'index']);
 
-Route::get('/homeAdmin', function () {
-    return view('admin.halmVerif',[
+Route::get('/admin/datauser', function () {
+    return view('admin.halmDataUser',[
+        'users' => User::all()
+    ]);
+});
+
+Route::get('/admin/home', function () {
+    return view('admin.homeAdmin',[
         'users' => User::all()
     ]);
 });
 
 
 
-// Route::get('/adminDataUser', function () {
-//     return view('admin/halmDataUser',[
-//         'users' => User::all()
-//     ]);
-// });
+Route::get('/admin/baranghilang', function () {
+    return view('admin.halmBarangHilang',[
+        'barangs' => Barang::all()
+    ]);
+});
 
-// Route::get('/adminBarangHilang', function () {
-//     return view('admin/halmBarangHilang',[
-//         'barangs' => Barang::all()
-//     ]);
-// });
+Route::get('/admin/barangtemu', function () {
+    return view('admin.halmBarangTemu',[
+        'barangs' => Barang::all()
+    ]);
+});
 
-// Route::get('/adminBarangTemu', function () {
-//     return view('admin/halmBarangTemu',[
-//         'barangs' => Barang::all()
-//     ]);
-// });
+Route::get('/admin/login', [AdminLoginController::class, 'index']);
+Route::post('/admin/login', [AdminLoginController::class, 'auth']);
 
-// Route::get('/adminVerif', function () {
-//     return view('admin/halmVerif',[
-//         'users' => User::all()
-//     ]);
-// });
-
-
-// Route::get('/adminUbahBarangHilang', function () {
-//     return view('admin/ubahBarangHilang',[
-//         'users' => User::all()
-//     ]);
-// });
-
+Route::get('/admin/barang-hilang/{barang:id}/edit', [AdminBarangHilangController::class, 'edit'])-> name('edit');
+Route::delete('/admin/barang-hilang/{barang:id}', [AdminBarangHilangController::class, 'delete'])-> name('delete');
+Route::delete('/admin/barang-temu/{barang:id}', [AdminBarangTemuController::class, 'delete'])-> name('delete');
+Route::delete('/admin/datauser/{user:id}', [AdminDataUserController::class, 'delete'])-> name('delete');

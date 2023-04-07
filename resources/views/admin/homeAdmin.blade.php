@@ -17,33 +17,38 @@
             <div class="px-8 flex w-full justify-between">
                 <!-- Kiri -->
                 <div class="flex items-center">
-                    <img src="img/logoLain.png" alt="logo" class="w-1/4 scale-75">
+                    <img src="/img/logoLain.png" alt="logo" class="w-1/4 scale-75">
                     <h1 class="text-lg text-white font-montserrat font-bold uppercase">Selamat Datang Admin</h1>
                 </div>
 
                 <!-- Kanan -->
                 <div class="flex items-center  relative">
                     <!-- Admin -->
-                    <div id="icon-profile" class="w-36 h-8 flex items-center border border-purple bg-white rounded-2xl cursor-pointer">
+                    <div id="icon-profile" class="w-36 h-8 flex items-center border  bg-white  rounded-2xl cursor-pointer">
                         <div class="flex mx-auto ">
-                            <img src="img/profileDummy.png" alt="" class="w-5 rounded-full items-center">
+                            <img src="/img/profileDummy.png" alt="" class="w-5 rounded-full items-center ">
                             <p class="ml-3 text-xs font-pop" id = "overlay">Admin Foundit.</p>
                         </div>
                     </div>
 
                     <!-- Modal Dropdown -->
-                    <div id="modal-dropdown" class="absolute -right-3 top-[60px] max-w-[250px] p-3 bg-[#B9E0FF] rounded-lg shadow-2xl transition-all ease-in-out duration-300 hidden">
-                            <ul class="flex flex-col">
-                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="login.html" class="text-mons text-sm font-semibold  cursor-pointer">Logout</a></li>
+                    <div id="modal-dropdown" class="w-[200px] absolute -right-3 top-[65px] bg-white rounded-sm shadow-2xl transition-all ease-in-out duration-300 hidden">
+                            <div id="close-btn" class="relative">
+                                <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-0 top-0 cursor-pointer">
+                            </div>
+                            <ul class="flex flex-col p-3">
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer">Home</a></li>
                                  
-                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="halmDataUser.html" class="text-mons text-sm font-semibold cursor-pointer
+                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/datauser" class="text-mons text-sm font-semibold cursor-pointer
                                     ">Data User</a></li>
 
-                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="halmBarangNemu.html" class="text-mons text-sm font-semibold cursor-pointer
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/barangtemu" class="text-mons text-sm font-semibold cursor-pointer
                                         ">Data Barang Temu</a></li>
 
-                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="halmBarangHilang.html" class="text-mons text-sm font-semibold cursor-pointer
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/baranghilang" class="text-mons text-sm font-semibold cursor-pointer
                                             ">Data Barang Hilang</a></li>
+
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/login" class="text-mons text-sm font-semibold cursor-pointer">Logout</a></li>
                         
                             </ul>
                     </div>
@@ -86,7 +91,7 @@
                                 </td>
 
                                 <td class="border">
-                                    <img src="img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                    <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
                                     ">
                                 </td>
 
@@ -117,10 +122,19 @@
     <script>
         let iconProfile = document.getElementById('icon-profile')
         let modalMenu = document.getElementById('modal-dropdown')
+        let closeBtn = document.getElementById('close-btn')
+
+        console.log(modalMenu)
 
         iconProfile.addEventListener('click', function () {
             modalMenu.classList.remove('hidden')
         })
+
+        closeBtn.addEventListener('click', function () {
+            modalMenu.classList.add('hidden')
+        })
+
+
     </script>
 
 </body>

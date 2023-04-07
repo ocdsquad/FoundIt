@@ -14,18 +14,18 @@
 </head>
 <body class="bg-background">
         <!-- Header -->
-        <header class="bg-white">
+        <header class="bg-[#19376D] w-full fixed z-10 top-0 ">
             <div class="mx-10 flex justify-between">
                 <!-- Kiri -->
                 <div class="w-1/3 flex justify-between items-center">
-                    <img src="img/logo.png" alt="logo" class="w-1/4 scale-75">
+                    <img src="/img/logoLain.png" alt="logo" class="w-1/4 scale-75">
                 </div>
     
                 <div class="w-2/3 flex justify-between">
                     <!-- Tengah -->
                     <div class="flex items-center w-2/3">
-                        <form class="relative w-2/3 mx-auto">
-                            <input type="text" placeholder="Cari User"
+                        <form class="relative w-4/5">
+                            <input type="text" placeholder="Cari Barang Hilang"
                                 class="w-full p-2 border border-[#D4D4D4] rounded-lg text-xs placeholder-black font-pop focus:outline-[#8D9EFF] transition-all duration-150 ease-in-out" />
             
                             <span class="absolute top-1/2 right-3 -translate-y-1/2">
@@ -39,20 +39,45 @@
                     </div>
     
                     <!-- Kanan -->
-                    <div class="w-1/3 flex items-center justify-end">
-                        <div class=" w-36 h-8 flex items-center border border-purple rounded-2xl">
+                    <div id="icon-profile" class="w-1/3 flex items-center justify-end">
+                        <div class=" w-36 h-8 flex items-center  bg-white  rounded-2xl cursor-pointer">
                             <div class="flex mx-auto ">
-                                <img src="img/profileDummy.png" alt="" class="w-5 rounded-full items-center">
+                                <img src="/img/profileDummy.png" alt="" class="w-5 rounded-full items-center">
                                 <p class="ml-3 text-xs font-pop">Admin Foundit.</p>
                             </div>
                         </div>
                     </div>
+
+
+                    <!-- Modal Dropdown -->
+                    <div id="modal-dropdown" class="w-[200px] absolute right-3 top-[65px] bg-white rounded-sm shadow-2xl transition-all ease-in-out duration-300 hidden">
+                            <div id="close-btn" class="relative">
+                                <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-0 top-0 cursor-pointer">
+                            </div>
+                            <ul class="flex flex-col p-3">
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer">Home</a></li>
+                                 
+                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/datauser" class="text-mons text-sm font-semibold cursor-pointer
+                                    ">Data User</a></li>
+
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/barangtemu" class="text-mons text-sm font-semibold cursor-pointer
+                                        ">Data Barang Temu</a></li>
+
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/baranghilang" class="text-mons text-sm font-semibold cursor-pointer
+                                            ">Data Barang Hilang</a></li>
+
+                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/login" class="text-mons text-sm font-semibold cursor-pointer">Logout</a></li>
+                        
+                            </ul>
+                    </div>
+
+    
                 </div>
             </div>
         </header>
 
     <!-- Tabel Data User -->
-    <section class=" w-full my-8 px-5 bg-white ">
+    <section class=" w-full mt-24 px-5 bg-white ">
         <div class="container py-2">
             <div>
                 <!-- Caption -->
@@ -85,18 +110,17 @@
                                 </td>
                                 <td class="border text-center">{{ $user-> email }}</td>
                                 <td class="border">
-                                    <img src="img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                    <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
                                     ">
                                 </td>
 
                                 <td class="border py-2">
-                                    <a href="/delete{{ $user -> id }}">
-                                        <button class="block mx-auto px-4 py-1 text-white bg-[#1D4ED8] rounded-lg shadow-md hover:opacity-80 transition-all ease-in-out duration-500">Ubah</button>
-                                    </a>
-
-                                    <a href="/delete{{ $user -> id }}">
-                                        <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
-                                    </a>
+                    
+                                    <form action="/admin/datauser/{{$user -> id}}" method="post">
+                                    @csrf
+                                    @method('delete')
+                                    <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
+                                </form>
                                     
                                 </td>
                             </tr>
@@ -119,5 +143,19 @@
             </div>
         </div>
     </section>
+
+    <script>
+        let iconProfile = document.getElementById('icon-profile')
+        let modalMenu = document.getElementById('modal-dropdown')
+        let closeBtn = document.getElementById('close-btn')
+
+        iconProfile.addEventListener('click', function () {
+            modalMenu.classList.remove('hidden')
+        })
+
+        closeBtn.addEventListener('click', function () {
+            modalMenu.classList.add('hidden')
+        })
+    </script>
 </body>
 </html>

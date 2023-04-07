@@ -43,10 +43,10 @@
 
                     <a class="text-sm font-montserrat font-semibold xl:text-base" href="/barangtemu"> Barang Temuan </a>
 
-                    <form action="/" class="w-[35%] relative xl:w-[28%]" >
-                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barang!">
+                    <form action="/" class="w-[35%] relative xl:w-[28%]">
+                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
 
-                        <button type="submit"for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                        <button type="submit" for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
                             <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
                         </button>
                     </form>
@@ -146,7 +146,7 @@
 
                         <p class="mb-12 text-base text-white font-openSans font-semibold"> Kamu bisa mencari dan membuat laporan barangmu yang hilang ! </p>
 
-                        <button class="px-12 py-3 text-lg text-white font-montserrat font-bold rounded-[38px] bg-[#8D9EFF]"> Buat Laporan Kehilangan </button>
+                        <a href="/Laporan/create" class="px-12 py-3 text-lg text-white font-montserrat font-bold rounded-[38px] bg-[#8D9EFF]"> Buat Laporan Kehilangan </a>
                     
                     </div>
 
@@ -188,7 +188,7 @@
                     <div class="flex w-full py-3 overflow-x-auto sm:justify-between sm:overflow-hidden lg:justify-around">
 
                         <!-- Elektronik -->
-                        <div class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#8D72E1] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                        <a href="/baranghilang?category=elektronik" class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#8D72E1] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
 
                             <div class="pl-2 pt-2 sm:pl-0 sm:pt-0">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10">
@@ -198,7 +198,7 @@
 
                             <!-- <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Elektronik </p> -->
                             <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Elektronik </p>
-                        </div>
+                        </a>
 
                         <!-- Kendaraan -->
                         <div class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#B9E0FF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
@@ -301,7 +301,7 @@
                                         </svg>  
                                     </span>
     
-                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at }} </p>
+                                    <p class="text-xs font-poppins font-normal lg:text-sm"> {{ $barang->created_at->format('d-m-Y') }} </p>
                                 </div>
                             </div>
 

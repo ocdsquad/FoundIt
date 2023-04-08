@@ -27,4 +27,28 @@ class AdminBarangTemuController extends Controller
    
         return redirect('/admin/barangtemu')->with('success', 'Barang berhasil dihapus');
     }
+
+    
+    public function verif($id){
+        $data = Barang::find($id);
+        $data->is_verif = true;
+        $data->save();
+
+        return redirect('/admin/barangtemu')->with('success', 'Berhasil Verifikasi Akun User');
+        // return "<script>
+        // alert('Berhasil Verifikasi Akun User');
+        // location.href='/admin/home';
+        // </script>"
+    }
+
+    public function tolak($id){
+        $data = Barang::find($id);
+        $data->is_tolak = true;
+        $data->save();
+        return redirect('/admin/barangtemu')->with('success', 'Berhasil Verifikasi Akun User');
+        // return "<script>
+        // alert('Berhasil Verifikasi Akun User');
+        // location.href='/admin/home';
+        // </script>"
+    }
 }

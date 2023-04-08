@@ -76,7 +76,7 @@
                     <div class="flex items-center justify-end w-[60%]">
                         <form action="" class="w-[50%] mr-3 relative ">
                         
-                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg border border-blue-500" type="text" placeholder="Search.." value="{{ request('search') }}">
+                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg border border-blue-500" type="text" placeholder="Cari username" value="{{ request('search') }}">
 
                             <button type="submit" for="search" class="p-1 bg-blue-400 rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
                                 <svg class="w-4 h-4 text-white"  width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
@@ -90,11 +90,11 @@
                     <thead class="w-full font-pop text-xs bg-[#D4D4D4]">
                         <tr class="h-8">
                             <th class="w-11 border">ID User</th>
-                            <th class="border">NIM</th>
                             <th class="border">Username</th>
-                            <th class="border">Jurusan</th>
-                            <th class="border">Email</th>
-                            <th class="border">Identitas</th>
+                            <th class="border">NIM</th>
+                            <th class="border">Email - No. Telepon</th>
+                            <th class="border">KTM</th>
+                            <th class="border">Foto Profile</th>
                             <th class="border">Aksi</th>
                         </tr>
                     </thead>
@@ -105,11 +105,12 @@
                                 @if ($user -> is_verif == false && $user -> is_tolak == false)
                                 <tr>
                                     <td class="border text-center">{{ $user -> id }}</td>
-                                    <td class="border text-center">1301198076 {{ $user -> created_at }}</td>
                                     <td class="border text-center">{{ $user -> username }}</td>
-                                    <td class="border text-center">S1 Informatika </td>
-                                    <td class="px-2 border text-center">
-                                        {{ $user -> email }}
+                                    <td class="border text-center">1301198076</td>
+                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border">
+                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            ">
                                     </td>
 
                                     <td class="border">
@@ -131,14 +132,15 @@
                                 </tr>
                                 @elseif ($user -> is_verif == true)
                                 <tr>
-                                    <td class="border text-center">{{ $user -> id }}</td>
-                                    <td class="border text-center relative">1301198076 {{ $user -> created_at }}
-                                        <p class="w-[40%] px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0">Disetujui</p>
+                                <td class="border text-center">{{ $user -> id }}</td>
+                                    <td class="border text-center relative">{{ $user -> username }}
+                                        <p class="w-[80%] px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0"> Disetujui</p>
                                     </td>
-                                    <td class="border text-center">Ahmad Alfarel {{$user->is_verif}}</td>
-                                    <td class="border text-center">S1 Informatika </td>
-                                    <td class="px-2 border text-center">
-                                        {{ $user -> email }}
+                                    <td class="border text-center">1301198076</td>
+                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border">
+                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            ">
                                     </td>
 
                                     <td class="border">
@@ -155,20 +157,20 @@
                                 @else
                                 <tr> 
                                     <td class="border text-center">{{ $user -> id }}</td>
-                                    <td class="border text-center relative">1301198076 {{ $user -> created_at }}
-                                        <p class="w-[40%] px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Tidak Disetujui</p>
+                                    <td class="border text-center relative">{{ $user -> username }}
+                                        <p class="w-[80%] px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Tidak Disetujui</p>
                                     </td>
-                                    <td class="border text-center">Ahmad Alfarel {{$user->is_verif}}</td>
-                                    <td class="border text-center">S1 Informatika </td>
-                                    <td class="px-2 border text-center">
-                                        {{ $user -> email }}
+                                    <td class="border text-center">1301198076</td>
+                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border">
+                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            ">
                                     </td>
 
                                     <td class="border">
                                         <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
-
                                     <td class="border py-2">
 
                                         <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>

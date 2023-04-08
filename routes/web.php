@@ -77,3 +77,14 @@ Route::get('/admin/barang-hilang/{barang:id}/edit', [AdminBarangHilangController
 Route::delete('/admin/barang-hilang/{barang:id}', [AdminBarangHilangController::class, 'delete'])-> name('delete');
 Route::delete('/admin/barang-temu/{barang:id}', [AdminBarangTemuController::class, 'delete'])-> name('delete');
 Route::delete('/admin/datauser/{user:id}', [AdminDataUserController::class, 'delete'])-> name('delete');
+
+//Verif barang 
+Route::post('/admin/baranghilang/{barang:id}/terima', [AdminBarangHilangController::class, 'verif']);
+Route::post('/admin/barangtemu/{barang:id}/terima', [AdminBarangTemuController::class, 'verif']);
+
+
+//Tolak barang
+Route::post('/admin/baranghilang/{barang:id}/tolak', [AdminBarangHilangController::class, 'tolak']);
+Route::post('/admin/barangtemu/{barang:id}/tolak', [AdminBarangTemuController::class, 'tolak']);
+
+

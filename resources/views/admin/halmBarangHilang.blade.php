@@ -26,7 +26,7 @@
                     <div class="flex items-center w-2/3">
                         <form action="" class="w-[90%] mr-3 relative">
                         
-                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg" type="text" placeholder="Search.." value="{{ request('search') }}">
+                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg" type="text" placeholder="Cari barang hilang" value="{{ request('search') }}">
 
                             <button type="submit" for="search" class="p-1 bg-blue-400 rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
                                 <svg class="w-4 h-4 text-white"  width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
@@ -105,32 +105,86 @@
 
                     <tbody class="text-xs font-pop">
                         @foreach ($barangs as $barang)
-                            @if ($barang->is_hilang == 1)
-                            <tr>
-                                <td class="border text-center">{{ $barang -> id }}</td>
-                                <td class="border text-center">{{ $barang -> nama }}</td>
-                                <td class="border">
-                                    <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 px-2 mx-auto
-                                    ">
-                                </td>
-                                <td class="border text-center"> Elektronik
-                                </td>
-                                <td class="border p-2 text-center">
-                                    <p>{!! $barang -> deskripsi !!}</p>
-                                </td>
-                                <td class="border p-2 text-center">
-                                    <p>{!! $barang -> kronologi !!}</p>
-                                </td>
+                            @if ($barang->is_hilang)
+                                @if($barang-> is_verif)
+                                <tr>
+                                    <td class="border text-center relative">
+                                        <p class="w-full px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0">Postingan Disetujui</p>
+                                        {{ $barang -> id }}</td>
+                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                    <td class="border">
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="120" class="py-4 px-2 mx-auto
+                                        ">
+                                    </td>
+                                    <td class="border text-center"> {{ $barang -> category_id  }}
+                                    </td>
+                                    <td class="border p-2 text-center">
+                                        <p>{!! $barang -> deskripsi !!}</p>
+                                    </td>
+                                    <td class="border p-2 text-center">
+                                        <p>{!! $barang -> kronologi !!}</p>
+                                    </td>
 
-                                <td class="border py-2">
-                                    
-                                    <form action="/admin/barang-hilang/{{$barang -> id}}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
-                                    </form>
-                                </td>
-                        </tr>
+                                    <td class="border py-2">
+                                        <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>
+                                        <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
+                                    </td>
+                                </tr>
+                                @elseif ($barang-> is_tolak)
+                                <tr>
+                                    <td class="border text-center relative">
+                                        <p class="w-full px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Postingan Tidak Disetujui</p>
+                                        {{ $barang -> id }}</td>
+                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                    <td class="border">
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="120" class="py-4 px-2 mx-auto
+                                        ">
+                                    </td>
+                                    <td class="border text-center"> Elektronik
+                                    </td>
+                                    <td class="border p-2 text-center">
+                                        <p>{!! $barang -> deskripsi !!}</p>
+                                    </td>
+                                    <td class="border p-2 text-center">
+                                        <p>{!! $barang -> kronologi !!}</p>
+                                    </td>
+
+                                    <td class="border py-2">
+                                        <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>
+                                        <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
+                                    </td>
+                                </tr>
+                                @else
+                                <tr>
+                                    <td class="border text-center">{{ $barang -> id }}</td>
+                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                    <td class="border">
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="120" class="py-4 px-2 mx-auto
+                                        ">
+                                    </td>
+                                    <td class="border text-center"> Elektronik
+                                    </td>
+                                    <td class="border p-2 text-center">
+                                        <p>{!! $barang -> deskripsi !!}</p>
+                                    </td>
+                                    <td class="border p-2 text-center">
+                                        <p>{!! $barang -> kronologi !!}</p>
+                                    </td>
+
+                                    <td class="border py-2">
+                                        
+                                        <form action="/admin/baranghilang/{{$barang -> id}}/terima" method="post">
+                                            @csrf
+                                            <button class="block mx-auto my-1 px-3 py-1  text-white bg-green-500 rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Disetujui</button>
+                                        </form>
+
+                                        <form action="/admin/baranghilang/{{$barang -> id}}/tolak" method="post">
+                                            @csrf
+                                            <button class="block mx-auto my-1 px-5 py-1  text-white bg-red-500 rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Tolak</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                @endif
                             @endif
                         @endforeach
                     </tbody>

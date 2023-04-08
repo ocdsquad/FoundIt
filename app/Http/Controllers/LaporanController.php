@@ -61,6 +61,8 @@ class LaporanController extends Controller
 
 
         $validatedData['is_claim'] = 0;
+        $validatedData["is_verif"] = 0;
+        $validatedData["is_tolak"] = 0;
 
         if($request["is_hadiah"] == "1"){
             $validatedData['is_hadiah'] = 1;

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->boolean('is_hilang');
             $table->boolean('is_claim');
             $table->boolean('is_hadiah')->nullable();
+            $table->boolean('is_verif');
+            $table->boolean('is_tolak');
             $table->timestamps();
 
         });

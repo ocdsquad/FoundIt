@@ -27,7 +27,7 @@
                     <div class="flex items-center w-2/3">
                         <form action="" class="w-[90%] mr-3 relative">
                         
-                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg" type="text" placeholder="Search.." value="{{ request('search') }}">
+                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg" type="text" placeholder="Cari username.." value="{{ request('search') }}">
 
                             <button type="submit" for="search" class="p-1 bg-blue-400 rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
                                 <svg class="w-4 h-4 text-white"  width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
@@ -94,40 +94,43 @@
                     <thead class="w-full font-pop text-xs bg-[#D4D4D4]">
                         <tr class="h-8">
                             <th class="w-11 border">ID User</th>
-                            <th class="border">NIM</th>
                             <th class="border">Username</th>
-                            <th class="border">Jurusan</th>
-                            <th class="border">No Telepon</th>
-                            <th class="border">Identitas</th>
+                            <th class="border">NIM</th>
+                            <th class="border">Email - No. Telepon</th>
+                            <th class="border">KTM</th>
+                            <th class="border">Foto Profile</th>
                             <th class="border">Aksi</th>
                         </tr>
                     </thead>
 
                     <tbody class="text-xs font-pop">
                         @foreach ($users as $user)
-                            @if ($user->is_verif == true)
-                                <tr>
-                                    <td class="border text-center">{{ $user->id }}</td>
-                                    <td class="border text-center">1301198076 {{ $user-> is_verif }}</td>
-                                    <td class="border text-center">{{ $user->username }}</td>
-                                    <td class="border text-center">S1 Informatika
-                                    </td>
-                                    <td class="border text-center">{{ $user-> email }}</td>
+                            @if ($user->is_verif)
+                            <tr>
+                                    <td class="border text-center">{{ $user -> id }}</td>
+                                    <td class="border text-center">{{ $user -> username }}</td>
+                                    <td class="border text-center">1301198076</td>
+                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border">
+                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            ">
+                                        </td>
+
                                     <td class="border">
                                         <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 
                                     <td class="border py-2">
-                        
+                            
                                         <form action="/admin/datauser/{{$user -> id}}" method="post">
                                         @csrf
                                         @method('delete')
                                         <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
-                                    </form>
-                                        
+                                        </form>
                                     </td>
                                 </tr>
+                    
                             @endif
                         @endforeach
         

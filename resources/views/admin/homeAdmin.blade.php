@@ -101,7 +101,8 @@
 
                     <tbody class="text-xs font-pop">
                         @foreach ($users as $user)
-                            @if ($user -> is_verif == false && $user -> is_tolak == false)
+                            @if ($user->is_admin == false)
+                                @if ($user -> is_verif == false && $user -> is_tolak == false)
                                 <tr>
                                     <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center">1301198076 {{ $user -> created_at }}</td>
@@ -128,7 +129,7 @@
                                         </form>
                                     </td>
                                 </tr>
-                            @elseif ($user -> is_verif == true)
+                                @elseif ($user -> is_verif == true)
                                 <tr>
                                     <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center relative">1301198076 {{ $user -> created_at }}
@@ -151,7 +152,7 @@
                                         <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
                                     </td>
                                 </tr>
-                            @else
+                                @else
                                 <tr> 
                                     <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center relative">1301198076 {{ $user -> created_at }}
@@ -175,6 +176,7 @@
                                         <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
                                     </td>
                                 </tr>
+                                @endif
                             @endif
                         @endforeach
                     </tbody>

@@ -34,14 +34,15 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {   
-
+        // dd($request);
         $validatedData = $request->validate([
             'nama' => 'required|max:255',
             'slug' => 'required|unique:barangs',
             'image' => 'image|file|max:2048',
-            'deskripsi' => 'required|unique:barangs',
+            'deskripsi' => 'required',
             'kronologi' => 'required',
-            'category_id' => 'required'
+            'category_id' => 'required',
+            'lokasi' => 'required'
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;

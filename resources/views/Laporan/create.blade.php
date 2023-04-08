@@ -1,138 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link href="/css/style.css" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        @vite('resources/css/app.css')
+        <title>Laporan Barang</title>
+    </head>
+
+    <body class="bg-gray-200">
+
+        <!-- Desktop Navigation Bar -->
+        <header class="w-full fixed bg-white shadow-kategori hidden lg:block z-10 overflow-x-auto">
+            <div class="container flex justify-between w-full ">
+
+                <!-- Logo (Kiri) -->
+                <a href="/" class="w-[8%] ">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
+                </a>
+
+                <!-- Navigasi Halaman (Kanan) -->
+                <div class="flex justify-around items-center w-[75%] ">
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> About Us </a>
+
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/Laporan/create"> Laporan </a>
+
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/baranghilang"> Barang Hilang </a>
+
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/barangtemu"> Barang Temuan </a>
+
+
+                    <form class="w-[35%] relative xl:w-[28%]">
+                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
+
+                        <label for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                            <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
+                        </label>
+                    </form>
+                </div>
+
+                <!-- Profile and Notifications -->
+                <div class="flex items-center w-[15%]">
+
+                    <!-- Notifications -->
+                    <span class="mr-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#244CA5]">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
+                            </svg>
+                    </span>
+
+                    <!-- Profile User -->
+                    <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                        <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
+                    </div>
+
+                    <!-- Nama User -->
+                    <p class="text-lg font-montserrat font-semibold"> Reza </p>
+
+                </div>
+
+            </div>
+        </header>
+
+        
+        <!-- Header Mobile -->
+        <header class="w-full fixed top-0 bg-white z-10 lg:hidden">
+            <div class="container">
+
+                <!-- Icon Panah, Search Bar & Filter -->
+                <div class="flex items-center w-full pt-4">
+
+                    <!-- Icon Panah -->
+                    <div class="w-fit">
+                        <a href="Home.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                                </svg>                                                                       
+                        </a>
+                    </div>
+
+                    <!-- Judul Halaman -->
+                    <h1 class="w-[90%] text-center text-lg font-poppins font-semibold"> Pelaporan Barang </h1>
+
+                </div>
+
+                <!-- Navigasi Barang Temuan & Barang Hilang -->
+                <div class="w-full pt-8 ">
+
+                    <!-- Judul Navigasi -->
+                    <div class="flex w-full mb-1">
+
+                        <!-- Judul Temuan -->
+                        <div class="nav-temu w-1/2 text-[#BDC1C2] cursor-pointer">
+                            <h2 class="py-1 text-base text-center font-montserrat font-semibold tracking-wide">Barang Temuan</h2>
+                        </div>
+
+                        <div class="nav-hilang w-1/2 text-[#8D9EFF] pointer-events-none cursor-pointer">
+                            <h2 class="py-1 text-base text-center font-montserrat font-semibold tracking-wide">Barang Hilang</h2>
+                        </div>
+
+                    </div>
+
+                    <!-- Span Garis Ungu -->
+                    <div class="w-full">
+                        <span class="slide-span w-1/2 h-[3px] bg-[#8D9EFF] rounded-2xl block translate-x-full transition-all ease-in-out duration-300"></span>
+                    </div>
+
+                </div>
+
+            </div>
+        </header>
+
+
+        <!-- Upload Laporan Opening Section (Desktop) -->
+        <section class="pt-36 hidden lg:block">
+            <div class="container">
+
+                <div class="w-full h-[45vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative" style="background-image: url(/img/bgAllitem.png);">
+
+                    <!-- All Item Opening -->
+                    <div class="flex flex-col justify-center items-center w-full h-full">
+
+                        <!-- Tagline -->
+                        <p class="mb-5 text-5xl text-white font-jost font-semibold"> Kehilangan Atau Menemukan Barang ? </p>
+                        <p class="text-5xl text-white font-jost font-semibold"> Coba Buat Laporan Mu Di Sini ! </p>
+
+                    </div>
+
+                    <!-- Switch Laporan -->
+                    <div class="flex justify-center items-center w-[350px] h-[70px] px-3 bg-white rounded-3xl absolute -bottom-18 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+
+                        <!-- Hilang & Temu -->
+                        <div class="flex items-center w-full h-full text-center relative z-[1]">
+
+                            <!-- Hilang -->
+                            <div class="switch-hilang w-1/2 text-white relative z-[3] transition-all duration-75 ease-in pointer-events-none cursor-pointer">
+                                <p class="text-base  font-montserratAlt font-bold"> Barang Hilang </p>
+                            </div>
+
+                            <!-- Temu -->
+                            <div class="switch-temu w-1/2 text-[#BDC1C2] relative z-[3] transition-all duration-75 ease-in cursor-pointer">
+                                <p class="text-base font-montserratAlt font-bold"> Barang Temuan </p>
+                            </div>
+
+                            <!-- Switcher -->
+                            <div class="switcher w-[50%] h-[55px] bg-[#8D9EFF] text-center rounded-2xl absolute transition-all ease-in-out duration-700 z-[2]"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- Upload Laporan Opening Section End -->
+
+
+        <!-- Form Barang Hilang & Ketemu (Mobile - Tablet) -->
+        <section id="form-hilang-temu" class="px-3 pt-40 transition-all ease-in-out duration-1000 lg:hidden">
+            <div class="container pb-5 bg-white rounded-t-[35px]">
+
+                <!-- Judul Form -->
+                <h1 class="judul-hilang py-4 text-2xl font-montserrat font-bold sm:text-center sm:text-3xl">Data Barang Hilang</h1>
+                <h1 class="judul-temu py-4 text-2xl font-montserrat font-bold hidden sm:text-center sm:text-3xl">Data Barang Temuan</h1>
+
+                <!-- Form -->
+                <form action="/Laporan" method="post" class="w-full" enctype="multipart/form-data">
+                    @csrf
+                    <!-- Nama Barang -->
+                    <div class="w-full py-2">
+                        <label class="text-sm text-[#244CA5] font-montserrat font-medium sm:text-base" for="nama-barang"> Nama Barang </label>
+
+                        <input class="w-full p-3 border border-[#88C6F8] rounded-xl shadow-md sm:mt-3" type="text" id="nama-barang" name="nama">
+                    </div>
+                    
+                    <!-- Deskripsi Barang  -->
+                    <div class="w-full py-2">
+                        <label class="text-sm text-[#244CA5] font-montserrat font-medium sm:text-base" for="desc-barang"> Deskripsi Barang </label>
+
+                        <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl shadow-md sm:mt-3" type="text" name="deskripsi" id="desc-barang" rows="5"></textarea>
+                    </div>
+
+                    <!-- Kronologi -->
+                    <div class="w-full py-2">
+                        <label class="text-sm text-[#244CA5] font-montserrat font-medium sm:text-base" for="kronologi-barang"> Kronologi Kehilangan </label>
+
+                        <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl shadow-md sm:mt-3" type="text" name="kronologi" id="kronologi-barang" rows="5"></textarea>
+                    </div>
+
+                    <!-- Upload Foto -->
+                    <div class="w-full py-3">
+
+                        <label class="w-full mb-3 text-sm text-[#244CA5] font-montserrat font-medium sm:text-base block">Upload Foto Barang</label>
+                        
+                        <!-- Pembagian Kanan dan Kiri -->
+                        <div class="flex justify-between w-full sm:mt-3">
+                            
+                            <!-- Kiri -->
+                            <div class="w-[40%]">
+
+                                <!-- Image Show -->
+                                <div class="w-full mb-2 h-[120px] bg-white rounded-lg shadow-input-gambar relative md:h-[180px]">
+
+                                    <label id="logo-placeholder-mobile" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" for="input-gambar-mobile">
+                                        <svg class="w-12 h-12 text-[#6C4AB6]"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="13" r="3" />  <path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h2m9 7v7a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" />  <line x1="15" y1="6" x2="21" y2="6" />  <line x1="18" y1="3" x2="18" y2="9" /></svg>
+                                    </label>
+
+                                    <img id="target-image-mobile" class="w-full h-full rounded-lg" >
+                                </div>
+
+                                <input id="input-gambar-mobile" class="w-full font-montserrat font-medium" type="file" name="image" required> 
+
+                            </div>
+
     
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" 
-    crossorigin="anonymous">
+                            <!-- Kanan Rewards / Location -->
+                            <div class="w-[55%]">
 
-</head>
-<body>
+                                <!-- Dropdown Kategori -->
+                                <div class="w-full mb-3 relative text-white">
 
-<div class="d-flex justify-content-center flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Tambah Laporan Barang</h1>
-</div>
+                                    <select name="kategori-barang" id="kategori-barang" class="w-full px-3 py-[3px] rounded-lg text-sm font-poppins font-medium border bg-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
 
-<div class="d-flex justify-content-center">
-    <form action="/Laporan" method="post" class="mb-5" enctype="multipart/form-data">
-        @csrf
-        <div class="mb-3">
-            <label for="nama" class="form-label">Nama Barang</label>
-            <input type="text" class="form-control" id="nama" name="nama" autofocus>
-        </div>
-        {{-- <div class="mb-3">
-            <label for="slug" class="form-label">Slug</label> --}}
-            <input type="hidden" class="form-control" id="slug" name="slug" autofocus>
-        {{-- </div> --}}
-        <div class="mb-3">
-            <label for="deskripsi" class="form-label">Deskripsi</label>
-            <input type="text" class="form-control" id="deskripsi" name="deskripsi">
+                                        <option disabled selected value="">Kategori Barang</option>
+                                        @foreach($categories as $category)
+                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}">{{ $category->nama}}</option>
+                                        @endforeach
+                                    </select>
 
-        </div>
-        <div class="mb-3">
-            <label for="kronologi" class="form-label">Kronologi</label>
-            <input type="text" class="form-control" id="kronologi" name="kronologi">
-            </select>
-        </div>
-        <div class="mb-3">
-        <label for="category" class="form-label">Category</label>
-          <select class="form-select" name="category_id">
-            @foreach ($categories as $category)
-            @if (old('category_id') == $category->id)
-                
-            <option value="{{ $category->id }}" selected>{{ $category->nama }}</option>
-            @else
-            <option value="{{ $category->id }}">{{ $category->nama }}</option>
+                                    <span class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
+                                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>                                          
+                                    </span>
+
+                                </div>
+
+                                <!-- Reward -->
+                                <div class="rewards-hilang w-full">
+                        
+                                    <p class="mb-3 text-sm text-[#244CA5] font-montserrat font-semibold sm:text-base"> Apakah kamu ingin memberi rewards ? </p>
             
-            @endif
-            @endforeach
-          </select>
-        </div>
+                                    <div class="flex flex-col gap-4 w-full sm:mt-3">
+                                        <div class="flex items-center gap-3 w-[80%] px-2 py-[5px] border border-[#244CA5] rounded-lg">
+                                            <input class="" type="radio" id="radio-ya" name="is_hadiah" value="1">
+                                            <label id="ya-label" class="text-xs font-montserrat font-medium rounded-lg sm:text-sm" for="radio-ya">Yup, Dapet Nih !</label>
+                                        </div>
+                
+                                        <div class="flex items-center gap-3 w-[80%] px-2 py-[5px] border border-[#244CA5] rounded-lg">
+                                            <input class="" type="radio" id="radio-tidak" name="is_hadiah" value="0">
+                                            <label id="tidak-label" class="text-xs font-montserrat font-medium sm:text-sm" for="radio-tidak">Maaf, Gak Dapet :&lpar; </label>
+                                        </div>
+                                    </div>
+            
+                                </div>
+
+                                <!-- Location -->
+                                <div class="lokasi-temu w-full h-full hidden">
+                                    <label class="text-sm text-[#244CA5] font-montserrat font-medium sm:text-base" for="lokasi-barang"> Lokasi Ditemukan</label>
+            
+                                    <input class="w-full p-2 border border-[#88C6F8] rounded-xl shadow-md sm:mt-3" type="text" name="lokasi" id="lokasi-barang" rows="5">
+                                </div>
+                            </div>
+
+                        </div>
 
 
-        <div class="mb-3">
-            <label for="image" class="form-label">Post Image</label>
-            <img class="img-preview img-fluid mb-3 col-sm-5">
-            <input class="form-control" type="file" id="image" name="image">
-        </div>
-        
-        <label for="image" class="form-label">Jenis Barang</label>
-        <br>
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                    </div>
 
-            <div id="hilang-barang">
-                <input type="radio" class="btn-check" name="is_hilang" id="hilang" value="1" autocomplete="off">
-                <label class="btn btn-outline-primary" for="hilang">hilang</label>
+                    <!-- Tombol Upload -->
+                    <div class="mt-5 text-center bg-[#8D72E1] rounded-xl shadow-xl">
+                        <button class="py-3 text-white font-montserrat font-semibold ">Unggah Laporan</button>
+                    </div>
+
+                    <!-- Radio Hilang / Temu -->
+                    <div class="scale-0">
+
+                        <!-- Hilang -->
+                        <input type="radio" id="barang-hilang" name="is_hilang" value="1" checked>
+                        <label for="barang-hilang"> Barang Hilang </label>
+
+                        <!-- Temu -->
+                        <input type="radio" id="barang-temu" name="is_hilang" value="0">
+                        <label for="barang-temu"> Barang Temu </label>
+
+                    </div>
+
+                </form>
             </div>
-          
-            <div id="temu-barang">
-                <input type="radio" class="btn-check" name="is_hilang" id="temuan" value="0" autocomplete="off">
-                <label class="btn btn-outline-primary" for="temuan">temuan</label>
+        </section>
+        <!-- Form Barang Hilang & Ketemu End -->
+
+
+        <!-- Form Barang Hilang & Ketemu (Desktop) -->
+        <section id="form-hilang-temu-desktop" class="pt-24 hidden lg:block transition-all ease-in-out duration-700">
+            <div class="container">
+
+                <!-- Container Form -->
+                <div class="w-full p-5 bg-white rounded-3xl shadow-form-desktop xl:p-7">
+
+                    <!-- Judul Form -->
+                    <h1 id="judul-hilang-desktop" class="text-2xl font-poppins font-semibold xl:text-3xl"> Laporan Barang Hilang </h1>
+                    <h1 id="judul-temu-desktop" class="text-2xl font-poppins font-semibold xl:text-3xl hidden"> Laporan Barang Temuan </h1>
+                    
+                    <!-- The Real Form -->
+                    <form action="/Laporan" method="post" class="flex flex-wrap w-full mt-4 xl:mt-5" enctype="multipart/form-data">
+                        @csrf
+                        <!-- Form Kiri -->
+                        <div class="w-1/2">
+
+                            <!-- Nama Barang -->
+                            <div class="w-full mb-5">
+                                <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="nama-desktop"> Nama Barang </label>
+
+                                <input class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="nama" id="nama-desktop">
+                            </div>
+
+                            <input type="hidden" class="form-control" id="slug" name="slug" autofocus>
+                            
+                            <!-- Deskripsi Barang  -->
+                            <div class="w-full mb-5">
+                                <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="deskripsi-desktop"> Deskripsi Barang </label>
+
+                                <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="deskripsi" id="deskripsi-desktop" rows="5"></textarea>
+                            </div>
+
+                            <!-- Kronologi -->
+                            <div class="w-full">
+                                <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="kornologi-desktop"> Kronologi Kehilangan </label>
+
+                                <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="kronologi" id="kornologi-desktop" rows="5"></textarea>
+                            </div>
+
+                        </div>
+
+                        <!-- Form Kanan -->
+                        <div class="flex flex-col justify-center w-1/2 px-3 pt-8">
+
+                            <!-- Dropdown Kategori -->
+                            <div class="w-full mb-3 relative text-white">
+
+                                <select name="category_id" id="kategori-barang" class="w-full px-3 py-[3px] rounded-lg text-sm font-poppins font-medium border bg-[#8D72E1] focus:outline-none appearance-none cursor-pointer lg:py-[5px]">
+                                    
+                                    <option disabled selected value="">Kategori Barang</option>
+                                    @foreach($categories as $category)
+                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}">{{ $category->nama}}</option>
+                                    @endforeach
+
+                                </select>
+
+                                <span class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
+                                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                    </svg>                                          
+                                </span>
+
+                            </div>
+
+                            <!-- Image Show -->
+                            <div class="w-full mb-4 h-[250px] bg-white rounded-lg shadow-input-gambar relative xl:h-[300px]">
+
+                                <label id="logo-placeholder-desktop" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" for="input-gambar-desktop">
+                                    <svg class="w-12 h-12 text-[#6C4AB6]"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="12" cy="13" r="3" />  <path d="M5 7h1a2 2 0 0 0 2 -2a1 1 0 0 1 1 -1h2m9 7v7a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2" />  <line x1="15" y1="6" x2="21" y2="6" />  <line x1="18" y1="3" x2="18" y2="9" /></svg>
+                                </label>
+
+                                <img id="target-image-desktop" class="w-full h-full rounded-lg" >
+                            </div>
+
+                            <!-- Container Tag Input -->
+                            <div class="flex w-full mb-5">
+                                <input id="input-gambar-desktop" class="w-[60%] m-auto font-montserrat font-medium" name="image" type="file" required> 
+                            </div>
+
+                            <!-- Reward -->
+                            <div id="reward-hilang-desktop" class="w-full">
+                    
+                                <p class="mb-3 text-base text-[#244CA5] font-montserrat font-medium xl:text-lg"> Apakah kamu ingin memberi rewards ? </p>
+        
+                                <div class="flex gap-4 w-full mt-3">
+                                    <div class="flex items-center gap-3 w-1/2 px-2 py-[5px] border border-[#244CA5] rounded-lg lg:px-4 xl:w-[40%] xl:px-5">
+                                        <input type="radio" id="radio-yes-desktop" name="is_hadiah" value="1">
+                                        <label id="label-yes-desktop" class="text-sm font-montserrat font-medium rounded-lg" for="radio-yes-desktop">Yup, Dapet Nih !</label>
+                                    </div>
+            
+                                    <div class="flex items-center gap-3 w-1/2 px-2 py-[5px] border border-[#244CA5] rounded-lg lg:px-4 xl:w-[40%] xl:px-5">
+                                        <input type="radio" id="radio-no-desktop" name="is_hadiah" value="0">
+                                        <label id="label-no-desktop" class="text-sm font-montserrat font-medium" for="radio-no-desktop">Maaf, Gak Dapet :&lpar; </label>
+                                    </div>
+                                </div>
+        
+                            </div>
+
+                            <!-- Location -->
+                            <div id="lokasi-temu-desktop" class="w-full h-full hidden">
+                                <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="lokasi-desktop"> Lokasi Ditemukan</label>
+        
+                                <input class="w-full p-2 border border-[#88C6F8] rounded-xl shadow-md" type="text" name="lokasi" id="lokasi-desktop" rows="5">
+                            </div>
+
+                            <!-- Radio Hilang / Temu -->
+                            <div class="scale-0">
+
+                                <!-- Hilang -->
+                                <input type="radio" id="barang-hilang-desktop" name="is_hilang" value="1" checked>
+                                <label for="barang-hilang-desktop"> Barang Hilang </label>
+
+                                <!-- Temu -->
+                                <input type="radio" id="barang-temu-desktop" name="is_hilang" value="0">
+                                <label for="barang-temu-desktop"> Barang Temu </label>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Tombol Upload -->
+                        <div class="w-[40%] mx-auto mt-5 text-center bg-[#8D72E1] rounded-xl shadow-xl">
+                            <button type="submit" class="py-3 text-white font-montserrat font-semibold ">Unggah Laporan</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
             </div>
-        </div>
-        <br>
-        <br>
-
-        <div id="lokasi" class="mb-3" >
-            <label for="lokasi" class="form-label">Lokasi</label>
-            <input type="text" class="form-control hidden" name="lokasi">
-        </div>
-        
-    
-        
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group" id="hadiah">
-            <label for="image" class="form-label">Apakah ada hadiahnya?</label>
-            <br>
-            <input type="radio" class="btn-check" name="is_hadiah" id="ya_hadiah" value="1" autocomplete="off">
-            <label class="btn btn-outline-primary" for="ya_hadiah">Yup, Beri hadiah</label>
-          
-            <input type="radio" class="btn-check" name="is_hadiah" id="tidak_hadiah" value="0" autocomplete="off">
-            <label class="btn btn-outline-primary" for="tidak_hadiah">Maaf, belum ada</label>
-        </div>
-                  
-        <button type="submit" class="btn btn-primary mb-3">Create Post</button>
-        <br>
-        <a href="/" class="mt-3">Back to Home</a>
-    </form>
-
-    
-</div>
-
-<script>
-    const nama = document.querySelector('#nama')
-    const slug = document.querySelector('#slug')
-
-    nama.addEventListener('change', function(){
-        fetch('/Laporan/create/checkSlug?nama=' + nama.value)
-          .then(response => response.json())
-          .then(data =>slug.value = data.slug)
-    });
-
-    const lokasi = document.querySelector('#lokasi')
-    const hadiah = document.querySelector('#hadiah')
-    
-    const temu = document.querySelector("#temu-barang");
-    const hilang = document.querySelector("#hilang-barang");
-
-    lokasi.style.display = "none"
-    hadiah.style.display = "none"
-
-    temu.addEventListener("click", () => {
-        lokasi.style.display = "block"
-        hadiah.style.display = "none"
-    })
-
-    hilang.addEventListener("click", () => {
-        lokasi.style.display = "none"
-        hadiah.style.display = "block"
-    })
+        </section>
+        <!-- Form Barang Hilang & Ketemu End -->
 
 
-</script>
-    
-</body>
+        <!-- Aside Section -->
+        <section class="w-[90%] h-[60vh] mx-auto mt-48 mb-10 hidden lg:block relative">
+
+            <!-- Container Cari Sekarang -->
+            <div class="flex justify-around w-[70%] py-10 bg-gradient-to-r from-[#4870C0] to-[#a7b3fa] rounded-3xl absolute -top-7 left-1/2 -translate-x-1/2 -translate-y-1/2">
+
+                <!-- Headline -->
+                <div class="text-3xl text-white font-jost font-semibold">
+                    <p> Kamu Kehilangan Barang ? </p>
+
+                    <p> Coba Cari Di Foundit. </p>
+                </div>
+
+                <!-- Button -->
+                <div class="self-center">
+                    <button class="px-10 py-4 text-lg text-white bg-[#395EB4] rounded-[52px]"> Cari Sekarang! </button>
+                </div>
+
+            </div>
+            
+
+            <div class="container h-full bg-[#EEEEEE] rounded-3xl shadow-kategori">
+                <div class="flex flex-wrap justify-center items-center h-full">
+
+                    <!-- Kiri -->
+                    <div class="w-[40%]">
+
+                        <!-- Logo -->
+                        <div class="w-[30%] mb-3">
+                            <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
+                        </div>
+
+                        <!-- Text Aside -->
+                        <p class="mb-3 text-base text-justify font-openSans font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi accusamus iusto, quod distinctio cum officia omnis at exercitationem ut sunt.</p>
+
+                        <!-- Media Sosial -->
+                        <div class="flex gap-4 w-full">
+
+                            <!-- Instagram -->
+                            <span class="p-[6px] bg-[#231656] rounded-full">
+                                <svg class="w-4 h-4 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
+                            </span>
+
+                            <!-- Facebook -->
+                            <span class="p-[6px] bg-[#231656] rounded-full">
+                                <svg class="w-4 h-4 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
+                            </span>
+
+                            <!-- Twitter -->
+                            <span class="p-[6px] bg-[#231656] rounded-full">
+                                <svg class="w-4 h-4 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg>
+                            </span>
+
+                            <!-- Youtube -->
+                            <span class="p-[6px] bg-[#231656] rounded-full">
+                                <svg class="w-4 h-4 text-white"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" /></svg>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!-- Garis tengah -->
+                    <span class="w-[1px] h-[65%] mx-5 bg-[#17282F] block"></span>
+
+                    <!-- Kanan -->
+                    <div class="w-[40%]">
+
+                        <!-- Menu Navigasi -->
+                        <div class="w-full">
+
+                            <!-- Judul Menu -->
+                            <p class="mb-3 text-2xl text-[#3D3269] font-montserrat font-semibold"> Menu </p>
+
+                            <!-- Navigasi -->
+                            <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
+                                <a href="#"> About us </a>
+                                <a href="/Laporan/create"> Laporan </a>
+                                <a href="/baranghilang"> Barang Hilang </a>
+                                <a href="/barangtemu"> Barang Temuan </a>
+                            </div>
+
+                            <!-- Garis -->
+                            <span class="w-full h-[1px] my-10 bg-[#17282F] block"></span>
+
+                            <p class="text-sm text-[#8D72E1] text-center font-poppins font-medium"> © 2022 Foundit. All rights reserved. </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- Aside Section End -->
+
+        <script src="/js/uploadBarang.js"></script>
+        <script>
+            const nama = document.querySelector('#nama-desktop')
+            const slug = document.querySelector('#slug')
+
+            nama.addEventListener('change', function(){
+            fetch('/Laporan/create/checkSlug?nama=' + nama.value)
+                .then(response => response.json())
+                .then(data =>slug.value = data.slug)
+            });
+        </script>
+
+    </body>
+
 </html>

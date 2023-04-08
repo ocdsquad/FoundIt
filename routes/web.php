@@ -34,16 +34,12 @@ Route::get('/', [LibraryController::class,'home']);
 Route::get('/baranghilang', [BarangController::class,'index']);
 Route::get('/barangtemu', [PostController::class, 'index_temu']);
 
-
-
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::get('/register',[RegisterController::class,'index'])->middleware('guest');
 Route::post('/register',[RegisterController::class,'store']);
 Route::get('/barangtemu', [PostController::class, 'index_temu']);
-
-
 
 
 // Route::get('baranghilang/{slug}', function($slug){
@@ -58,14 +54,12 @@ Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu'])
 Route::resource('/Laporan', LaporanController::class);
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
-// Admin
+//------------------------------------------- Admin------------------------------------------------------------
 
 
 Route::get('/admin/datauser', [AdminDataUserController::class, 'index']);
 
 Route::get('/admin/home', [AdminHomeController::class, 'index']);
-
-
 
 Route::get('/admin/baranghilang',[AdminBarangHilangController::class, 'index'] );
 
@@ -76,7 +70,8 @@ Route::post('/admin/verif/{user:id}', [AdminHomeController::class, 'verif']);
 Route::post('/admin/tolak/{user:id}', [AdminHomeController::class, 'tolak']);
 
 Route::get('/admin/login', [AdminLoginController::class, 'index']);
-Route::post('/admin/login', [AdminLoginController::class, 'auth']);
+Route::post('/admin/login', [AdminLoginController::class, 'auth']); 
+Route::post('/admin/logout',[AdminLoginController::class,'logout']);
 
 Route::get('/admin/barang-hilang/{barang:id}/edit', [AdminBarangHilangController::class, 'edit'])-> name('edit');
 Route::delete('/admin/barang-hilang/{barang:id}', [AdminBarangHilangController::class, 'delete'])-> name('delete');

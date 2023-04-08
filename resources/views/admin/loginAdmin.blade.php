@@ -30,7 +30,7 @@
     @endif
 
     <div class="w-screen h-screen flex justify-center items-center bg-background ">
-        <form action ="/adminlogin" method="post" class="p-10 bg-white rounded flex justify-center items-center flex-col shadow-lg rounded-b-3xl relative">
+        <form action ="/admin/login" method="post" class="p-10 bg-white rounded flex justify-center items-center flex-col shadow-lg rounded-b-3xl relative">
                 @csrf
                 <div class="w-full absolute bg-[#19376D] top-0 rounded-t-3xl">
                     <p class="py-3 text-sm text-center font-bold font-mons text-white uppercase">Admin Login</p>

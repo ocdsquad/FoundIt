@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('password');
-            $table->boolean('is_verif');
-            $table->boolean('is_tolak');
+            $table->boolean('is_verif')->nullable();
+            $table->boolean('is_tolak')->nullable();
             $table->boolean('is_admin')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

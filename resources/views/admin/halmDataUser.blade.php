@@ -23,18 +23,15 @@
     
                 <div class="w-2/3 flex justify-between">
                     <!-- Tengah -->
+                    <!-- Search Bar -->
                     <div class="flex items-center w-2/3">
-                        <form class="relative w-4/5">
-                            <input type="text" placeholder="Cari Barang Hilang"
-                                class="w-full p-2 border border-[#D4D4D4] rounded-lg text-xs placeholder-black font-pop focus:outline-[#8D9EFF] transition-all duration-150 ease-in-out" />
-            
-                            <span class="absolute top-1/2 right-3 -translate-y-1/2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                </svg>
-                            </span>
+                        <form action="" class="w-[90%] mr-3 relative">
+                        
+                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg" type="text" placeholder="Search.." value="{{ request('search') }}">
+
+                            <button type="submit" for="search" class="p-1 bg-blue-400 rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
+                                <svg class="w-4 h-4 text-white"  width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
+                            </button>
                         </form>
                     </div>
     
@@ -83,7 +80,7 @@
                 <!-- Caption -->
                 <div class="mx-5">
                     <h1 class="mt-2 font-pop font-bold text-lg">Data User</h1>
-                    <p class="font-pop text-xs">Data User Mahasiswa / Mahasiswi Telkom University</p>
+                    <p class="font-pop text-xs">Data User Foundit (Telah Terverifikasi) </p>
                 </div>
 
                 <!-- Tabel -->
@@ -92,7 +89,7 @@
                         <tr class="h-8">
                             <th class="w-11 border">ID User</th>
                             <th class="border">NIM</th>
-                            <th class="border">Nama Mahasiswa</th>
+                            <th class="border">Username</th>
                             <th class="border">Jurusan</th>
                             <th class="border">No Telepon</th>
                             <th class="border">Identitas</th>
@@ -102,34 +99,36 @@
 
                     <tbody class="text-xs font-pop">
                         @foreach ($users as $user)
-                            <tr>
-                                <td class="border text-center">{{ $user->id }}</td>
-                                <td class="border text-center">1301198076</td>
-                                <td class="border text-center">Ahmad Alfarel</td>
-                                <td class="border text-center">S1 Informatika
-                                </td>
-                                <td class="border text-center">{{ $user-> email }}</td>
-                                <td class="border">
-                                    <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
-                                    ">
-                                </td>
+                            @if ($user->is_verif == true)
+                                <tr>
+                                    <td class="border text-center">{{ $user->id }}</td>
+                                    <td class="border text-center">1301198076 {{ $user-> is_verif }}</td>
+                                    <td class="border text-center">{{ $user->username }}</td>
+                                    <td class="border text-center">S1 Informatika
+                                    </td>
+                                    <td class="border text-center">{{ $user-> email }}</td>
+                                    <td class="border">
+                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        ">
+                                    </td>
 
-                                <td class="border py-2">
-                    
-                                    <form action="/admin/datauser/{{$user -> id}}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
-                                </form>
-                                    
-                                </td>
-                            </tr>
+                                    <td class="border py-2">
+                        
+                                        <form action="/admin/datauser/{{$user -> id}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="block mx-auto my-1 px-3 py-1  text-white bg-[#ff0000] rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
+                                    </form>
+                                        
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
         
                     </tbody>
                 </table>
 
-               <div class="flex">
+               <!-- <div class="flex">
                     <div class="mx-auto py-8 font-pop text-sm">
                         <a href="" class="text-lg text-[#D4D4D4]">&laquo;</a>
                         <a href="" class="border border-[#D4D4D4] rounded-md px-2 py-1">1</a>
@@ -139,7 +138,7 @@
                         <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">5</a>
                         <a href="" class="text-lg text-[#D4D4D4]">&raquo;</a>
                     </div>
-               </div>
+               </div> -->
             </div>
         </div>
     </section>

@@ -22,19 +22,15 @@
                 </div>
     
                 <div class="w-2/3 flex justify-between">
-                    <!-- Tengah -->
+                    <!-- Search Bar -->
                     <div class="flex items-center w-2/3">
-                        <form class="relative w-4/5">
-                            <input type="text" placeholder="Cari Barang Hilang"
-                                class="w-full p-2 border border-[#D4D4D4] rounded-lg text-xs placeholder-black font-pop focus:outline-[#8D9EFF] transition-all duration-150 ease-in-out" />
-            
-                            <span class="absolute top-1/2 right-3 -translate-y-1/2">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                    stroke="currentColor" class="w-6 h-6">
-                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                </svg>
-                            </span>
+                        <form action="" class="w-[90%] mr-3 relative">
+                        
+                            <input id="search" name="search" class="w-full px-5 py-2 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg" type="text" placeholder="Search.." value="{{ request('search') }}">
+
+                            <button type="submit" for="search" class="p-1 bg-blue-400 rounded-lg absolute top-1/2 right-3 -translate-y-1/2">
+                                <svg class="w-4 h-4 text-white"  width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
+                            </button>
                         </form>
                     </div>
     
@@ -132,25 +128,9 @@
                         @endforeach
                     </tbody>
                 </table>
-
-               <div class="flex">
-                    <div class="mx-auto py-8 font-pop text-sm">
-                        <a href="" class="text-lg text-[#D4D4D4]">&laquo;</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md px-2 py-1">1</a>
-                        <a href="" class="text-white border border-[#D4D4D4] bg-[#1D4ED8] rounded-md px-2 py-1">2</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">3</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">4</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">5</a>
-                        <a href="" class="text-lg text-[#D4D4D4]">&raquo;</a>
-                    </div>
-               </div>
-
-               
             </div>
         </div>
     </section>
-
-    
 
     <script>
         let iconProfile = document.getElementById('icon-profile')

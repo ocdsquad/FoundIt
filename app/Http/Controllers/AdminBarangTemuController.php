@@ -8,6 +8,18 @@ use App\Http\Controllers\Controller;
 
 class AdminBarangTemuController extends Controller
 {
+    public function index(Request $request){
+        $barangs = Barang::latest();
+
+        if($request->search){
+            $barangs->where('nama', 'like','%'. $request->search  . '%');
+        }
+
+        return view('admin.halmBarangTemu',[
+            'barangs' => $barangs->get()
+        ]);
+    }
+
     public function delete(string $id)
     {
         $data = Barang::find($id);

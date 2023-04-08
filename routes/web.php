@@ -61,27 +61,15 @@ Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug'])
 // Admin
 
 
-Route::get('/admin/datauser', function () {
-    return view('admin.halmDataUser',[
-        'users' => User::all()
-    ]);
-});
+Route::get('/admin/datauser', [AdminDataUserController::class, 'index']);
 
 Route::get('/admin/home', [AdminHomeController::class, 'index']);
 
 
 
-Route::get('/admin/baranghilang', function () {
-    return view('admin.halmBarangHilang',[
-        'barangs' => Barang::all()
-    ]);
-});
+Route::get('/admin/baranghilang',[AdminBarangHilangController::class, 'index'] );
 
-Route::get('/admin/barangtemu', function () {
-    return view('admin.halmBarangTemu',[
-        'barangs' => Barang::all()
-    ]);
-});
+Route::get('/admin/barangtemu', [AdminBarangTemuController::class, 'index']);
 
 //route verifikasi
 Route::post('/admin/verif/{user:id}', [AdminHomeController::class, 'verif']);

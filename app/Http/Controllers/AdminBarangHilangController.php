@@ -6,8 +6,21 @@ use App\Models\Barang;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 class AdminBarangHilangController extends Controller
 {
+    public function index(Request $request){
+        $barangs = Barang::latest();
+
+        if($request->search){
+            $barangs->where('nama', 'like','%'. $request->search  . '%');
+        }
+
+        return view('admin.halmBarangHilang',[
+            'barangs' => $barangs->get()
+        ]);
+    }
+
     public function edit($id)
     {
         $data = Barang::find($id);

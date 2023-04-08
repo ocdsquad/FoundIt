@@ -23,12 +23,26 @@
           <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
         </div>
         @endif
-        @if(session()->has('loginError'))
 
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          {{ session('loginError') }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-        </div>
+        @if(session()->has('loginError'))
+        <script>
+            var msg = '{{Session::get('loginError')}}';
+            alert(msg);
+        </script>
+        @endif
+
+        @if(session()->has('belumVerif'))
+        <script>
+            var msg = '{{Session::get('belumVerif')}}';
+            alert(msg);
+        </script>
+        @endif
+
+        @if(session()->has('tolakLogin'))
+        <script>
+            var msg = '{{Session::get('tolakLogin')}}';
+            alert(msg);
+        </script>
         @endif
     
         <!-- Login -->

@@ -23,10 +23,10 @@
     @endif
 
     @if(session()->has('loginError'))
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-        {{ session('loginError ') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
+        <script>
+            var msg = '{{Session::get('loginError')}}'
+            alert(msg);
+        </script>
     @endif
 
     <div class="w-screen h-screen flex justify-center items-center bg-background ">

@@ -15,31 +15,39 @@
     </head>
 
     <body>  
-        <!-- Jika Sukses -->
-        @if(session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-        <div class="w-screen h-screen flex justify-center items-center bg-background ">    
-            <form class="p-10 bg-white rounded flex justify-center items-center flex-col shadow-lg rounded-b-3xl relative">
+    @if(session()->has('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    @endif
+
+    @if(session()->has('loginError'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ session('loginError ') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    @endif
+
+    <div class="w-screen h-screen flex justify-center items-center bg-background ">
+        <form action ="/adminlogin" method="post" class="p-10 bg-white rounded flex justify-center items-center flex-col shadow-lg rounded-b-3xl relative">
                 @csrf
                 <div class="w-full absolute bg-[#19376D] top-0 rounded-t-3xl">
                     <p class="py-3 text-sm text-center font-bold font-mons text-white uppercase">Admin Login</p>
                 </div>
 
                 <div class="scale-75 mb-3">
-                    <img src="img/logoLain.png" alt="Logo">
+                    <img src="/img/logoLain.png" alt="Logo">
                 </div>
 
-                <input type="email" name="email" class="mb-5 p-3 w-80 rounded border-2 outline-none " autocomplete="off" placeholder="Username" required>
+                <input type="email" name="email" id="email" class="mb-5 p-3 w-80 rounded border-2 outline-none " placeholder="Email" required autofocus>
 
-                <input type="password" name="password" class="mb-5 p-3 w-80 focus:border-green-primary rounded border-2 outline-none" autocomplete="off" placeholder="Password" required>
+                <input type="password" name="password" id="password" class="mb-5 p-3 w-80 focus:border-green-primary rounded border-2 outline-none" placeholder="Password" required>
 
                 <button class="w-full py-1 bg-[#19376D] font-semibold text-white text-center rounded-lg" type="submit">Login</button>
-            </form>
-        </div>
+        </form>
+    </div>
+
 
     </body>
 </html>

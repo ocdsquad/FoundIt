@@ -40,21 +40,21 @@
                                 <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-1 top-1 cursor-pointer">
                             </div>
                             <ul class="flex flex-col p-3">
-                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer">Home</a></li>
+                                <li class="w-full mb-1 px-2 py-1 rounded-md"><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer hover:bg-gray-200 block">Home</a></li>
                                  
-                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/datauser" class="text-mons text-sm font-semibold cursor-pointer
+                                 <li class="w-full mb-1 px-2 py-1 rounded-md"><a href="/admin/datauser" class="text-mons text-sm font-semibold cursor-pointer hover:bg-gray-200 block
                                     ">Data User</a></li>
 
-                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/barangtemu" class="text-mons text-sm font-semibold cursor-pointer
+                                <li class="w-full mb-1 px-2 py-1 rounded-md"><a href="/admin/barangtemu" class="text-mons text-sm font-semibold cursor-pointer hover:bg-gray-200 block
                                         ">Data Barang Temu</a></li>
 
-                                <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/baranghilang" class="text-mons text-sm font-semibold cursor-pointer
+                                <li class="w-full mb-1 px-2 py-1 rounded-md"><a href="/admin/baranghilang" class="text-mons text-sm font-semibold cursor-pointer hover:bg-gray-200 block
                                             ">Data Barang Hilang</a></li>
 
                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30">
                                     <form action="/admin/logout" method="post">
                                         @csrf
-                                        <button type="submit" class="text-mons text-sm font-semibold cursor-pointer outline-none">Logout</button>
+                                        <button type="submit" class="text-mons text-sm font-semibold hover:bg-gray-200 block w-full text-left cursor-pointer outline-none">Logout</button>
                                     </form>
                                 </li>
                         

@@ -14,8 +14,8 @@ class LaporanController extends Controller
      */
     public function index()
     {
-        return view('upload', [
-            'barangs' => Barang::all()
+        return view('Laporan.create', [
+            'categories' => Category::all()
         ]);
     }
 

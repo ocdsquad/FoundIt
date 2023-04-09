@@ -28,6 +28,10 @@ use App\Http\Controllers\AdminBarangHilangController;
 |
 */
 
+Route::get('/History', function(){
+    return view('History');
+});
+
 Route::get('/userprofilepribadi', function(){
     return view('UserProfilePribadi');
 });

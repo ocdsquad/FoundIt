@@ -72,7 +72,7 @@
 
                 <!-- Logo (Kiri) -->
                 <div class="w-[8%] ">
-                    <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                 </div>
 
                 <!-- Navigasi Halaman (Kanan) -->
@@ -106,7 +106,7 @@
 
                     <!-- Profile User -->
                     <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                        <img class="w-full h-full" src="../src/img/tim.png" alt="Profile Dummy">
+                        <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
                     </div>
 
                     <!-- Nama User -->
@@ -122,7 +122,7 @@
         <section class="mb-10 pt-32 hidden lg:block">
             <div class="container">
 
-                <div class="w-full h-[40vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative xl:h-[60vh]" style="background-image: url(../src/img/bgProfile.png);">
+                <div class="w-full h-[40vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative xl:h-[60vh]" style="background-image: url(/img/bgProfile.png);">
 
                     <!-- Tagline History -->
                     <div class="flex flex-col justify-center items-center w-full h-full">
@@ -191,7 +191,7 @@
 
                                 <!-- Image Container -->
                                 <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                    <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                                 </div>
 
                             </div>
@@ -263,7 +263,7 @@
 
                                 <!-- Image Container -->
                                 <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                    <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                                 </div>
 
                             </div>
@@ -335,7 +335,7 @@
 
                                 <!-- Image Container -->
                                 <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                    <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                                 </div>
 
                             </div>
@@ -412,7 +412,7 @@
 
                                 <!-- Image Container -->
                                 <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                    <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                                 </div>
 
                             </div>
@@ -472,7 +472,7 @@
 
                                 <!-- Image Container -->
                                 <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                    <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                                 </div>
 
                             </div>
@@ -562,7 +562,7 @@
 
                         <!-- Logo -->
                         <div class="w-[30%] mb-3">
-                            <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                            <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                         </div>
 
                         <!-- Text Aside -->

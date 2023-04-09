@@ -18,6 +18,12 @@
     </head>
 
     <body class="bg-gray-100">
+        @if(session()->has('success'))
+            <script>
+                var msg = '{{Session::get('success')}}';
+                alert(msg);
+            </script>
+        @endif
 
         <!-- Header Mobile -->
         <header class="w-full fixed top-0 bg-white z-10 lg:hidden">
@@ -513,7 +519,7 @@
 
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
-                                <a href="#"> About us </a>
+                                <a href="/History/create"> About us </a>
                                 <a href="#"> Laporan </a>
                                 <a href="#"> Chatting </a>
                                 <a href="#"> Settings </a>

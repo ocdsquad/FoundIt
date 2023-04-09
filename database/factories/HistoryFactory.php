@@ -22,6 +22,7 @@ class HistoryFactory extends Factory
             'user_id' => mt_rand(1,3),
             'nama_penerima'=> $this->faker->sentence(2),
             'nim' => random_int(1000000000,9999999999),
+            'jurusan' => $this->faker->sentence(2)
 
         ];
     }

@@ -6,6 +6,7 @@ use App\Models\History;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreHistoryRequest;
 use App\Http\Requests\UpdateHistoryRequest;
+use \Cviebrock\EloquentSluggable\Services\SlugService;
 
 class HistoryController extends Controller
 {
@@ -32,8 +33,22 @@ class HistoryController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(StoreHistoryRequest $request)
-    {
-        //
+    {   
+        // dd($request);
+
+        $validatedData = $request->validate([
+            'nama_barang' => 'required|max:255',
+            'nama_penerima' => 'required|max:255',
+            'slug' => 'required|unique:barangs',
+            'nim' => 'required',
+            'jurusan' => 'required'
+        ]);
+
+        $validatedData['user_id'] = auth()->user()->id;
+
+        History::create($validatedData);
+
+        return redirect('/History')->with('success', 'Transaksi kamu berhasil ditambahkan!');
     }
 
     /**
@@ -66,5 +81,11 @@ class HistoryController extends Controller
     public function destroy(History $history)
     {
         //
+    }
+
+    public function checkSlug(Request $request)
+    {
+        $slug = SlugService::createSlug(Post::class, 'slug', $request->title);
+        return response()->json(['slug' => $slug]);
     }
 }

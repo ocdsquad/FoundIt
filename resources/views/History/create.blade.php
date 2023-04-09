@@ -54,13 +54,13 @@
 
                 <!-- Navigasi Halaman (Kanan) -->
                 <div class="flex justify-around items-center w-[70%]">
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Home </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/"> Home </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Laporan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/Laporan"> Laporan </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Barang Hilang </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/baranghilang"> Barang Hilang </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Barang Temuan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/barangtemu"> Barang Temuan </a>
 
                     <form class="w-[35%] relative xl:w-[30%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
@@ -103,34 +103,37 @@
                     </div>
 
                     <!-- Form Claim -->
-                    <form class="w-[80%] mx-auto">
-
+                    <form class="w-[80%] mx-auto" action="/History" method="post">
+                        @csrf
                         <!-- Nama -->
                         <div class="w-full mb-4">
                             <label class="mb-1 inline-block text-xs font-semibold sm:text-sm md:text-base" for="nama"> Nama Penerima </label>
 
-                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="nama">
+                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="nama" name="nama_penerima">
                         </div>
 
                         <!-- Nama Barang -->
                         <div class="w-full mb-4">
                             <label class="mb-1 inline-block text-xs font-semibold sm:text-sm md:text-base" for="nama-barang"> Nama Barang </label>
 
-                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="nama-barang">
+                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="nama-barang" name="nama_barang">
                         </div>
+
+                        {{-- Slug --}}
+                        <input type="hidden" class="form-control" id="slug" name="slug" autofocus>
 
                         <!-- NIM -->
                         <div class="w-full mb-4">
                             <label class="mb-1 inline-block text-xs font-semibold sm:text-sm md:text-base" for="nim"> NIM Penerima </label>
 
-                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="nim">
+                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="nim" name="nim">
                         </div>
 
                         <!-- Jurusan -->
                         <div class="w-full mb-8">
                             <label class="mb-1 inline-block text-xs font-semibold sm:text-sm md:text-base" for="jurusan"> Jurusan Penerima </label>
 
-                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="jurusan">
+                            <input class="w-full p-3 border border-[#8D9EFF] rounded-xl" type="text" id="jurusan" name="jurusan">
                         </div>
 
                         <!-- Button -->
@@ -254,6 +257,17 @@
         <div class="w-full absolute bottom-0 left-1/2 -translate-x-1/2 -z-[1] md:w-[85%] lg:hidden">
             <img class="w-full" src="/img/stikerMobile.png" alt="Sticker Mobile">
         </div>
+
+        <script>
+            const nama = document.querySelector('#nama-barang')
+            const slug = document.querySelector('#slug')
+
+            nama.addEventListener('change', function(){
+            fetch('/Laporan/create/checkSlug?nama=' + nama.value)
+                .then(response => response.json())
+                .then(data =>slug.value = data.slug)
+            });
+        </script>
 
     </body>
 </html>

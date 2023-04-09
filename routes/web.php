@@ -2,6 +2,7 @@
 
 use App\Models\User;
 use App\Models\Barang;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -66,7 +67,7 @@ Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilan
 Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);
 
 Route::resource('/Laporan', LaporanController::class);
-Route::resource('/History', HistoryController::class);
+Route::resource('/History', HistoryController::class)->middleware('auth');
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
 Route::get('/profile', function(){

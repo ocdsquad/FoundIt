@@ -63,6 +63,12 @@ Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu'])
 Route::resource('/Laporan', LaporanController::class);
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
+Route::get('/profile', function(){
+    return view('UserProfilePribadi', [
+        "barang" => Barang::all();
+    ]);
+});
+
 //------------------------------------------- Admin------------------------------------------------------------
 
 

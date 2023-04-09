@@ -65,7 +65,7 @@ Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug'])
 
 Route::get('/profile', function(){
     return view('UserProfilePribadi', [
-        "barang" => Barang::all();
+        "barang" => Barang::all()
     ]);
 });
 

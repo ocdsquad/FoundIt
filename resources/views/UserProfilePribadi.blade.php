@@ -870,7 +870,7 @@
         </section>
         <!-- Aside Section End -->
 
-        <script src="js/userProfile.js"></script>
+        <script src="/js/userProfile.js"></script>
 
     </body>
 

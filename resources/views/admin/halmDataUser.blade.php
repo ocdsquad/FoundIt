@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;0,800;1,300&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <title>Halaman Data User</title>
 </head>
+@auth
 <body class="bg-background">
         <!-- Header -->
         <header class="bg-[#19376D] w-full fixed z-10 top-0 ">
@@ -48,7 +49,7 @@
                     <!-- Modal Dropdown -->
                     <div id="modal-dropdown" class="w-[200px] absolute right-3 top-[65px] bg-white rounded-sm shadow-2xl transition-all ease-in-out duration-300 hidden">
                             <div id="close-btn" class="relative">
-                                <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-0 top-0 cursor-pointer">
+                                <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-1 top-1 cursor-pointer">
                             </div>
                             <ul class="flex flex-col p-3">
                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer">Home</a></li>
@@ -117,7 +118,7 @@
                                         </td>
 
                                     <td class="border">
-                                        <img src="/{{ asset('storage/'.$user->profil}}" alt="Profile" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profil) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 
@@ -154,4 +155,5 @@
         })
     </script>
 </body>
+@endauth
 </html>

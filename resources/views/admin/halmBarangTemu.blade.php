@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;0,800;1,300&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <title>Data Barang Ditemukan</title>
 </head>
+@auth
 <body class="bg-background">
 @if(session()->has('barangHapus'))
         <script>
@@ -53,7 +54,7 @@
                     <!-- Modal Dropdown -->
                     <div id="modal-dropdown" class="w-[200px] absolute right-3 top-[65px] bg-white rounded-sm shadow-2xl transition-all ease-in-out duration-300 hidden">
                             <div id="close-btn" class="relative">
-                                <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-0 top-0 cursor-pointer">
+                                <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-1 top-1 cursor-pointer">
                             </div>
                             <ul class="flex flex-col p-3">
                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30"><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer">Home</a></li>
@@ -68,12 +69,10 @@
                                             ">Data Barang Hilang</a></li>
 
                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30">
-                                    @auth
                                     <form action="/admin/logout" method="post">
                                         @csrf
                                         <button type="submit" class="text-mons text-sm font-semibold cursor-pointer outline-none">Logout</button>
                                     </form>
-                                    @endauth
                                 </li>
                         
                             </ul>
@@ -122,6 +121,7 @@
                                         ">
                                     </td>
                                     <td class="border text-center"> 
+                                        {{ $barang -> category -> nama  }}
                                     </td>
                                     <td class="border p-2 text-center">
                                         <p>{!! $barang -> deskripsi !!}</p>
@@ -149,7 +149,7 @@
                                         <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Temu" width="120" class="py-4 px-2 mx-auto
                                         ">
                                     </td>
-                                    <td class="border text-center"> Elektronik
+                                    <td class="border text-center">  {{ $barang -> category -> nama  }}
                                     </td>
                                     <td class="border p-2 text-center">
                                         <p>{!! $barang -> deskripsi !!}</p>
@@ -170,7 +170,7 @@
                                     <td class="border">
                                         <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
                                     </td>
-                                    <td class="border text-center"> Elektronik
+                                    <td class="border text-center">  {{ $barang -> category -> nama  }}
                                     </td>
                                     <td class="border p-2 text-center">
                                         <p>{!! $barang -> deskripsi !!}</p>
@@ -215,4 +215,5 @@
         })
     </script>
 </body>
+@endauth
 </html>

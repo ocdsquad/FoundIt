@@ -128,6 +128,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const inputGambarDesktop = document.getElementById('input-gambar-desktop');
         inputGambarDesktop.addEventListener('change', loadFileDesktop);
 
+        // Logic Dropdown Profile (Desktop)
+        const dropdown_trigger = document.getElementById("dropdown-trigger");
+        const dropdown_menu = document.getElementById("dropdown-menu");
+        
+        dropdown_trigger.addEventListener("mouseover", () => {
+            dropdown_menu.classList.remove("hidden")
+            
+            setTimeout(() => {  
+                dropdown_menu.classList.remove("opacity-0")
+            }, 0);
+        });
+        
+        dropdown_trigger.addEventListener("mouseout", () => {
+            dropdown_menu.classList.add("hidden")
+            
+            setTimeout(() => {  
+                dropdown_menu.classList.add("opacity-0")
+            }, 0);
+        });
+
         // Change Form
         const swithcer = document.querySelector(".switcher")
         const switch_hilang = document.querySelector(".switch-hilang")

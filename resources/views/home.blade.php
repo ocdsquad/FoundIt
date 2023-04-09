@@ -35,7 +35,7 @@
 
                 <!-- Navigasi Halaman (Kanan) -->
                 <div class="flex justify-around items-center w-[70%]">
-                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/"> Home </a>
+                    <a class="text-sm font-montserrat font-extrabold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/"> Home </a>
 
                     <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/Laporan"> Laporan </a>
 

@@ -35,13 +35,13 @@
 
                 <!-- Navigasi Halaman (Kanan) -->
                 <div class="flex justify-around items-center w-[70%]">
-                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="Home.html"> Home </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/"> Home </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="UploadBarang.html"> Laporan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/Laporan"> Laporan </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="SearchBarangHilang.html"> Barang Hilang </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/baranghilang"> Barang Hilang </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="SearchBarangTemu.html"> Barang Temuan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/barangtemu"> Barang Temuan </a>
 
                     <form class="w-[35%] relative xl:w-[30%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
@@ -55,19 +55,10 @@
                 <!-- Profile and Dropdown -->
                 <div class="flex justify-center items-center w-[20%]">
 
-                    <!-- Belum Login -->
-                    <div class="hidden justify-center items-center">
-
-                        <!-- Profile User -->
-                        <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
-                        </div>
-    
-                        <!-- Nama User -->
-                        <a class="text-lg font-montserrat font-semibold" href="LoginFix.html"> Login </a>
-
-                    </div>
-
+                    
+                    @auth
+                        
+                    
                     <!-- Udah Login -->
                     <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
 
@@ -92,7 +83,22 @@
 
                     </div>
 
+                    @else
+                    <!-- Belum Login -->
+                    <div class="hidden justify-center items-center">
+
+                        <!-- Profile User -->
+                        <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                            <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
+                        </div>
+    
+                        <!-- Nama User -->
+                        <a class="text-lg font-montserrat font-semibold" href="LoginFix.html"> Login </a>
+
                     </div>
+                    @endauth
+
+                    
 
                 </div>
 

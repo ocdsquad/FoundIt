@@ -24,7 +24,7 @@ class LibraryController extends Controller
         
         // dd(request('search'));
 
-        $barang = Barang::all();
+        $barang = Barang::all()->where('is_verif',true);
 
         if(request('search')){
             $barang->where('nama', 'like','%'. request('search') . '%');

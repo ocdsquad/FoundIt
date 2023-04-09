@@ -27,7 +27,7 @@ class BarangFactory extends Factory
             'is_hilang' => mt_rand(0,1),
             'is_claim' => mt_rand(0,1),
             'is_hadiah' => false,
-            'is_verif' => false,
+            'is_verif' => mt_rand(0,1),
             'is_tolak' => false
         ];
     }

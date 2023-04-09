@@ -17,10 +17,10 @@ class BarangController extends Controller
     {
         if($request->sort ==='latest'){
 
-            $barang = Barang::latest()->where('is_hilang',true);
+            $barang = Barang::latest()->where('is_hilang',true)->where('is_verif',true);
         }else{
             
-            $barang = Barang::oldest()->where('is_hilang',true);
+            $barang = Barang::oldest()->where('is_hilang',true)->where('is_verif',true);
         }
 
         $barang->when($request->jenis, function($q) use ($request){

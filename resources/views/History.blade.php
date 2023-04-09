@@ -13,6 +13,8 @@
 
         <title> History </title>
 
+        @vite('resources/css/app.css')
+
     </head>
 
     <body class="bg-gray-100">
@@ -67,50 +69,86 @@
 
 
         <!-- Desktop Navigation Bar -->
-        <header class="w-full fixed bg-white shadow-kategori hidden lg:block z-10">
-            <div class="container flex justify-between w-full ">
+        <header class="w-full py-2 fixed bg-white shadow-kategori rounded-lg hidden lg:block z-10">
+            <div class="container flex justify-between w-full">
 
                 <!-- Logo (Kiri) -->
-                <div class="w-[8%] ">
+                <div class="w-[8%]">
                     <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                 </div>
 
                 <!-- Navigasi Halaman (Kanan) -->
-                <div class="flex justify-around items-center w-[75%] ">
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> About Us </a>
+                <div class="flex justify-around items-center w-[70%]">
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/"> Home </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Laporan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/Laporan"> Laporan </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Chatting </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/baranghilang"> Barang Hilang </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Settings </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/barangtemu"> Barang Temuan </a>
 
-                    <form class="w-[35%] relative xl:w-[28%]">
+                    <form class="w-[35%] relative xl:w-[30%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
 
-                        <label for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                        <button type="submit" for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
                             <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
-                        </label>
+                        </button>
                     </form>
                 </div>
 
-                <!-- Profile and Notifications -->
-                <div class="flex items-center w-[15%]">
+                <!-- Profile and Dropdown -->
+                <div class="flex justify-center items-center w-[20%]">
 
-                    <!-- Notifications -->
-                    <span class="mr-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-[#244CA5]">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
-                          </svg>
-                    </span>
+                    
+                    @auth
+                    <!-- Udah Login -->
+                        <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
 
-                    <!-- Profile User -->
-                    <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                        <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
-                    </div>
+                            <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
+                            </div>
+        
+                            <!-- Nama User -->
+                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
 
-                    <!-- Nama User -->
-                    <p class="text-lg font-montserrat font-semibold"> Reza </p>
+                            <!-- Dropdown Menu -->
+                            <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
+
+                                <ul class="flex flex-col justify-center items-center gap-[6px] w-full text-center font-poppins">
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="/profile"> Profile </a> </li>
+
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="History.html"> History </a> </li>
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer">
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit" class="w-full inline-block" href="/logout"> Logout </button> 
+                                    </form>
+                                 </li>
+                                </ul>
+
+                        </div>
+    
+                        
+                        
+                        
+                    @else
+                        <!-- Belum Login -->
+                        <div class="flex justify-center items-center">
+
+                        <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
+                            </div>
+        
+                            <!-- Nama User -->
+                            <a class="text-lg font-montserrat font-semibold" href="/login"> Login </a>
+
+                        </div>
+                    @endauth
+
+                </div>
+
 
                 </div>
 
@@ -191,7 +229,7 @@
 
                                 <!-- Image Container -->
                                 <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
+                                    <img class="w-full h-full" src="/img/claimedLogo.png" alt="Gambar Barang">
                                 </div>
 
                             </div>
@@ -244,7 +282,11 @@
                                         <div class="text-center">
                                             <p class="text-xs text-[#244CA5] font-poppins font-base sm:text-sm md:text-base"> Claimed by : </p>
     
-                                            <p class="text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> Reza Juandri </p>
+                                            <p class="mb-2 text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> Reza Juandri </p>
+
+                                            <p class="mb-1 text-xs font-poppins sm:text-sm md:text-base"> 1301202285 </p>
+
+                                            <p class="text-xs font-poppins sm:text-sm md:text-base"> S1 Informatika </p>
                                         </div>
 
                                     </div>
@@ -630,6 +672,6 @@
         <!-- Aside Section End -->
 
 
-        <script src="history.js"></script>
+        <script src="/js/history.js"></script>
     </body>
 </html>

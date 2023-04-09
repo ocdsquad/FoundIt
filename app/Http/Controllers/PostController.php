@@ -42,7 +42,7 @@ class PostController extends Controller
         }
 
         return view('searchBarangTemuan', [
-            'barangs' => $barang->paginate(7)->withQueryString(),
+            'barangs' => $barang->paginate(5)->withQueryString(),
             'categories' => Category::all()
         ]);
 

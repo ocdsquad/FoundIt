@@ -41,10 +41,10 @@ class LaporanController extends Controller
             'image' => 'image|file|max:2048',
             'deskripsi' => 'required',
             'kronologi' => 'required',
-            'category_id' => 'required',
-            'lokasi' => 'required'
+            'category_id' => 'required'
         ]);
 
+        $validatedData['lokasi'] = $request['lokasi'];
         $validatedData['user_id'] = auth()->user()->id;
         
 

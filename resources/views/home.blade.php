@@ -60,42 +60,46 @@
                         
                     
                     <!-- Udah Login -->
-                    <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
+                        <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
 
-                        <!-- Profile User -->
-                        <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
+                            <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
+                            </div>
+        
+                            <!-- Nama User -->
+                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+
+                            <!-- Dropdown Menu -->
+                            <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
+
+                                <ul class="flex flex-col justify-center items-center gap-[6px] w-full text-center font-poppins">
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="/profile"> Profile </a> </li>
+
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="History.html"> History </a> </li>
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer">
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit" class="w-full inline-block" href="/logout"> Logout </button> 
+                                    </form>
+                                 </li>
+                                </ul>
+
                         </div>
-    
-                        <!-- Nama User -->
-                        <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
-
-                        <!-- Dropdown Menu -->
-                        <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
-
-                            <ul class="flex flex-col justify-center items-center gap-[6px] w-full text-center font-poppins">
-                                <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="UserProfilePribadi.html"> Profile </a> </li>
-
-                                <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="History.html"> History </a> </li>
-
-                                <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="#"> Logout </a> </li>
-                            </ul>
-
-                    </div>
 
                     @else
-                    <!-- Belum Login -->
-                    <div class="hidden justify-center items-center">
+                        <!-- Belum Login -->
+                        <div class="justify-center items-center">
 
-                        <!-- Profile User -->
-                        <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
+                            <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
+                            </div>
+        
+                            <!-- Nama User -->
+                            <a class="text-lg font-montserrat font-semibold" href="/login"> Login </a>
+
                         </div>
-    
-                        <!-- Nama User -->
-                        <a class="text-lg font-montserrat font-semibold" href="LoginFix.html"> Login </a>
-
-                    </div>
                     @endauth
 
                     

@@ -88,3 +88,10 @@ Route::post('/admin/baranghilang/{barang:id}/tolak', [AdminBarangHilangControlle
 Route::post('/admin/barangtemu/{barang:id}/tolak', [AdminBarangTemuController::class, 'tolak']);
 
 
+Route::get('/profile', function(){
+    return view('UserProfilePribadi', [
+        "barang" => Barang::all()
+    ]);
+});
+
+

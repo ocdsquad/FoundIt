@@ -22,7 +22,7 @@
 
                 <!-- Logo (Kiri) -->
                 <div class="w-[8%] ">
-                    <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                 </div>
 
                 <!-- Navigasi Halaman (Kanan) -->
@@ -56,7 +56,7 @@
 
                     <!-- Profile User -->
                     <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                        <img class="w-full h-full" src="../src/img/tim.png" alt="Profile Dummy">
+                        <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
                     </div>
 
                     <!-- Nama User -->
@@ -77,7 +77,7 @@
 
                     <!-- Icon Panah -->
                     <div class="w-fit">
-                        <a href="Home.html">
+                        <a href="/">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                                 </svg>                                                                       
@@ -101,7 +101,7 @@
 
                     <!-- Image Container -->
                     <div class="w-[140px] h-[140px] mb-3 rounded-full overflow-hidden sm:w-[200px] sm:h-[200px]">
-                        <img class="w-full h-full" src="../src/img/tim.png" alt="User Profile">
+                        <img class="w-full h-full" src="/img/tim.png" alt="User Profile">
                     </div>
 
                     <!-- Nama -->
@@ -120,14 +120,14 @@
         <section class="mb-10 pt-32 hidden lg:block">
             <div class="container">
 
-                <div class="w-full h-[55vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative" style="background-image: url(../src/img/bgProfile.png);">
+                <div class="w-full h-[55vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative" style="background-image: url(/img/bgProfile.png);">
 
                     <!-- Profile Information -->
                     <div class="flex flex-col justify-center items-center w-full h-full">
 
                         <!-- Image Container -->
                         <div class="w-[160px] h-[160px] mb-3 rounded-full overflow-hidden xl:w-[200px] xl:h-[200px]">
-                            <img class="w-full h-full" src="../src/img/tim.png" alt="User Profile">
+                            <img class="w-full h-full" src="/img/tim.png" alt="User Profile">
                         </div>
 
                         <!-- Nama -->
@@ -213,7 +213,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -263,7 +263,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -313,7 +313,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -364,7 +364,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -414,7 +414,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -469,7 +469,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -519,7 +519,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -569,7 +569,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -619,7 +619,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -669,7 +669,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -719,7 +719,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -803,7 +803,7 @@
 
                         <!-- Logo -->
                         <div class="w-[30%] mb-3">
-                            <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                            <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                         </div>
 
                         <!-- Text Aside -->

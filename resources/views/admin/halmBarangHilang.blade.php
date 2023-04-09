@@ -13,6 +13,12 @@
     <title>Data Barang Hilang</title>
 </head>
 <body class="bg-background">
+        @if(session()->has('barangHapus'))
+        <script>
+            var msg = '{{Session::get('barangHapus')}}';
+            alert(msg);
+        </script>
+        @endif
         <!-- Header -->
         <header class="bg-[#19376D] w-full fixed z-10 top-0 ">
             <div class="mx-10 flex justify-between">
@@ -126,8 +132,11 @@
                                     </td>
 
                                     <td class="border py-2">
-                                        <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>
-                                        <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
+                                    <form action="/admin/baranghilang/{{$barang->id}}/hapus" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="block mx-auto my-1 px-3 py-1  text-white bg-blue-700 rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @elseif ($barang-> is_tolak)

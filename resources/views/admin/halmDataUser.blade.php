@@ -109,15 +109,15 @@
                             <tr>
                                     <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center">{{ $user -> username }}</td>
-                                    <td class="border text-center">1301198076</td>
-                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border text-center">{{ $user -> nim }}</td>
+                                    <td class="border text-center">{{ $user -> email }} - {{ $user -> nomor }}</td>
                                     <td class="border">
-                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            <img src="/{{ asset('storage/'.$user->ktm) }}" alt="KTM" width="120" class="py-4 mx-auto
                                             ">
                                         </td>
 
                                     <td class="border">
-                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profil}}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 
@@ -136,18 +136,6 @@
         
                     </tbody>
                 </table>
-
-               <!-- <div class="flex">
-                    <div class="mx-auto py-8 font-pop text-sm">
-                        <a href="" class="text-lg text-[#D4D4D4]">&laquo;</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md px-2 py-1">1</a>
-                        <a href="" class="text-white border border-[#D4D4D4] bg-[#1D4ED8] rounded-md px-2 py-1">2</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">3</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">4</a>
-                        <a href="" class="border border-[#D4D4D4] rounded-md  px-2 py-1">5</a>
-                        <a href="" class="text-lg text-[#D4D4D4]">&raquo;</a>
-                    </div>
-               </div> -->
             </div>
         </div>
     </section>

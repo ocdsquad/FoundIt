@@ -12,6 +12,12 @@
     <title>Data Barang Ditemukan</title>
 </head>
 <body class="bg-background">
+@if(session()->has('barangHapus'))
+        <script>
+            var msg = '{{Session::get('barangHapus')}}';
+            alert(msg);
+        </script>
+        @endif
         <!-- Header -->
         <header class="bg-[#19376D] w-full fixed z-10 top-0 ">
             <div class="mx-10 flex justify-between">
@@ -125,9 +131,13 @@
                                     </td>
 
                                     <td class="border py-2">
-                                        <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>
-                                        <button class="block mx-auto my-1 px-4 py-1  text-white bg-gray-500 rounded-lg shadow-md">Tolak</button>
+                                        <form action="/admin/barangtemu/{{$barang->id}}/hapus" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="block mx-auto my-1 px-3 py-1  text-white bg-blue-700 rounded-md shadow-lg hover:opacity-60 transition-all ease-in-out duration-500">Hapus</button>
+                                        </form>
                                     </td>
+
                                 </tr>
                                 @elseif ($barang-> is_tolak)
                                 <tr>
@@ -158,11 +168,7 @@
                                     <td class="border text-center">{{ $barang -> id }}</td>
                                     <td class="border text-center">{{ $barang -> nama }}</td>
                                     <td class="border">
-                                        @if ($barang->image)
                                         <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
-                                        @else
-                                        <img class="w-full h-full" src="img/dompetHitam.png" alt="Gambar Barang">
-                                        @endif 
                                     </td>
                                     <td class="border text-center"> Elektronik
                                     </td>

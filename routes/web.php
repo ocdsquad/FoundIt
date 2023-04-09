@@ -28,6 +28,15 @@ use App\Http\Controllers\AdminBarangHilangController;
 |
 */
 
+Route::get('/userprofilepribadi', function(){
+    return view('UserProfilePribadi');
+});
+
+Route::get('/userprofilepengunjung', function(){
+    return view('UserProfilePengunjung');
+});
+
+
 Route::get('/', [LibraryController::class,'home']);
 
 // Route::get('/', [LibraryController::class,'home']);
@@ -87,11 +96,7 @@ Route::post('/admin/barangtemu/{barang:id}/terima', [AdminBarangTemuController::
 Route::post('/admin/baranghilang/{barang:id}/tolak', [AdminBarangHilangController::class, 'tolak']);
 Route::post('/admin/barangtemu/{barang:id}/tolak', [AdminBarangTemuController::class, 'tolak']);
 
-
-Route::get('/profile', function(){
-    return view('UserProfilePribadi', [
-        "barang" => Barang::all()
-    ]);
-});
-
+//hapus barang
+Route::delete('/admin/barangtemu/{barang:id}/hapus', [AdminBarangTemuController::class, 'delete']);
+Route::delete('/admin/baranghilang/{barang:id}/hapus', [AdminBarangHilangController::class, 'delete']);
 

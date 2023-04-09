@@ -101,20 +101,20 @@
 
                     <tbody class="text-xs font-pop">
                         @foreach ($users as $user)
-                            @if ($user->is_admin == false)
-                                @if ($user -> is_verif == false && $user -> is_tolak == false)
+                            @if (!$user->is_admin)
+                                @if (!$user -> is_verif && !$user -> is_tolak)
                                 <tr>
                                     <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center">{{ $user -> username }}</td>
-                                    <td class="border text-center">1301198076</td>
-                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border text-center">{{ $user -> nim }}</td>
+                                    <td class="border text-center">{{ $user -> email }} - {{ $user -> nomor }}</td>
                                     <td class="border">
-                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            <img src="/{{ asset('storage/'.$user->ktm) }}" alt="KTM" width="120" class="py-4 mx-auto
                                             ">
                                     </td>
 
                                     <td class="border">
-                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profile) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 
@@ -130,21 +130,21 @@
                                         </form>
                                     </td>
                                 </tr>
-                                @elseif ($user -> is_verif == true)
+                                @elseif ($user -> is_verif)
                                 <tr>
-                                <td class="border text-center">{{ $user -> id }}</td>
+                                    <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center relative">{{ $user -> username }}
                                         <p class="w-[80%] px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0"> Disetujui</p>
                                     </td>
-                                    <td class="border text-center">1301198076</td>
-                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border text-center">{{ $user -> nim }}</td>
+                                    <td class="border text-center">{{ $user -> email }} - {{ $user -> nomor }}</td>
                                     <td class="border">
-                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            <img src="/{{ asset('storage/'.$user->ktm) }}" alt="KTM" width="120" class="py-4 mx-auto
                                             ">
                                     </td>
 
                                     <td class="border">
-                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profile) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 
@@ -156,21 +156,23 @@
                                 </tr>
                                 @else
                                 <tr> 
+
                                     <td class="border text-center">{{ $user -> id }}</td>
                                     <td class="border text-center relative">{{ $user -> username }}
                                         <p class="w-[80%] px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Tidak Disetujui</p>
                                     </td>
-                                    <td class="border text-center">1301198076</td>
-                                    <td class="border text-center">{{ $user -> email }} - 082113160023</td>
+                                    <td class="border text-center">{{ $user -> nim }}</td>
+                                    <td class="border text-center">{{ $user -> email }} - {{ $user -> nomor }}</td>
                                     <td class="border">
-                                            <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                            <img src="/{{ asset('storage/'.$user->ktm) }}" alt="KTM" width="120" class="py-4 mx-auto
                                             ">
                                     </td>
 
                                     <td class="border">
-                                        <img src="/img/profileDummy.png" alt="KTM" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profile) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
+
                                     <td class="border py-2">
 
                                         <button class="block mx-auto px-3 py-1 text-white bg-gray-500 rounded-lg shadow-md ">Terima</button>

@@ -25,7 +25,7 @@ class AdminBarangTemuController extends Controller
         $data = Barang::find($id);
         $data->delete();
    
-        return redirect('/admin/barangtemu')->with('success', 'Barang berhasil dihapus');
+        return redirect('/admin/barangtemu')->with('barangHapus', 'Barang berhasil dihapus');
     }
 
     

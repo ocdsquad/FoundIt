@@ -32,7 +32,7 @@ class AdminBarangHilangController extends Controller
         $data = Barang::find($id);
         $data->delete();
    
-        return redirect('/admin/baranghilang')->with('success', 'Barang berhasil dihapus');
+        return redirect('/admin/baranghilang')->with('barangHapus', 'Barang berhasil dihapus');
     }
 
     

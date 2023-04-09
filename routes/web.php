@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\RegisterController;
@@ -65,6 +66,7 @@ Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilan
 Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);
 
 Route::resource('/Laporan', LaporanController::class);
+Route::resource('/History', HistoryController::class);
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
 Route::get('/profile', function(){

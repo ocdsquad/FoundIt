@@ -235,10 +235,15 @@
                         <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
                             
                             <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                            <div class="w-full h-[130px] relative">  
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
+                           <!-- Label -->
+                           <div class="px-5 bg-red-600 absolute top-3 right-3">
+                                <p class="text-white text-sm text-center font-light font-poppins">Ditolak</p>
+                            </div>
+
                             <!-- Deskripsi Kehilangan -->
                             <div class="w-full px-2 py-3">
     

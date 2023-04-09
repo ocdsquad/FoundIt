@@ -41,6 +41,6 @@ class AdminLoginController extends Controller
         $request->session()->regenerateToken();
 
         // dd("logout admin");
-        return redirect('/admin/login');
+        return redirect('/admin/login')->with('logoutSuccess', 'Berhasil logout');
     }
 }

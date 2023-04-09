@@ -52,12 +52,10 @@
                                             ">Data Barang Hilang</a></li>
 
                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30">
-                                    @auth
                                     <form action="/admin/logout" method="post">
                                         @csrf
                                         <button type="submit" class="text-mons text-sm font-semibold cursor-pointer outline-none">Logout</button>
                                     </form>
-                                    @endauth
                                 </li>
                         
                             </ul>
@@ -115,7 +113,7 @@
                                     </td>
 
                                     <td class="border">
-                                        <img src="/{{ asset('storage/'.$user->profile) }}" alt="Profile" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profil) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 
@@ -145,7 +143,7 @@
                                     </td>
 
                                     <td class="border">
-                                        <img src="/{{ asset('storage/'.$user->profile) }}" alt="Profile" width="120" class="py-4 mx-auto
+                                        <img src="/{{ asset('storage/'.$user->profil) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 

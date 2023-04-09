@@ -14,6 +14,12 @@
 </head>
 @auth
 <body class="bg-background">
+        @if(session()->has('userHapus'))
+        <script>
+            var msg = '{{Session::get('userHapus')}}';
+            alert(msg);
+        </script>
+        @endif
         <!-- Header -->
         <header class="bg-[#19376D] w-full fixed z-10 top-0 ">
             <div class="mx-10 flex justify-between">
@@ -64,12 +70,10 @@
                                             ">Data Barang Hilang</a></li>
 
                                 <li class="w-full mb-1 px-2 py-1 rounded-md hover:bg-purple hover:bg-opacity-30">
-                                    @auth
                                     <form action="/admin/logout" method="post">
                                         @csrf
                                         <button type="submit" class="text-mons text-sm font-semibold cursor-pointer outline-none">Logout</button>
                                     </form>
-                                    @endauth
                                 </li>
                         
                             </ul>

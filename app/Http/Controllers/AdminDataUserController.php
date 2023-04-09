@@ -25,6 +25,6 @@ class AdminDataUserController extends Controller
         $data = User::find($id);
         $data->delete();
    
-        return redirect('/admin/datauser')->with('success', 'Barang berhasil dihapus');
+        return redirect('/admin/datauser')->with('userHapus', 'Data user berhasil dihapus');
     }
 }

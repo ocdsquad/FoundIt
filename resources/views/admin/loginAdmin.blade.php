@@ -15,11 +15,11 @@
     </head>
 
     <body>  
-    @if(session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    </div>
+    @if(session()->has('logoutSuccess'))
+        <script>
+            var msg = '{{Session::get('logoutSuccess')}}'
+            alert(msg);
+        </script>
     @endif
 
     @if(session()->has('loginError'))

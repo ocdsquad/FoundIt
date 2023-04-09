@@ -278,7 +278,7 @@
                         </div>
     
                         <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
+                        {{-- <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
@@ -439,7 +439,7 @@
                                 </div>
                             </div>
     
-                        </div>
+                        </div> --}}
     
                     </div>
     

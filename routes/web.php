@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LibraryController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminLoginController;
@@ -67,11 +68,7 @@ Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu'])
 Route::resource('/Laporan', LaporanController::class);
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
-Route::get('/profile', function(){
-    return view('UserProfilePribadi', [
-        "barang" => Barang::all()
-    ]);
-});
+Route::get('/profile', [ProfileController::class,'index']);
 
 //------------------------------------------- Admin------------------------------------------------------------
 

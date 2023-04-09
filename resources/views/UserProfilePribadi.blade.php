@@ -54,11 +54,11 @@
 
                             <!-- Profile User -->
                             <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                                <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
+                                <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="Profile Dummy">
                             </div>
         
                             <!-- Nama User -->
-                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
 
                             <!-- Dropdown Menu -->
                             <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
@@ -141,7 +141,7 @@
                     </div>
 
                     <!-- Nama -->
-                    <h1 class="mb-1 text-lg font-poppins font-semibold sm:text-xl"> Reza Fakhreza </h1>
+                    <h1 class="mb-1 text-lg font-poppins font-semibold sm:text-xl"> {{ auth()->user()->username }} </h1>
 
                     <!-- Prodi -->
                     <h2 class="mb-3 text-sm text-[#BDC1C2] font-poppins font-[500] sm:text-base"> S1 Informatika </h2>
@@ -163,11 +163,11 @@
 
                         <!-- Image Container -->
                         <div class="w-[160px] h-[160px] mb-3 rounded-full overflow-hidden xl:w-[200px] xl:h-[200px]">
-                            <img class="w-full h-full" src="/img/tim.png" alt="User Profile">
+                            <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="User Profile">
                         </div>
 
                         <!-- Nama -->
-                        <h1 class="mb-1 text-2xl text-white font-poppins font-semibold xl:text-3xl"> Selamat Datang, Reza Fakhreza !</h1>
+                        <h1 class="mb-1 text-2xl text-white font-poppins font-semibold xl:text-3xl"> Selamat Datang, {{ auth()->user()->username }} !</h1>
 
                     </div>
 
@@ -231,7 +231,7 @@
                 <div class="w-full px-3 hidden lg:block">
 
                     <!-- Judul -->
-                    <p class="w-[50%] mb-5 text-2xl text-[#244CA5] font-montserratAlt font-bold"> Laporan Barang Reza Fakhreza </p>
+                    <p class="w-[50%] mb-5 text-2xl text-[#244CA5] font-montserratAlt font-bold"> Laporan Barang {{ auth()->user()->username }} </p>
 
                     <!-- Garis -->
                     <span class="block w-full h-[2px] bg-[#BDC1C2]"></span>
@@ -243,6 +243,8 @@
 
                     <!-- Lost Post Container -->
                     <div id="lost-post-barang" class="grid grid-cols-2 w-full mt-6 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+                        @foreach($barangs as $barang)
+                            
                         
                         <!-- Card -->
                         <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
@@ -349,158 +351,8 @@
                             </div>
     
                         </div>
-    
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-
-                            </div>
-    
-                        </div>
-    
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-                            </div>
-    
-                        </div>
-
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-                            </div>
-    
-                        </div>
-    
+                        @endforeach
+                        
                     </div>
     
                     <!-- Found Post Container -->
@@ -604,208 +456,7 @@
                                 </div>
                             </div>
     
-                        </div>
-
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-                            </div>
-    
-                        </div>
-
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-                            </div>
-    
-                        </div>
-
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-                            </div>
-    
-                        </div>
-
-                        <!-- Card -->
-                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
-                            
-                            <!-- Image Container -->
-                            <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
-                            </div>
-    
-                            <!-- Deskripsi Kehilangan -->
-                            <div class="w-full px-2 py-3">
-    
-                                <!-- Nama Barang -->
-                                <h1 class="mb-2 text-base font-poppins font-semibold"> Dompet Cokelat </h1>
-    
-                                <!-- Location Barang -->
-                                <div class="flex items-center w-full mb-[5px]">
-                                    <span class="mr-1">
-                                        <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.00016 0.833252C1.38766 0.833252 0.0834961 2.13742 0.0834961 3.74992C0.0834961 5.93742 3.00016 9.16659 3.00016 9.16659C3.00016 9.16659 5.91683 5.93742 5.91683 3.74992C5.91683 2.13742 4.61266 0.833252 3.00016 0.833252ZM3.00016 4.79159C2.7239 4.79159 2.45894 4.68184 2.26359 4.48649C2.06824 4.29114 1.9585 4.02619 1.9585 3.74992C1.9585 3.47365 2.06824 3.2087 2.26359 3.01335C2.45894 2.818 2.7239 2.70825 3.00016 2.70825C3.27643 2.70825 3.54138 2.818 3.73673 3.01335C3.93208 3.2087 4.04183 3.47365 4.04183 3.74992C4.04183 4.02619 3.93208 4.29114 3.73673 4.48649C3.54138 4.68184 3.27643 4.79159 3.00016 4.79159Z" fill="black"/>
-                                            </svg>                                    
-                                    </span> 
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> Bank Mandiri Telkom </p>
-                                </div>
-    
-                                <!-- Informasi Post -->
-                                <div class="flex items-center w-full mb-6">
-                                    <span class="mr-[5px]">
-                                        <svg width="13" height="13" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M3.75 0.833415C3.75 0.603296 3.93655 0.416748 4.16667 0.416748H5.83333C6.06345 0.416748 6.25 0.603296 6.25 0.833415C6.25 1.06353 6.06345 1.25008 5.83333 1.25008H4.16667C3.93655 1.25008 3.75 1.06353 3.75 0.833415ZM7.92917 3.07925L8.22497 2.78344C8.39228 2.61613 8.40483 2.34572 8.23788 2.17805C8.07235 2.01182 7.80677 2.02665 7.64089 2.19252L7.34167 2.49175C6.67805 1.95772 5.8518 1.66662 5 1.66675C4.00544 1.66675 3.05161 2.06184 2.34835 2.7651C1.64509 3.46836 1.25 4.42219 1.25 5.41675C1.25 7.48758 2.925 9.16675 5 9.16675C5.70596 9.16713 6.39767 8.96809 6.99547 8.59256C7.59327 8.21704 8.07283 7.68029 8.37893 7.04414C8.68503 6.40799 8.80522 5.69832 8.72564 4.99685C8.64607 4.29539 8.36998 3.63067 7.92917 3.07925ZM5 8.33342C3.3875 8.33342 2.08333 7.02925 2.08333 5.41675C2.08333 3.80425 3.3875 2.50008 5 2.50008C6.6125 2.50008 7.91667 3.80425 7.91667 5.41675C7.91667 7.02925 6.6125 8.33342 5 8.33342Z" fill="black"/>
-                                            <path d="M4.5835 3.74992C4.5835 3.5198 4.77004 3.33325 5.00016 3.33325V3.33325C5.23028 3.33325 5.41683 3.5198 5.41683 3.74992V5.41659C5.41683 5.6467 5.23028 5.83325 5.00016 5.83325V5.83325C4.77004 5.83325 4.5835 5.6467 4.5835 5.41659V3.74992Z" fill="black"/>
-                                            </svg>
-                                                                            
-                                    </span>
-    
-                                    <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> 1 hour ago </p>
-                                </div>
-
-                                <!-- Logo Sudah Diclaim -->
-                                <div class="flex justify-end w-full">
-
-                                    <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                        <a href="#"> Sudah Diklaim </a>
-                                    </div>
-
-                                </div>
-                            </div>
-    
-                        </div>
-    
+                        </div>  
     
                     </div>
                 </div>

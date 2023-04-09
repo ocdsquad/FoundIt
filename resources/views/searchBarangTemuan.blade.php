@@ -177,7 +177,7 @@
                     <div class="flex justify-center items-center w-full h-full">
                 
                         <!-- Container Tagline, Search Bar, dan Dropdown -->
-                        <div class="w-fit">
+                        <div class="w-full">
 
                             <!-- Tagline -->
                             <p class="mb-4 text-5xl text-white text-center font-jost font-semibold"> Kamu Nemuin Barang Nih ? </p>
@@ -187,7 +187,7 @@
                             <div class="flex items-center">
 
                                 <!-- Search Bar -->
-                                <form class="w-[65%] mx-auto relative">
+                                <form class="w-[40%] mx-auto relative">
                     
                                     <input id="search" name="search" class="w-full px-5 py-3 text-sm placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl xl:text-base" type="text" placeholder="All item">
     

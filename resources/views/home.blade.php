@@ -57,8 +57,6 @@
 
                     
                     @auth
-                        
-                    
                     <!-- Udah Login -->
                     <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
 
@@ -85,7 +83,7 @@
 
                     @else
                     <!-- Belum Login -->
-                    <div class="hidden justify-center items-center">
+                    <div class="flex justify-center items-center">
 
                         <!-- Profile User -->
                         <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">

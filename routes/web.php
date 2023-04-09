@@ -2,12 +2,14 @@
 
 use App\Models\User;
 use App\Models\Barang;
+use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LibraryController;
 use App\Http\Controllers\ProfileController;
@@ -66,6 +68,7 @@ Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilan
 Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);
 
 Route::resource('/Laporan', LaporanController::class);
+Route::resource('/History', HistoryController::class)->middleware('auth');
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
 Route::get('/profile', [ProfileController::class,'index']);

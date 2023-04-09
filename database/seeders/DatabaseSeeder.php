@@ -48,5 +48,8 @@ class DatabaseSeeder extends Seeder
             "email" => "admin123@gmail.com",
             "password" => bcrypt(123456)
         ]);
+
+        \App\Models\History::factory(25)->create();
+
     }
 }

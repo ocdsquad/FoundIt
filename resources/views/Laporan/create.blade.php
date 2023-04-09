@@ -319,7 +319,11 @@
                             <div class="w-full mb-5">
                                 <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="nama-desktop"> Nama Barang </label>
 
-                                <input class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="nama" id="nama-desktop">
+                                <input class="w-full p-3 border border-[#88C6F8] rounded-xl @error('nama') is-invalid @enderror" type="text" name="nama" id="nama-desktop" value="{{ old('nama') }}">
+                                @error('nama')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                @enderror
+                           
                             </div>
 
                             <input type="hidden" class="form-control" id="slug" name="slug" autofocus>
@@ -328,14 +332,20 @@
                             <div class="w-full mb-5">
                                 <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="deskripsi-desktop"> Deskripsi Barang </label>
 
-                                <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="deskripsi" id="deskripsi-desktop" rows="5"></textarea>
+                                <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="deskripsi" id="deskripsi-desktop" rows="5">{{ old('deskripsi') }}</textarea>
+                                @error('deskripsi')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <!-- Kronologi -->
                             <div class="w-full">
                                 <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="kornologi-desktop"> Kronologi Kehilangan </label>
 
-                                <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="kronologi" id="kornologi-desktop" rows="5"></textarea>
+                                <textarea class="w-full p-3 border border-[#88C6F8] rounded-xl" type="text" name="kronologi" id="kornologi-desktop" rows="5">{{ old('kronologi') }}</textarea>
+                                @error('kronologi')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                @enderror
                             </div>
 
                         </div>
@@ -350,8 +360,14 @@
                                     
                                     <option disabled selected value="">Kategori Barang</option>
                                     @foreach($categories as $category)
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}">{{ $category->nama}}</option>
+                                    @if (old('category_id') == $category->id)
+                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}" selected>{{ $category->nama}}</option>
+                                    @else 
+                                        <option class="text-sm text-black font-poppins font-medium bg-white" value="{{ $category->id }}">{{ $category->nama}}</option>
+                                    @endif
+                                    
                                     @endforeach
+                                    
 
                                 </select>
 
@@ -376,6 +392,9 @@
                             <!-- Container Tag Input -->
                             <div class="flex w-full mb-5">
                                 <input id="input-gambar-desktop" class="w-[60%] m-auto font-montserrat font-medium" name="image" type="file" required> 
+                                @error('image')
+                                <div class="text-sm text-red-600">{{ $message }}</div>
+                                @enderror
                             </div>
 
                             <!-- Reward -->
@@ -385,14 +404,23 @@
         
                                 <div class="flex gap-4 w-full mt-3">
                                     <div class="flex items-center gap-3 w-1/2 px-2 py-[5px] border border-[#244CA5] rounded-lg lg:px-4 xl:w-[40%] xl:px-5">
+                                        @if(old('is_hadiah') == 1)
+                                        <input type="radio" id="radio-yes-desktop" name="is_hadiah" value="1" checked>
+                                        @else
                                         <input type="radio" id="radio-yes-desktop" name="is_hadiah" value="1">
+                                        @endif
                                         <label id="label-yes-desktop" class="text-sm font-montserrat font-medium rounded-lg" for="radio-yes-desktop">Yup, Dapet Nih !</label>
                                     </div>
             
                                     <div class="flex items-center gap-3 w-1/2 px-2 py-[5px] border border-[#244CA5] rounded-lg lg:px-4 xl:w-[40%] xl:px-5">
+                                        @if(old('is_hadiah') === 0)
+                                        <input type="radio" id="radio-no-desktop" name="is_hadiah" value="0" checked>
+                                        @else
                                         <input type="radio" id="radio-no-desktop" name="is_hadiah" value="0">
+                                        @endif
                                         <label id="label-no-desktop" class="text-sm font-montserrat font-medium" for="radio-no-desktop">Maaf, Gak Dapet :&lpar; </label>
                                     </div>
+                                    
                                 </div>
         
                             </div>

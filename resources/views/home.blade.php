@@ -7,7 +7,7 @@
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
         <link rel="stylesheet" href="./css/style.css">
         @vite('resources/css/app.css')
@@ -112,13 +112,13 @@
         </header>
 
         
-        <!-- Section Atas (Header) -->
+        <!-- Section Atas Header (Mobile) -->
         <section class="h-[25vh] bg-[#8D9EFF] rounded-b-2xl relative lg:hidden">
             <div class="container">
                 <div class="flex flex-wrap">
 
                     <!-- Menu, Logo, dan Profile -->
-                    <header class="flex justify-between items-center w-[90%] absolute top-12 left-1/2 -translate-x-1/2 -transalate-y-1/2 md:w-[85%]">
+                    <header class="flex justify-between items-center w-[90%] absolute top-10 left-1/2 -translate-x-1/2 -transalate-y-1/2 md:w-[85%]">
                         
                         <!-- Menu Span -->
                         <div class="span-container flex flex-col justify-between w-8 h-6">
@@ -130,10 +130,11 @@
                         <!-- Foundit -->
                         <h1 class="text-2xl text-white font-montserrat font-extrabold"> Foundit. </h1>
 
-                        <!-- Profile User -->
-                        <div class="w-12 h-12 rounded-full overflow-hidden">
+ 
+                        <!-- Image Profile -->
+                        <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
                             <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
-                        </div>
+                        </a>
 
                     </header>
 
@@ -153,7 +154,7 @@
                 </div>
             </div>
         </section>
-        <!-- Section Atas (Header) End -->
+        <!-- Section Atas Header End -->
 
 
         <!-- Home Opening Section  -->
@@ -510,7 +511,7 @@
 
 
         <!-- Lost Item Section -->
-        <section class="mt-8 pb-24 lg:mt-10 lg:pb-0">
+        <section id="lost-section" class="mt-8 pb-6 lg:mt-10 lg:pb-0">
             <div class="container">
                 <div class="flex flex-wrap">
 
@@ -806,55 +807,48 @@
                 <div class="flex w-[45%] justify-evenly">
 
                     <!-- Home -->
-                    <button title="Home">
+                    <a href="#">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
                             <path
                             stroke-linecap="round"
                             stroke-linejoin="round"
                             d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                         </svg>
-                    </button>
+                    </a>
         
-                    <!-- Produk -->
-                    <button title="Product">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                            <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
-                        </svg>
-                    </button>
+                    <!-- History -->
+                    <a href="#">
+                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="12 8 12 12 14 14" />  <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg>
+                    </a>
 
                 </div>
 
-                <!-- Tombol tengah -->
+                <!-- Laporan -->
                 <div class="flex justify-center items-center p-2 bg-[#B9E0FF] rounded-2xl shadow-3xl absolute -top-3 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <button>
+                    <a href="#">
                         <svg class="h-9 w-9 text-white"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
                         </svg>                          
-                    </button>
+                    </a>
                 </div>
 
                 <!-- Bottom Navigasi Kanan -->
                 <div class="flex w-[45%] justify-evenly">
 
-                    <!-- Pelatihan -->
-                    <button title="Pelatihan">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                            <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                        </svg>
-                    </button>
+                    <!-- All Items -->
+                    <a href="#">
+                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20 3 7" />  <line x1="9" y1="4" x2="9" y2="17" />  <line x1="15" y1="7" x2="15" y2="20" /></svg>
+                    </a>
         
-                    <!-- About Us -->
-                    <button title="About Us">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
-                        </svg>
-                    </button>
+                    <!-- Belum Login (Logo Login) -->
+                    <a href="#">
+                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M20 12h-13l3 -3m0 6l-3 -3" /></svg>
+                    </a>
+
+                    <!-- Udah Login (Logout) -->
+                    <a href="#">
+                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+                    </a>
 
                 </div>
 
@@ -890,6 +884,7 @@
                 const span_line_1 = document.querySelector(".sp-1")
                 const span_line_2 = document.querySelector(".sp-2")
 
+                const lost_section = document.getElementById("lost-section");
                 const btm_navigation = document.querySelector(".bottom-nav")
 
                 span_container.addEventListener("click", () => {
@@ -902,6 +897,9 @@
 
                     btm_navigation.classList.toggle("-bottom-32")
                     btm_navigation.classList.toggle("-bottom-3")
+
+                    lost_section.classList.toggle("pb-24")
+                    lost_section.classList.toggle("pb-6")
                     
                 })
 

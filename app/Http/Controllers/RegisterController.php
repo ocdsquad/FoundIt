@@ -18,14 +18,27 @@ class RegisterController extends Controller
         $validatedData=$request->validate([
             // 'name'=>'required|max:255',
             'username'=>['required','min:3','max:255', 'unique:users'],
+            'nim' => 'required|unique:users',
             'email'=>'required|email:dns|unique:users',
-            'password'=> 'required|min:5|:max:255'
+            'nomor'=>'required|unique:users',
+            'password'=> 'required|min:5|:max:255',
+            'profil' =>'image|file|max:2048',
+            'ktm' =>'image|file|max:2048'
 
         ]);
+
+
+        if($request->file('ktm')&&$request->file('profil')){
+            $validatedData['ktm'] = $request->file('ktm')->store('post-images');
+            $validatedData['profil'] = $request->file('profil')->store('post-images');
+            
+        }
 
         $validatedData['password'] = Hash::make($validatedData['password']);
         $validatedData['is_verif'] = false;
         $validatedData['is_tolak'] = false;
+        $validatedData['is_admin'] = false;
+
 
         User::create($validatedData);
 

@@ -14,8 +14,8 @@ class LoginController extends Controller
     }
 
     public function auth(Request $request){
-        $user = User::where('email', '=', $request->email)->get();
-
+        $user = User::where('email',$request->email)->get();
+        // dd($user);
         $credentials=$request->validate([
             'email'=>'required|email',
             'password'=> 'required'
@@ -29,8 +29,8 @@ class LoginController extends Controller
         // }
         // return back()->with('loginError', 'Email/Password salah!');      
 
-        if($user[0] ->is_admin == false){
-            if ($user[0]->is_verif){
+        if($user[0]->is_admin == false){
+            if (!$user[0]->is_verif){
                 if(Auth::attempt($credentials)){
                     $request->session()->regenerate();
                     return redirect()->intended('/');

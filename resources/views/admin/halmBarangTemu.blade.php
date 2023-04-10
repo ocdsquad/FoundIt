@@ -13,7 +13,7 @@
 </head>
 @auth
 <body class="bg-background">
-@if(session()->has('barangHapus'))
+    @if(session()->has('barangHapus'))
         <script>
             var msg = '{{Session::get('barangHapus')}}';
             alert(msg);
@@ -112,12 +112,13 @@
                             @if ($barang->is_hilang == false)
                                 @if($barang-> is_verif)
                                 <tr>
-                                    <td class="border text-center relative">
-                                        <p class="w-full px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0">Postingan Disetujui</p>
+                                    <td class="border text-center">
                                         {{ $barang -> id }}</td>
-                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                    <td class="border text-center relative">
+                                        <p class="w-full px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0">Postingan Disetujui</p>    
+                                    {{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img src="/{{ asset('storage/'.$barang->image) }}" alt="Barang Temu" width="120" class="py-4 px-2 mx-auto
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Temu" width="300" class="py-4 px-2 mx-auto
                                         ">
                                     </td>
                                     <td class="border text-center"> 
@@ -142,11 +143,12 @@
                                 @elseif ($barang-> is_tolak)
                                 <tr>
                                     <td class="border text-center relative">
-                                        <p class="w-full px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Postingan Tidak Disetujui</p>
                                         {{ $barang -> id }}</td>
-                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                    <td class="border text-center relative">
+                                        <p class="w-full px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Postingan Tidak Disetujui</p>
+                                        {{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Temu" width="120" class="py-4 px-2 mx-auto
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Temu" width="300" class="py-4 px-2 mx-auto
                                         ">
                                     </td>
                                     <td class="border text-center">  {{ $barang -> category -> nama  }}
@@ -168,7 +170,7 @@
                                     <td class="border text-center">{{ $barang -> id }}</td>
                                     <td class="border text-center">{{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" alt="Gambar Barang">
+                                        <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" width="300" alt="Gambar Barang">
                                     </td>
                                     <td class="border text-center">  {{ $barang -> category -> nama  }}
                                     </td>

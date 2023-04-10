@@ -42,10 +42,6 @@ class AdminBarangHilangController extends Controller
         $data->save();
 
         return redirect('/admin/baranghilang')->with('success', 'Berhasil Verifikasi Akun User');
-        // return "<script>
-        // alert('Berhasil Verifikasi Akun User');
-        // location.href='/admin/home';
-        // </script>"
     }
 
     public function tolak($id){
@@ -53,22 +49,6 @@ class AdminBarangHilangController extends Controller
         $data->is_tolak = true;
         $data->save();
         return redirect('/admin/baranghilang')->with('success', 'Berhasil Verifikasi Akun User');
-        // return "<script>
-        // alert('Berhasil Verifikasi Akun User');
-        // location.href='/admin/home';
-        // </script>"
     }
 
-    // public function update(Request $request, $id)
-    // {
-    //     $data = Barang::find($id);
-
-    //     // dd($request->namabarang);
-    //     $data->nama = $request->namabarang;
-    //     // $data->category_id = $request->kategori;
-    //     $data->deskripsi = $request->deskripsi;
-    //     $data->kronologi = $request->kronologi;
-    //     $data->save();
-    //     return redirect('/admin/baranghilang')->with('success', 'Barang berhasil diubah');
-    // }
 }

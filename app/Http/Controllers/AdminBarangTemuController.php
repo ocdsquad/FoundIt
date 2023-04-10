@@ -35,10 +35,6 @@ class AdminBarangTemuController extends Controller
         $data->save();
 
         return redirect('/admin/barangtemu')->with('success', 'Berhasil Verifikasi Akun User');
-        // return "<script>
-        // alert('Berhasil Verifikasi Akun User');
-        // location.href='/admin/home';
-        // </script>"
     }
 
     public function tolak($id){
@@ -46,9 +42,5 @@ class AdminBarangTemuController extends Controller
         $data->is_tolak = true;
         $data->save();
         return redirect('/admin/barangtemu')->with('success', 'Berhasil Verifikasi Akun User');
-        // return "<script>
-        // alert('Berhasil Verifikasi Akun User');
-        // location.href='/admin/home';
-        // </script>"
     }
 }

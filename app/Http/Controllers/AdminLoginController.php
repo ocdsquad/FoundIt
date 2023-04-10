@@ -26,7 +26,6 @@ class AdminLoginController extends Controller
             $request->session()->regenerate();
            
             if ($emailExists[0]->is_admin){
-                // dd("login admin");
                 return redirect()->intended('/admin/home');
             }
         }
@@ -35,12 +34,8 @@ class AdminLoginController extends Controller
 
     public function logout(Request $request){
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
-        // dd("logout admin");
         return redirect('/admin/login')->with('logoutSuccess', 'Berhasil logout');
     }
 }

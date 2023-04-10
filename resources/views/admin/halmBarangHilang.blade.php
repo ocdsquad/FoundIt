@@ -113,12 +113,13 @@
                             @if ($barang->is_hilang)
                                 @if($barang-> is_verif)
                                 <tr>
+                                    <td class="border text-center">
+                                        {{ $barang -> id }}</td>
                                     <td class="border text-center relative">
                                         <p class="w-full px-1 text-center text-white text-xs font-poppins bg-green-600 absolute top-0 left-0">Postingan Disetujui</p>
-                                        {{ $barang -> id }}</td>
-                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                        {{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="120" class="py-4 px-2 mx-auto
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="300" class="py-4 px-2 mx-auto
                                         ">
                                     </td>
                                     <td class="border text-center"> {{ $barang -> category -> nama  }}
@@ -140,12 +141,13 @@
                                 </tr>
                                 @elseif ($barang-> is_tolak)
                                 <tr>
+                                    <td class="border text-center">
+                                        {{ $barang -> id }}</td>
                                     <td class="border text-center relative">
                                         <p class="w-full px-1 text-center text-white text-xs font-poppins bg-red-600 absolute top-0 left-0">Postingan Tidak Disetujui</p>
-                                        {{ $barang -> id }}</td>
-                                    <td class="border text-center">{{ $barang -> nama }}</td>
+                                        {{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="120" class="py-4 px-2 mx-auto
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="300" class="py-4 px-2 mx-auto
                                         ">
                                     </td>
                                     <td class="border text-center">  {{ $barang -> category -> nama  }}
@@ -167,7 +169,7 @@
                                     <td class="border text-center">{{ $barang -> id }}</td>
                                     <td class="border text-center">{{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="120" class="py-4 px-2 mx-auto
+                                        <img src="{{ asset('storage/'.$barang->image) }}" alt="Barang Hilang" width="300" class="py-4 px-2 mx-auto
                                         ">
                                     </td>
                                     <td class="border text-center">  {{ $barang -> category -> nama  }}

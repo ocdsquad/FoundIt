@@ -117,12 +117,12 @@
                                     <td class="border text-center">{{ $user -> nim }}</td>
                                     <td class="border text-center">{{ $user -> email }} - {{ $user -> nomor }}</td>
                                     <td class="border">
-                                            <img src="/{{ asset('storage/'.$user->ktm) }}" alt="KTM" width="120" class="py-4 mx-auto
+                                            <img src="{{ asset('storage/'.$user->ktm) }}" alt="KTM" width="120" class="py-4 mx-auto
                                             ">
                                         </td>
 
                                     <td class="border">
-                                        <img src="/{{ asset('storage/'.$user->profil) }}" alt="Profile" width="120" class="py-4 mx-auto
+                                        <img src="{{ asset('storage/'.$user->profil) }}" alt="Profile" width="120" class="py-4 mx-auto
                                         ">
                                     </td>
 

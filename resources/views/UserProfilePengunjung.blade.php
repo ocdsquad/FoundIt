@@ -16,8 +16,9 @@
 
     <body class="scroll-smooth">
 
+        <!-- INI HIDDEN DULU -->
         <!-- Desktop Navigation Bar -->
-        <header class="w-full fixed bg-white shadow-kategori hidden lg:block z-10">
+        <header class="w-full fixed bg-white shadow-kategori z-10 hidden lg:block">
             <div class="container flex justify-between w-full ">
 
                 <!-- Logo (Kiri) -->

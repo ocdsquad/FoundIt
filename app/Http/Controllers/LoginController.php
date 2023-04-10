@@ -14,23 +14,23 @@ class LoginController extends Controller
     }
 
     public function auth(Request $request){
+        $emailExist = User::where('email',$request->email)->exists();
+
+        //Belum registrasi
+        if (!$emailExist){
+            return redirect('/login')->with('noRegist', 'Akun anda belum terdaftar. Silahkan registrasi terlebih dahulu!');
+        }
+
+        //Sudah registrasi
         $user = User::where('email',$request->email)->get();
-        // dd($user);
         $credentials=$request->validate([
             'email'=>'required|email',
             'password'=> 'required'
 
         ]);
 
-
-        // if(Auth::attempt($credentials)){
-        //     $request->session()->regenerate();
-        //     return redirect()->intended('/');
-        // }
-        // return back()->with('loginError', 'Email/Password salah!');      
-
         if($user[0]->is_admin == false){
-            if (!$user[0]->is_verif){
+            if ($user[0]->is_verif){
                 if(Auth::attempt($credentials)){
                     $request->session()->regenerate();
                     return redirect()->intended('/');
@@ -42,7 +42,7 @@ class LoginController extends Controller
                 return redirect('/login')->with('tolakLogin', 'Mohon Maaf Akun Anda Tidak Lolos Verifikasi');
             }
         }
-        return back()->with('loginError', 'Email/Password salah!');      
+        return back()->with('loginError', 'Email/Password salah!');
     }
 
     public function logout(Request $request){

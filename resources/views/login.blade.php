@@ -78,7 +78,7 @@
     
                             <!-- Image -->
                             <div class="w-[70%] mx-auto md:w-[55%]">
-                                <img class="w-full" src="../src/img/loginSticker.png" alt="Image Login">
+                                <img class="w-full" src="/img/loginSticker.png" alt="Image Login">
                             </div>
 
                         </div>
@@ -90,7 +90,7 @@
                             <div class="w-full h-full bg-[#6C4AB6] rounded-[35px] relative overflow-hidden">
 
                                 <!-- Logo Foundit -->
-                                <img class="w-[15%] absolute top-0 right-0" src="../src/img/logoLain.png" alt="Logo">
+                                <img class="w-[15%] absolute top-0 right-0" src="/img/logoLain.png" alt="Logo">
 
                                 <!-- Welcome Text -->
                                 <div class="w-full pl-8 pt-6 xl:mt-8">
@@ -99,7 +99,7 @@
                                     <p class="text-[55px] text-white font-poppins font-extrabold xl:text-[65px]">Foundit.</p>
                                 </div>
 
-                                <img class="w-full absolute bottom-0 xl:w-[85%]" src="../src/img/stickerHomeLg.png" alt="Sticker Login">
+                                <img class="w-full absolute bottom-0 xl:w-[85%]" src="/img/stickerHomeLg.png" alt="Sticker Login">
 
                             </div>
 

@@ -37,35 +37,12 @@
                         <a href="Home.html">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                                </svg>                                                                       
+                            </svg>                                                                       
                         </a>
                     </div>
 
                     <!-- Judul Halaman -->
                     <h1 class="w-[90%] text-center text-xl font-poppins font-semibold"> History Laporan </h1>
-
-                </div>
-
-                <!-- Post Switcher (Mobile) -->
-                <div class="w-full h-[50px] mt-5 px-3 rounded-[10px] shadow-post z-[1] sm:w-[95%] sm:mx-auto lg:hidden">
-
-                    <!-- Container Lost & Found -->
-                    <div class="flex items-center justify-between w-full h-full relative">
-
-                        <!-- Lost Post -->
-                        <div id="lost-post" class="w-1/2 z-[3] text-white pointer-events-none transition-all ease-in-out duration-700">
-                            <p class="text-lg text-center font-poppins font-bold"> Lost Post </p>
-                        </div>
-
-                        <!-- Found Post -->
-                        <div id="found-post" class="w-1/2 z-[3] text-[#BDC1C2] transition-all ease-in-out duration-700">
-                            <p class="text-lg text-center font-poppins font-bold"> Found Post </p>
-                        </div>
-
-                        <!-- Switcher -->
-                        <div id="switcher-post" class="w-1/2 h-[32px] bg-[#8D72E1] rounded-[9px] absolute z-[2] transition-all ease-in-out duration-700"></div>
-
-                    </div>
 
                 </div>
 
@@ -116,7 +93,7 @@
                             </div>
         
                             <!-- Nama User -->
-                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
 
                             <!-- Dropdown Menu -->
                             <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
@@ -176,30 +153,6 @@
                         <h1 class="text-4xl text-white font-jost font-semibold xl:text-5xl"> Yang Sudah Kamu Temukan atau Kembalikan </h1>
 
                     </div>
-
-                    <!-- Switch Post -->
-                    <div class="flex justify-center items-center w-[350px] h-[70px] px-3 bg-white rounded-3xl shadow-switch-post absolute -bottom-18 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
-
-                        <!-- Lost Post & Found Post -->
-                        <div class="flex items-center w-full h-full text-center relative z-[1]">
-
-                            <!-- Lost Post -->
-                            <div id="lost-post-desktop" class="w-1/2 text-white relative z-[3] transition-all duration-75 ease-in pointer-events-none cursor-pointer">
-                                <p class="text-base  font-montserratAlt font-bold"> Lost Post </p>
-                            </div>
-
-                            <!-- Found Post -->
-                            <div id="found-post-desktop" class="w-1/2 text-[#BDC1C2] relative z-[3] transition-all duration-75 ease-in cursor-pointer">
-                                <p class="text-base font-montserratAlt font-bold"> Found Post </p>
-                            </div>
-
-                            <!-- Switcher Post -->
-                            <div id="switcher-post-desktop" class="w-[50%] h-[55px] bg-[#8D72E1] text-center rounded-2xl absolute transition-all ease-in-out duration-700 z-[2]"></div>
-
-                        </div>
-
-                    </div>
-
                 </div>
             </div>
         </section>
@@ -224,7 +177,7 @@
                 <!-- History Whole Card Container -->
                 <div id="container-history" class="w-full transition-all ease-in-out duration-1000">
 
-                    <!-- Container History Lost -->
+                    <!-- Container History Lost & Found -->
                     <div id="lost-barang-history" class="flex flex-col gap-3 w-full h-[90vh] px-3 pb-3 overflow-auto xl:gap-7">
                         
                         @foreach ($histories as $history)
@@ -291,7 +244,7 @@
                                         <div class="text-center">
                                             <p class="text-xs text-[#244CA5] font-poppins font-base sm:text-sm md:text-base"> Claimed by : </p>
     
-                                            <p class="mb-2 text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> {{ $history->nama_penerima }} </p>
+                                            <a href="/profile/{{ $history->nim}}" class="mb-2 text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> {{ $history->nama_penerima }} </a>
 
                                             <p class="mb-1 text-xs font-poppins sm:text-sm md:text-base"> {{ $history->nim }}</p>
 
@@ -306,134 +259,6 @@
 
                         </div>
                         @endforeach
-                        
-
-                        
-
-                    </div>
-
-                    <!-- Container History Found -->
-                    <div id="found-barang-history" class="flex-col gap-3 w-full h-[90vh] px-3 pb-3 overflow-auto hidden xl:gap-7">
-
-                        <!-- Card Found -->
-                        <div class="flex flex-shrink-0 items-center w-full h-fit p-3 bg-white rounded-xl shadow-history">
-
-                            <!-- Kiri -->
-                            <div class="w-[30%] md:w-[32%] lg:w-[30%] xl:w-[25%]">
-
-                                <!-- Image Container -->
-                                <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
-                                </div>
-
-                            </div>
-
-                            <!-- Kanan -->
-                            <div class="w-[70%] pl-2 md:w-[68%]">
-
-                                <!-- Nama Barang & Claimed Logo -->
-                                <div class="flex justify-between items-center w-full">
-
-                                    <!-- Nama Barang -->
-                                    <p class="text-md font-poppins font-semibold sm:text-lg md:text-xl lg:text-3xl"> Dompet Cokelat </p>
-
-                                    <div class="flex justify-center items-center w-[65px] h-[20px] bg-[#B9E0FF] rounded-md sm:w-[100px] sm:h-[25px] lg:w-[130px] lg:h-[28px]">
-                                        <p class="text-[10px] text-[#8D72E1] font-poppins font-semibold sm:text-xs md:text-sm lg:text-[15px]"> Claimed </p>
-                                    </div>
-
-                                </div>
-
-                                <!-- Garis Pembatas -->
-                                <span class="block w-full my-2 h-[2px] bg-[#395EB4] opacity-60"></span>
-
-                                <!-- Informasi Claim Barang -->
-                                <div class="flex justify-between items-center w-full">
-
-                                    <!-- Keterangan Waktu & Tanggal -->
-                                    <div class="w-1/2 text-[#244CA5] font-normal">
-
-                                        <!-- Waktu & Tanggal -->
-                                        <p class="mb-1 text-xs sm:text-sm md:text-base xl:text-lg"> 28.12.2023, 11:47 PM </p>
-
-                                    </div>
-
-                                    <!-- Profile User Claim -->
-                                    <div class="flex justify-end w-1/2">
-
-                                        <!-- Informasi User Claim -->
-                                        <div class="text-center">
-                                            <p class="text-xs text-[#244CA5] font-poppins font-base sm:text-sm md:text-base"> Claimed by : </p>
-    
-                                            <p class="text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> Reza Juandri </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-                        
-                        <!-- Card Found -->
-                        <div class="flex flex-shrink-0 items-center w-full h-fit p-3 bg-white rounded-xl shadow-history">
-
-                            <!-- Kiri -->
-                            <div class="w-[30%] md:w-[32%] lg:w-[30%] xl:w-[25%]">
-
-                                <!-- Image Container -->
-                                <div class="w-full h-[100px] rounded-md overflow-hidden sm:h-[120px] md:h-[160px] lg:h-[210px]">
-                                    <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
-                                </div>
-
-                            </div>
-
-                            <!-- Kanan -->
-                            <div class="w-[70%] pl-2 md:w-[68%]">
-
-                                <!-- Nama Barang & Claimed Logo -->
-                                <div class="flex justify-between items-center w-full">
-
-                                    <!-- Nama Barang -->
-                                    <p class="text-md font-poppins font-semibold sm:text-lg md:text-xl lg:text-3xl"> Dompet Cokelat </p>
-
-                                    <div class="flex justify-center items-center w-[65px] h-[20px] bg-[#B9E0FF] rounded-md sm:w-[100px] sm:h-[25px] lg:w-[130px] lg:h-[28px]">
-                                        <p class="text-[10px] text-[#8D72E1] font-poppins font-semibold sm:text-xs md:text-sm lg:text-[15px]"> Claimed </p>
-                                    </div>
-
-                                </div>
-
-                                <!-- Garis Pembatas -->
-                                <span class="block w-full my-2 h-[2px] bg-[#395EB4] opacity-60"></span>
-
-                                <!-- Informasi Claim Barang -->
-                                <div class="flex justify-between items-center w-full">
-
-                                    <!-- Keterangan Waktu & Tanggal -->
-                                    <div class="w-1/2 text-[#244CA5] font-normal">
-
-                                        <!-- Waktu & Tanggal -->
-                                        <p class="mb-1 text-xs sm:text-sm md:text-base xl:text-lg"> 28.12.2023, 11:47 PM </p>
-
-                                    </div>
-
-                                    <!-- Profile User Claim -->
-                                    <div class="flex justify-end w-1/2">
-
-                                        <!-- Informasi User Claim -->
-                                        <div class="text-center">
-                                            <p class="text-xs text-[#244CA5] font-poppins font-base sm:text-sm md:text-base"> Claimed by : </p>
-    
-                                            <p class="text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> Reza Juandri </p>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                        </div>
 
                     </div>
 

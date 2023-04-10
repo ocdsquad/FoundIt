@@ -23,10 +23,10 @@ class HistoryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create($slug)
+    public function create()
     {
         return view('History.create',[
-            'slug' => $slug
+            
         ]);
     }
 

@@ -461,7 +461,7 @@
                             </div>
 
                             <!-- Location -->
-                            <div id="lokasi-temu-desktop" class="w-full h-full hidden">
+                            <div id="lokasi-temu-desktop" class="w-full hidden">
                                 <label class="mb-2 inline-block text-base text-[#244CA5] font-montserrat font-medium xl:text-lg" for="lokasi-desktop"> Lokasi Ditemukan</label>
         
                                 <input class="w-full p-2 border border-[#88C6F8] rounded-xl shadow-md" type="text" name="lokasi" id="lokasi-desktop" rows="5">
@@ -571,7 +571,7 @@
 
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
-                                <a href="#"> About us </a>
+                                <a href="/"> Home </a>
                                 <a href="/Laporan/create"> Laporan </a>
                                 <a href="/baranghilang"> Barang Hilang </a>
                                 <a href="/barangtemu"> Barang Temuan </a>

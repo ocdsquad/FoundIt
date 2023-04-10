@@ -87,6 +87,7 @@
 
                         <!-- Profile User -->
                             <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                
                                 <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
                             </div>
         
@@ -145,7 +146,7 @@
                     <h1 class="mb-1 text-lg font-poppins font-semibold sm:text-xl"> {{ auth()->user()->username }} </h1>
 
                     <!-- Prodi -->
-                    <h2 class="mb-3 text-sm text-[#BDC1C2] font-poppins font-[500] sm:text-base"> S1 Informatika </h2>
+                    <h2 class="mb-3 text-sm text-[#BDC1C2] font-poppins font-[500] sm:text-base"> {{ auth()->user()->nim }} </h2>
 
                 </div>
             </div>

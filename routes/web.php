@@ -71,7 +71,8 @@ Route::get('/History/create/{Barang:slug}', [HistoryController::class, 'create']
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
 Route::get('/profile', [ProfileController::class,'index'])->middleware('auth');
-Route::get('/profile/{User:username}', [ProfileController::class,'pengunjung'])->middleware('auth');
+Route::get('/profile/{User:nim}', [ProfileController::class,'pengunjung'])->middleware('auth');
+// Route::get('/profile/history/{user:nim}', [ProfileController::class,'show'])->middleware('auth');
 
 //------------------------------------------- Admin------------------------------------------------------------
 

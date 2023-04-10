@@ -138,7 +138,7 @@
 
                     </header>
 
-                    <!-- Search Bar -->
+                    <!-- Search Bar (Belum Implement) -->
                     <div class="w-[88%] absolute -bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-bottom-11 md:w-[83%]">
                         <form class="w-full relative">
                             
@@ -209,52 +209,60 @@
                         <h1 class="text-lg text-[#1D2A30] font-poppins font-semibold md:text-xl"> Kategori Barang Hilang </h1>
                     </div>
 
-                    <!-- Slider Kategori -->
+                    <!-- Slider Kategori (Belum Implement) -->
                     <div class="flex w-full py-3 overflow-x-auto sm:justify-between sm:overflow-hidden lg:justify-around">
 
                         <!-- Elektronik -->
-                        <a href="/baranghilang?category=elektronik" class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#8D72E1] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
-
-                            <div class="pl-2 pt-2 sm:pl-0 sm:pt-0">
+                        <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#8D72E1] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                            
+                            <a href="/baranghilang?category=elektronik" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                                 </svg>
-                            </div>
 
-                            <!-- <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Elektronik </p> -->
-                            <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Elektronik </p>
-                        </a>
+                                <span class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Elektronik </span>
+                            </a>
+                            
+                        </div>
 
                         <!-- Kendaraan -->
-                        <div class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#B9E0FF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                        <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#B9E0FF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                            
 
-                            <div class="pl-2 pt-2 sm:pl-0 sm:pt-0">
+                            <a href="#" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="17" r="2" />  <circle cx="17" cy="17" r="2" />  <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" /></svg>
-                            </div>
 
-                            <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Kendaraan </p>
+                                <span class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Kendaraan </span>
+                            </a>
+                            
                         </div>
 
                         <!-- Aksesoris -->
-                        <div class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#8D9EFF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                        <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#8D9EFF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                            
 
-                            <div class="pl-2 pt-2 sm:pl-0 sm:pt-0">
+                            <a href="#" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
+
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="7" />  <polyline points="12 9 12 12 13.5 13.5" />  <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83" /></svg>
-                            </div>
 
-                            <p class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Aksesoris </p>
+
+                                <span class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Aksesoris </span>
+                            </a>
+                            
                         </div>
-
                         
-                        <!-- All Item -->
-                        <div class="flex-shrink-0 flex flex-col justify-between w-[25%] h-[95px] mr-4 bg-[#244CA5] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 sm:flex-row sm:items-center sm:justify-center lg:w-[20%] xl:w-[18%] xl:h-[110px]">
+                        <!-- Lainnya -->
+                        <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#244CA5] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
                             
 
-                            <div class="pl-2 pt-2 sm:pl-0 sm:pt-0">
+                            <a href="/baranghilang" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
+
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="2" />  <path d="M4 13h3l3 3h4l3 -3h3" /></svg>
-                            </div>
+
+
+                                <span class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Lainnya </span>
+                            </a>
                             
-                            <a href="/baranghilang" class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> All Item </a>
                         </div>
                         
                     </div>
@@ -777,7 +785,7 @@
 
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
-                                <a href="#"> About us </a>
+                                <a href="/"> Home </a>
                                 <a href="/Laporan/create"> Laporan </a>
                                 <a href="/baranghilang"> Barang Hilang </a>
                                 <a href="/barangtemu"> Barang Temu </a>
@@ -799,7 +807,7 @@
         <!-- Aside Section End -->
 
 
-        <!-- Bottom Navigation -->
+        <!-- Bottom Navigation (Belum Implement) -->
         <header class="bottom-nav w-[88%] py-[14px] bg-[#8D72E1] rounded-2xl fixed -bottom-32 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all ease-in-out duration-500 lg:hidden">
             <div class="w-full flex justify-between relative">
 

@@ -140,7 +140,7 @@
 
                     <!-- Barang Temuan -->
                     <div class="w-1/2">
-                        <a href="SearchBarangTemu.html">
+                        <a href="/barangtemu">
                             <h2 class="py-1 text-base text-center text-[#8D72E1] font-montserrat font-semibold tracking-wide">Barang Temuan</h2>
                         </a>
 
@@ -152,7 +152,7 @@
 
                     <!-- Barang Hilang -->
                     <div class="w-1/2">
-                        <a href="SearchBarangHilang.html">
+                        <a href="/baranghilang">
                             <h2 class="py-1 text-base text-center text-[#BDC1C2] font-montserrat font-semibold tracking-wide">Barang Hilang</h2>
                         </a>
 
@@ -240,28 +240,6 @@
                         
                         <!-- Status, Jenis, dan Tanggal -->
                         <div class="flex justify-between w-[60%]">
-
-                            <!-- Dropdown Status -->
-                            <div class="w-[30%] relative">
-                                
-                                <select name="status" id="status" class="w-full px-3 py-[7px] rounded-xl text-sm text-black font-poppins font-medium border border-[#8D72E1] focus:outline-none appearance-none cursor-pointer">
-
-                                    <option disabled selected value="">Status Barang</option>
-
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="1">Claimed </option>
-
-                                    <option class="text-sm text-black font-poppins font-medium bg-white" value="0"> Unclaimed </option>
-
-
-                                </select>
-
-                                <span class="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2">
-                                    <svg class="w-6 h-6 text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                    </svg>                                          
-                                </span>
-
-                            </div>
 
                             <!-- Dropdown Jenis -->
                             <div class="w-[30%] relative mx-3">
@@ -493,7 +471,7 @@
 
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
-                                <a href="#"> About us </a>
+                                <a href="/"> Home </a>
                                 <a href="/Laporan/create"> Laporan </a>
                                 <a href="/baranghilang"> Barang Hilang </a>
                                 <a href="/barangtemuan"> Barang Temuan </a>

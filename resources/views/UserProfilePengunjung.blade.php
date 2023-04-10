@@ -5,11 +5,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <link href="./css/style.css" rel="stylesheet">
+        <link href="/css/style.css" rel="stylesheet">
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800&family=Montserrat+Alternates:wght@100;200;300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        
         @vite('resources/css/app.css')
         <title>User Profile</title>
     </head>
@@ -18,7 +19,7 @@
 
         <!-- INI HIDDEN DULU -->
         <!-- Desktop Navigation Bar -->
-        <header class="w-full fixed bg-white shadow-kategori z-10 hidden lg:block">
+        <header class="w-full fixed bg-white shadow-kategori z-10 hidden">
             <div class="container flex justify-between w-full ">
 
                 <!-- Logo (Kiri) -->
@@ -62,6 +63,94 @@
 
                     <!-- Nama User -->
                     <p class="text-lg font-montserrat font-semibold"> {{ $user->username }} </p>
+
+                </div>
+
+            </div>
+        </header>
+
+
+        <!-- Desktop Navigation Bar -->
+        <header class="w-full py-2 fixed bg-white shadow-kategori rounded-lg hidden lg:block z-10">
+            <div class="container flex justify-between w-full">
+
+                <!-- Logo (Kiri) -->
+                <div class="w-[8%]">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
+                </div>
+
+                <!-- Navigasi Halaman (Kanan) -->
+                <div class="flex justify-around items-center w-[70%]">
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/"> Home </a>
+
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/Laporan"> Laporan </a>
+
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/baranghilang"> Barang Hilang </a>
+
+                    <a class="text-sm font-montserrat font-semibold xl:text-base transition-all ease-in-out duration-150 hover:scale-90" href="/barangtemu"> Barang Temuan </a>
+
+                    <form class="w-[35%] relative xl:w-[30%]">
+                        <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
+
+                        <button type="submit" for="search" class="absolute top-1/2 left-2 -translate-y-1/2">
+                            <svg class="w-1 h-1 text-[#244CA5] md:w-7 md:h-7" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="10" cy="10" r="7" />  <line x1="21" y1="21" x2="15" y2="15" /></svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Profile and Dropdown -->
+                <div class="flex justify-center items-center w-[20%]">
+
+                    
+                    @auth
+                    <!-- Udah Login -->
+                        <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
+
+                            <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="Profile Dummy">
+                            </div>
+        
+                            <!-- Nama User -->
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
+
+                            <!-- Dropdown Menu -->
+                            <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
+
+                                <ul class="flex flex-col justify-center items-center gap-[6px] w-full text-center font-poppins">
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="/profile"> Profile </a> </li>
+
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer"> <a class="w-full inline-block" href="/History"> History </a> </li>
+                                    <li class="w-[80%] py-[6px] rounded-xl hover:bg-[#8D9EFF] hover:text-white hover:font-semibold transition-all ease-in-out duration-150 cursor-pointer">
+                                    <form action="/logout" method="post">
+                                        @csrf
+                                        <button type="submit" class="w-full inline-block" href="/logout"> Logout </button> 
+                                    </form>
+                                 </li>
+                                </ul>
+
+                        </div>
+    
+                        
+                        
+                        
+                    @else
+                        <!-- Belum Login -->
+                        <div class="flex justify-center items-center">
+
+                        <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
+                            </div>
+        
+                            <!-- Nama User -->
+                            <a class="text-lg font-montserrat font-semibold" href="/login"> Login </a>
+
+                        </div>
+                    @endauth
+
+                </div>
+
 
                 </div>
 
@@ -449,7 +538,7 @@
         </section>
         <!-- Aside Section End -->
 
-        <script src="/js/userProfile.js"></script>
+        <script src="/js/userProfilePengunjung.js"></script>
 
     </body>
 

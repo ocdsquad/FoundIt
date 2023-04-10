@@ -116,7 +116,7 @@
                             </div>
         
                             <!-- Nama User -->
-                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
 
                             <!-- Dropdown Menu -->
                             <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
@@ -291,7 +291,7 @@
                                         <div class="text-center">
                                             <p class="text-xs text-[#244CA5] font-poppins font-base sm:text-sm md:text-base"> Claimed by : </p>
     
-                                            <p class="mb-2 text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> {{ $history->nama_penerima }} </p>
+                                            <a href="/profile/{{ $history->nim}}" class="mb-2 text-xs font-poppins font-semibold sm:text-sm md:text-base xl:text-lg"> {{ $history->nama_penerima }} </a>
 
                                             <p class="mb-1 text-xs font-poppins sm:text-sm md:text-base"> {{ $history->nim }}</p>
 

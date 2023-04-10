@@ -58,7 +58,11 @@
 
                     <!-- Profile User -->
                     <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                        @if ($user->profil)
+                        <img class="w-full h-full" src="{{ asset('storage/'.$user->profil) }}" alt="Profile Dummy">
+                        @else
                         <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
+                        @endif
                     </div>
 
                     <!-- Nama User -->

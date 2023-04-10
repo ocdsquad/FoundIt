@@ -155,7 +155,7 @@
                                 @endif
                                 <!-- Nama Profile -->
                                 <div class="flex items-center">
-                                    <a href="/profile/{{ $barang->users->username }}" class="text-sm font-poppins sm:text-base">{{ $barang->users->username }}</a>
+                                    <a href="/profile/{{ $barang->users->nim }}" class="text-sm font-poppins sm:text-base">{{ $barang->users->username }}</a>
                                 </div>
                             </div>
 

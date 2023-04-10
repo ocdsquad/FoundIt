@@ -87,6 +87,7 @@
 
                         <!-- Profile User -->
                             <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                
                                 <img class="w-full h-full" src="/img/profileDummy.png" alt="Profile Dummy">
                             </div>
         

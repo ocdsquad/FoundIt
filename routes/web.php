@@ -36,23 +36,23 @@ Route::get('/History', function(){
 });
 
 
-Route::get('/userprofilepengunjung', function(){
-    return view('UserProfilePengunjung');
-});
+// Route::get('/userprofilepengunjung', function(){
+//     return view('UserProfilePengunjung');
+// });
 
 
 Route::get('/', [LibraryController::class,'home']);
 
 // Route::get('/', [LibraryController::class,'home']);
-Route::get('/baranghilang', [BarangController::class,'index']);
-Route::get('/barangtemu', [PostController::class, 'index_temu']);
+Route::get('/baranghilang', [BarangController::class,'index'])->middleware('auth');
+Route::get('/barangtemu', [PostController::class, 'index_temu'])->middleware('auth');
 
 Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
 Route::post('/login',[LoginController::class,'auth']);
 Route::post('/logout',[LoginController::class,'logout']);
 Route::get('/register',[RegisterController::class,'index'])->middleware('guest');
 Route::post('/register',[RegisterController::class,'store']);
-Route::get('/barangtemu', [PostController::class, 'index_temu']);
+Route::get('/barangtemu', [PostController::class, 'index_temu'])->middleware('auth');
 
 
 // Route::get('baranghilang/{slug}', function($slug){
@@ -61,16 +61,17 @@ Route::get('/barangtemu', [PostController::class, 'index_temu']);
 //     ]);
 // });
 
-Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilang']);
-Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu']);
+Route::get('/baranghilang/{barang:slug}', [LibraryController::class, 'show_hilang'])->middleware('auth');
+Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu'])->middleware('auth');
 
-Route::resource('/Laporan', LaporanController::class);
+Route::resource('/Laporan', LaporanController::class)->middleware('auth');
 Route::resource('/History', HistoryController::class)->middleware('auth');
 Route::get('/History/create/{Barang:slug}', [HistoryController::class, 'create'])->middleware('auth');
 
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
-Route::get('/profile', [ProfileController::class,'index']);
+Route::get('/profile', [ProfileController::class,'index'])->middleware('auth');
+Route::get('/profile/{User:username}', [ProfileController::class,'pengunjung'])->middleware('auth');
 
 //------------------------------------------- Admin------------------------------------------------------------
 

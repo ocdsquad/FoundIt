@@ -108,13 +108,19 @@
                             <!-- User Profile -->
                             <div class="flex">
                                 <!-- Icon Profile -->
+                                @if($barang->users->profil)
+                                <div class="w-8 h-8 mr-3 rounded-full overflow-hidden sm:w-10 sm:h-10">
+                                    <img class="w-full h-full" src="{{ 'storage'.$barang->users->profil }}" alt="Profile">
+                                </div>
+                                @else
+
                                 <div class="w-8 h-8 mr-3 rounded-full overflow-hidden sm:w-10 sm:h-10">
                                     <img class="w-full h-full" src="/img/tim.png" alt="Profile">
                                 </div>
-
+                                @endif
                                 <!-- Nama Profile -->
                                 <div class="flex items-center">
-                                    <p class="text-sm font-poppins sm:text-base">Reza Fakhreza</p>
+                                    <a href="/profile/{{ $barang->users->username }}" class="text-sm font-poppins sm:text-base">{{ $barang->users->username }}</a>
                                 </div>
                             </div>
 
@@ -126,7 +132,7 @@
                             </span>
 
                             <!-- Message Button (viewport sm ke atas) -->
-                            <button class="items-center justify-center w-[43%] px-2 border border-[#8D72E1] rounded-xl hidden sm:flex">
+                            <a href="https://api.whatsapp.com/send/?phone={{ $barang->users->nomor }}" class="items-center justify-center w-[43%] px-2 border border-[#8D72E1] rounded-xl hidden sm:flex">
 
                                 <span class="mr-2">
                                     <svg class="w-5 h-5 text-[#4870C0]"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -136,7 +142,7 @@
                                 </span>
                         
                                 <h5 class="text-sm font-montserratAlt font-semibold">Chat Owner</h5>
-                            </button>
+                            </a>
                         </div>
 
                         <!-- Bagian Gambar -->
@@ -336,7 +342,7 @@
 
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
-                                <a href="#"> About us </a>
+                                <a href="/"> Home </a>
                                 <a href="/Laporan/create"> Laporan </a>
                                 <a href="/baranghilang"> Barang Hilang </a>
                                 <a href="/barangtemu"> Barang Temuan </a>

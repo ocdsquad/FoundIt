@@ -22,18 +22,18 @@
 
                 <!-- Logo (Kiri) -->
                 <div class="w-[8%] ">
-                    <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                    <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                 </div>
 
                 <!-- Navigasi Halaman (Kanan) -->
                 <div class="flex justify-around items-center w-[75%] ">
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> About Us </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/"> Home </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Laporan </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/Laporan"> Laporan </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Chatting </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/baranghilang"> Barang Hilang </a>
 
-                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="#"> Settings </a>
+                    <a class="text-sm font-montserrat font-semibold xl:text-base" href="/barangtemu"> Barang Temuan </a>
 
                     <form class="w-[35%] relative xl:w-[28%]">
                         <input id="search" name="search" class="w-full pl-12 py-2 text-xs font-poppins font-medium placeholder-[#244CA5] bg-white border border-[#244CA5] rounded-lg xl:text-sm" type="text" placeholder="Cari Barangmu Yang Hilang !">
@@ -56,11 +56,11 @@
 
                     <!-- Profile User -->
                     <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
-                        <img class="w-full h-full" src="../src/img/tim.png" alt="Profile Dummy">
+                        <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
                     </div>
 
                     <!-- Nama User -->
-                    <p class="text-lg font-montserrat font-semibold"> Reza </p>
+                    <p class="text-lg font-montserrat font-semibold"> {{ $user->username }} </p>
 
                 </div>
 
@@ -101,23 +101,23 @@
 
                     <!-- Image Container -->
                     <div class="w-[140px] h-[140px] mb-3 rounded-full overflow-hidden sm:w-[200px] sm:h-[200px]">
-                        <img class="w-full h-full" src="../src/img/tim.png" alt="User Profile">
+                        <img class="w-full h-full" src="/img/tim.png" alt="User Profile">
                     </div>
 
                     <!-- Nama -->
-                    <h1 class="mb-1 text-lg font-poppins font-semibold sm:text-xl"> Reza Fakhreza </h1>
+                    <h1 class="mb-1 text-lg font-poppins font-semibold sm:text-xl"> {{ $user->username }} </h1>
 
                     <!-- Prodi -->
-                    <h2 class="mb-3 text-sm text-[#BDC1C2] font-poppins font-[500] sm:text-base"> S1 Informatika </h2>
+                    <h2 class="mb-3 text-sm text-[#BDC1C2] font-poppins font-[500] sm:text-base"> {{ $user->nim }}</h2>
 
                     <!-- Button Message -->
-                    <button class="w-[50%] py-[10px] bg-[#4870C0] rounded-xl"> 
+                    <a href="https://api.whatsapp.com/send/?phone={{ $user->nomor }}"class="w-[50%] py-[10px] bg-[#4870C0] rounded-xl"> 
                         <span class="flex justify-center items-center w-full text-base text-white font-montserrat font-bold"> 
                             <svg class="w-6 h-6 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />  <line x1="8" y1="9" x2="16" y2="9" />  <line x1="8" y1="13" x2="14" y2="13" /></svg>
 
                             Kirim Pesan 
                         </span>
-                    </button>
+                    </a>
 
                 </div>
             </div>
@@ -129,21 +129,21 @@
         <section class="mb-10 pt-32 hidden lg:block">
             <div class="container">
 
-                <div class="w-full h-[55vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative" style="background-image: url(../src/img/bgProfile.png);">
+                <div class="w-full h-[55vh] mx-auto rounded-[40px] bg-no-repeat bg-left-bottom bg-cover relative" style="background-image: url(/img/bgProfile.png);">
 
                     <!-- Profile Information -->
                     <div class="flex flex-col justify-center items-center w-full h-full pb-6">
 
                         <!-- Image Container -->
                         <div class="w-[160px] h-[160px] mb-3 rounded-full overflow-hidden xl:w-[200px] xl:h-[200px]">
-                            <img class="w-full h-full" src="../src/img/tim.png" alt="User Profile">
+                            <img class="w-full h-full" src="/img/tim.png" alt="User Profile">
                         </div>
 
                         <!-- Nama -->
-                        <h1 class="mb-1 text-2xl text-white font-poppins font-semibold xl:text-3xl"> Reza Fakhreza </h1>
+                        <h1 class="mb-1 text-2xl text-white font-poppins font-semibold xl:text-3xl"> {{ $user->username }} </h1>
 
                         <!-- Prodi -->
-                        <h2 class="mb-3 text-base text-black font-poppins font-semibold xl:text-lg"> S1 Informatika </h2>
+                        <h2 class="mb-3 text-base text-black font-poppins font-semibold xl:text-lg"> {{ $user->nim }} </h2>
 
                     </div>
 
@@ -207,16 +207,16 @@
                 <div class="justify-between w-full mb-5 px-3 hidden lg:flex">
 
                     <!-- Judul -->
-                    <p class="w-[50%] text-2xl text-[#244CA5] font-montserratAlt font-bold"> Laporan Barang Reza Fakhreza </p>
+                    <p class="w-[50%] text-2xl text-[#244CA5] font-montserratAlt font-bold"> Laporan Barang {{ $user->username }} </p>
 
                     <!-- Button -->
-                    <button class="w-[25%] py-[10px] bg-[#4870C0] rounded-xl"> 
+                    <a href="https://api.whatsapp.com/send/?phone={{ $user->nomor }}"class="w-[25%] py-[10px] bg-[#4870C0] rounded-xl"> 
                         <span class="flex justify-center items-center w-full text-base text-white font-montserrat font-bold"> 
                             <svg class="w-6 h-6 mr-2"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4" />  <line x1="8" y1="9" x2="16" y2="9" />  <line x1="8" y1="13" x2="14" y2="13" /></svg>
 
                             Kirim Pesan 
                         </span>
-                    </button>
+                    </a>
                     
                 </div>
 
@@ -278,11 +278,11 @@
                         </div>
     
                         <!-- Card -->
-                        {{-- <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
+                        <div class="justify-self-center w-[95%] mb-8 bg-white rounded-xl shadow-barang relative overflow-hidden sm:w-[75%] md:w-[88%] xl:w-[75%] 2xl:w-[85%]">
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -323,7 +323,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -364,7 +364,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -405,7 +405,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetHitam.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetHitam.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -439,7 +439,7 @@
                                 </div>
                             </div>
     
-                        </div> --}}
+                        </div> 
     
                     </div>
     
@@ -451,7 +451,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -492,7 +492,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -533,7 +533,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -574,7 +574,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -615,7 +615,7 @@
                             
                             <!-- Image Container -->
                             <div class="w-full h-[130px]">  
-                                <img class="w-full h-full" src="../src/img/dompetPutih.png" alt="Gambar Barang">
+                                <img class="w-full h-full" src="/img/dompetPutih.png" alt="Gambar Barang">
                             </div>
     
                             <!-- Deskripsi Kehilangan -->
@@ -689,7 +689,7 @@
 
                         <!-- Logo -->
                         <div class="w-[30%] mb-3">
-                            <img class="w-full" src="../src/img/logoLain.png" alt="Logo Foundit">
+                            <img class="w-full" src="/img/logoLain.png" alt="Logo Foundit">
                         </div>
 
                         <!-- Text Aside -->
@@ -756,7 +756,7 @@
         </section>
         <!-- Aside Section End -->
 
-        <script src="js/userProfile.js"></script>
+        <script src="/js/userProfile.js"></script>
 
     </body>
 

@@ -18,7 +18,7 @@ class ProfileController extends Controller
         // dd($user);
         return view('UserProfilePengunjung',[
             "user" => $user,
-            "barangs"=> Barang::where('user_id', $user->id )
+            "barangs"=> Barang::where('user_id', $user->id )->get()
         ]);
     }
 }

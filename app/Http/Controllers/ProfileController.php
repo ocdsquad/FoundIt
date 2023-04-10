@@ -10,7 +10,7 @@ class ProfileController extends Controller
 {
     public function index(){
         return view('UserProfilePribadi', [
-            "barangs" => Barang::where('user_id', auth()->user()->id)
+            "barangs" => Barang::where('user_id', auth()->user()->id)->get()
         ]);
     }
 }

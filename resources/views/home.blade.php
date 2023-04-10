@@ -839,22 +839,17 @@
                     <a href="#">
                         <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20 3 7" />  <line x1="9" y1="4" x2="9" y2="17" />  <line x1="15" y1="7" x2="15" y2="20" /></svg>
                     </a>
-                    @auth
-                        
+
+                    @auth    
                     <!-- Udah Login (Logout) -->
                     <form action="/logout" method="post">
                         @csrf
                         <button type="submit" class="w-full inline-block">
-                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+                            <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
                         </button>
                     </form>
                     
-                    
-                     
-                    
                     @else
-                    
-
                     <!-- Belum Login (Logo Login) -->
                     <a href="/login">
                         <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M20 12h-13l3 -3m0 6l-3 -3" /></svg>
@@ -869,50 +864,58 @@
         <script>
             document.addEventListener("DOMContentLoaded", () => {
 
-                // Logic Dropdown Profile (Desktop)
-                const dropdown_trigger = document.getElementById("dropdown-trigger");
-                const dropdown_menu = document.getElementById("dropdown-menu");
-                
-                dropdown_trigger.addEventListener("mouseover", () => {
-                    dropdown_menu.classList.remove("hidden")
+                // Code Viewport
+                const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+
+                if(viewportWidth < 1024){
+
+                    // Logic Mobile Navigation
+                    const span_container = document.querySelector(".span-container")
+                    const span_line_1 = document.querySelector(".sp-1")
+                    const span_line_2 = document.querySelector(".sp-2")
+
+                    const lost_section = document.getElementById("lost-section");
+                    const btm_navigation = document.querySelector(".bottom-nav")
+
+                    span_container.addEventListener("click", () => {
+
+                        span_line_1.classList.toggle("w-[60%]")
+                        span_line_1.classList.toggle("w-[100%]")
+
+                        span_line_2.classList.toggle("w-[80%]")
+                        span_line_2.classList.toggle("w-[100%]")
+
+                        btm_navigation.classList.toggle("-bottom-32")
+                        btm_navigation.classList.toggle("-bottom-3")
+
+                        lost_section.classList.toggle("pb-24")
+                        lost_section.classList.toggle("pb-6")
+                        
+                    })
+
+                } else if (viewportWidth >= 1024){
+
+                    // Logic Dropdown Profile (Desktop)
+                    const dropdown_trigger = document.getElementById("dropdown-trigger");
+                    const dropdown_menu = document.getElementById("dropdown-menu");
                     
-                    setTimeout(() => {  
-                        dropdown_menu.classList.remove("opacity-0")
-                    }, 0);
-                });
-                
-                dropdown_trigger.addEventListener("mouseout", () => {
-                    dropdown_menu.classList.add("hidden")
+                    dropdown_trigger.addEventListener("mouseover", () => {
+                        dropdown_menu.classList.remove("hidden")
+                        
+                        setTimeout(() => {  
+                            dropdown_menu.classList.remove("opacity-0")
+                        }, 0);
+                    });
                     
-                    setTimeout(() => {  
-                        dropdown_menu.classList.add("opacity-0")
-                    }, 0);
-                });
+                    dropdown_trigger.addEventListener("mouseout", () => {
+                        dropdown_menu.classList.add("hidden")
+                        
+                        setTimeout(() => {  
+                            dropdown_menu.classList.add("opacity-0")
+                        }, 0);
+                    });
 
-
-                // Logic Mobile Navigation
-                const span_container = document.querySelector(".span-container")
-                const span_line_1 = document.querySelector(".sp-1")
-                const span_line_2 = document.querySelector(".sp-2")
-
-                const lost_section = document.getElementById("lost-section");
-                const btm_navigation = document.querySelector(".bottom-nav")
-
-                span_container.addEventListener("click", () => {
-
-                    span_line_1.classList.toggle("w-[60%]")
-                    span_line_1.classList.toggle("w-[100%]")
-
-                    span_line_2.classList.toggle("w-[80%]")
-                    span_line_2.classList.toggle("w-[100%]")
-
-                    btm_navigation.classList.toggle("-bottom-32")
-                    btm_navigation.classList.toggle("-bottom-3")
-
-                    lost_section.classList.toggle("pb-24")
-                    lost_section.classList.toggle("pb-6")
-                    
-                })
+                }
 
             })
         </script>

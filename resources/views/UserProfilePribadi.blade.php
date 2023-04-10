@@ -625,10 +625,10 @@
 
                             <!-- Navigasi -->
                             <div class="flex justify-between w-full text-base text-[#244CA5] font-medium">
-                                <a href="#"> About us </a>
-                                <a href="#"> Laporan </a>
-                                <a href="#"> Chatting </a>
-                                <a href="#"> Settings </a>
+                                <a href="/"> Home </a>
+                                <a href="/Laporan"> Laporan </a>
+                                <a href="/baranghilang"> Barang Hilang</a>
+                                <a href="/barangtemu"> Barang Temuan </a>
                             </div>
 
                             <!-- Garis -->

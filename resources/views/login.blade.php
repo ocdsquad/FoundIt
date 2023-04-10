@@ -17,6 +17,26 @@
 
     <body class="bg-[#B9E0FF]">
 
+    @if(session()->has('loginError'))
+        <script>
+            var msg = '{{Session::get('loginError')}}'
+            alert(msg);
+        </script>
+    @endif
+
+    @if(session()->has('belumVerif'))
+        <script>
+            var msg = '{{Session::get('belumVerif')}}'
+            alert(msg);
+        </script>
+    @endif
+
+    @if(session()->has('tolakLogin'))
+        <script>
+            var msg = '{{Session::get('tolakLogin')}}'
+            alert(msg);
+        </script>
+    @endif
         <!-- Header Mobile -->
         <header class="w-full fixed top-0 z-10 lg:hidden">
             <div class="container">

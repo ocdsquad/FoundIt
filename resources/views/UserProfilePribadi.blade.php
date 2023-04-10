@@ -307,14 +307,14 @@
                                             <div class="flex justify-end w-full">
 
                                                 <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
-                                                    <a href="/History/create"> claim barang</a>
+                                                    <a href="/History/create/{{ $barang->slug }}"> claim barang</a>
                                                 </div>
 
                                             </div>
                                             @else
                                             <div class="flex justify-end w-full">
 
-                                                <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#8D9EFF] xl:px-3 xl:text-[13px]">
+                                                <div class="px-2 py-1 text-xs text-white text-center font-poppins font-semibold rounded-lg bg-[#5ad475] xl:px-3 xl:text-[13px]">
                                                     Barang claimed
                                                 </div>
 

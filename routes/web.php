@@ -35,9 +35,6 @@ Route::get('/History', function(){
     return view('History');
 });
 
-Route::get('/userprofilepribadi', function(){
-    return view('UserProfilePribadi');
-});
 
 Route::get('/userprofilepengunjung', function(){
     return view('UserProfilePengunjung');
@@ -69,6 +66,8 @@ Route::get('/barangtemu/{barang:slug}', [LibraryController::class, 'show_temu'])
 
 Route::resource('/Laporan', LaporanController::class);
 Route::resource('/History', HistoryController::class)->middleware('auth');
+Route::get('/History/create/{Barang:slug}', [HistoryController::class, 'create'])->middleware('auth');
+
 Route::get('/Laporan/create/checkSlug', [LaporanController::class, 'checkSlug']);
 
 Route::get('/profile', [ProfileController::class,'index']);

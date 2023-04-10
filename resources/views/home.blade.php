@@ -66,7 +66,7 @@
                             </div>
         
                             <!-- Nama User -->
-                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
 
                             <!-- Dropdown Menu -->
                             <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
@@ -839,16 +839,27 @@
                     <a href="#">
                         <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <polyline points="3 7 9 4 15 7 21 4 21 17 15 20 9 17 3 20 3 7" />  <line x1="9" y1="4" x2="9" y2="17" />  <line x1="15" y1="7" x2="15" y2="20" /></svg>
                     </a>
-        
+                    @auth
+                        
+                    <!-- Udah Login (Logout) -->
+                    <form action="/logout" method="post">
+                        @csrf
+                        <button type="submit" class="w-full inline-block">
+                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
+                        </button>
+                    </form>
+                    
+                    
+                     
+                    
+                    @else
+                    
+
                     <!-- Belum Login (Logo Login) -->
-                    <a href="#">
+                    <a href="/login">
                         <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M20 12h-13l3 -3m0 6l-3 -3" /></svg>
                     </a>
-
-                    <!-- Udah Login (Logout) -->
-                    <a href="#">
-                        <svg class="w-6 h-6 text-white"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />  <path d="M7 12h14l-3 -3m0 6l3 -3" /></svg>
-                    </a>
+                    @endauth
 
                 </div>
 

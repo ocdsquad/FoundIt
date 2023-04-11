@@ -136,17 +136,22 @@
                         <!-- Foundit -->
                         <h1 class="text-2xl text-white font-montserrat font-extrabold"> Foundit. </h1>
 
- 
+                        @if(auth()->user()->profil)
                         <!-- Image Profile -->
+                        <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
+                            <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="Profile Dummy">
+                        </a>
+                        @else
                         <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
                             <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
                         </a>
+                        @endif
 
                     </header>
 
                     <!-- Search Bar (Belum Implement) -->
                     <div class="w-[88%] absolute -bottom-10 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:-bottom-11 md:w-[83%]">
-                        <form class="w-full relative">
+                        <form action="/baranghilang" class="w-full relative">
                             
                             <input id="search" name="search" class="w-full px-5 py-3 text-xs placeholder-black font-poppins font-extralight bg-white rounded-lg shadow-3xl sm:py-4 sm:text-sm" type="text" placeholder="Cari barang kamu yang hilang !">
 
@@ -731,7 +736,7 @@
 
                 <!-- Button -->
                 <div class="self-center">
-                    <button class="px-10 py-4 text-lg text-white bg-[#395EB4] rounded-[52px]"> Cari Sekarang! </button>
+                    <a href="/baranghilang" class="px-10 py-4 text-lg text-white bg-[#395EB4] rounded-[52px]"> Cari Sekarang! </a>
                 </div>
 
             </div>

@@ -461,7 +461,7 @@
 
                 <!-- Button -->
                 <div class="self-center">
-                    <button class="px-10 py-4 text-lg text-white bg-[#395EB4] rounded-[52px]"> Cari Sekarang! </button>
+                    <a href="/baranghilang" class="px-10 py-4 text-lg text-white bg-[#395EB4] rounded-[52px]"> Cari Sekarang! </a>
                 </div>
 
             </div>

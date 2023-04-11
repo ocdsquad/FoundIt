@@ -135,17 +135,25 @@
 
                         <!-- Foundit -->
                         <h1 class="text-2xl text-white font-montserrat font-extrabold"> Foundit. </h1>
-
-                        @if(auth()->user()->profil)
-                        <!-- Image Profile -->
-                        <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="Profile Dummy">
-                        </a>
+                        @auth
+                            
+                        
+                            @if(auth()->user()->profil)
+                            <!-- Image Profile -->
+                            <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="Profile Dummy">
+                            </a>
+                            @else
+                            <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
+                            </a>
+                            @endif
                         @else
-                        <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
-                            <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
-                        </a>
-                        @endif
+
+                            <a href="#" class="w-10 h-10 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="img/tim.png" alt="Profile Dummy">
+                            </a>
+                        @endauth
 
                     </header>
 

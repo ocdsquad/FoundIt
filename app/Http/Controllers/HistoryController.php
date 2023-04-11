@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\History;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreHistoryRequest;
 use App\Http\Requests\UpdateHistoryRequest;
@@ -23,10 +24,10 @@ class HistoryController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($slug)
     {
         return view('History.create',[
-            
+            'slug'=>$slug
         ]);
     }
 
@@ -35,17 +36,22 @@ class HistoryController extends Controller
      */
     public function store(StoreHistoryRequest $request)
     {   
-        // dd($request);
+        
 
         $validatedData = $request->validate([
             'nama_barang' => 'required|max:255',
             'nama_penerima' => 'required|max:255',
-            'slug' => 'required|unique:barangs',
+            'slug' => 'required',
             'nim' => 'required',
             'jurusan' => 'required'
         ]);
 
         $validatedData['user_id'] = auth()->user()->id;
+
+
+        $data = Barang::where('slug',$request->slug)->get()[0];
+        $data->is_claim = true;
+        $data->save();
 
         History::create($validatedData);
 

@@ -103,7 +103,7 @@
                             </div>
     
                             <!-- Form -->
-                            <form action="" method="post" class="w-full" enctype="multipart/form-data">
+                            <form action="/register" method="post" class="w-full" enctype="multipart/form-data">
 
                                 @csrf
                                 <!-- Container Nama & NIM -->

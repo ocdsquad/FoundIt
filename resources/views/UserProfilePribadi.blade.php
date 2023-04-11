@@ -344,9 +344,12 @@
                                         @endif 
 
                             
-                                        <div class="px-5 bg-red-600 absolute top-3 right-3">
-                                            <p class="text-white text-sm text-center font-light font-poppins">Ditolak</p>
-                                        </div> 
+                                        @if ($barang->is_tolak)
+                                            <!-- Label -->
+                                            <div class="px-5 bg-red-600 absolute top-3 right-3">
+                                                <p class="text-white text-sm text-center font-light font-poppins">Ditolak</p>
+                                            </div> 
+                                        @endif
                                         
                                         
 
@@ -491,9 +494,12 @@
                                         @endif 
 
                             
-                                        <div class="px-5 bg-red-600 absolute top-3 right-3">
-                                            <p class="text-white text-sm text-center font-light font-poppins">Ditolak</p>
-                                        </div> 
+                                        @if ($barang->is_tolak)
+                                            <!-- Label -->
+                                            <div class="px-5 bg-red-600 absolute top-3 right-3">
+                                                <p class="text-white text-sm text-center font-light font-poppins">Ditolak</p>
+                                            </div> 
+                                        @endif
                                         
                                         
 

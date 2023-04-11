@@ -85,7 +85,7 @@
                             </div>
         
                             <!-- Nama User -->
-                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
 
                             <!-- Dropdown Menu -->
                             <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">
@@ -162,7 +162,7 @@
                         </div>
 
                         {{-- Slug --}}
-                        <input type="hidden" class="form-control" id="slug" name="slug" autofocus>
+                        <input type="hidden" value="{{ $slug }}" class="form-control" id="slug" name="slug" autofocus>
 
                         <!-- NIM -->
                         <div class="w-full mb-4">

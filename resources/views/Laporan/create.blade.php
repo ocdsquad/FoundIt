@@ -52,13 +52,20 @@
                     <!-- Udah Login -->
                         <div id="dropdown-trigger" class="group flex justify-center items-center cursor-pointer relative transition-all ease-in-out duration-150">
 
+                            @if(auth()->user()->profil)
+                            <!-- Profile User -->
+                            <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
+                                <img class="w-full h-full" src="{{ asset('storage/'.auth()->user()->profil) }}" alt="Profile Dummy">
+                            </div>
+                            @else
                             <!-- Profile User -->
                             <div class="w-10 h-10 mr-3 rounded-full overflow-hidden">
                                 <img class="w-full h-full" src="/img/tim.png" alt="Profile Dummy">
                             </div>
+                            @endif
         
                             <!-- Nama User -->
-                            <p class="text-lg font-montserrat font-semibold"> Rafli Fakhreza </p>
+                            <p class="text-lg font-montserrat font-semibold"> {{ auth()->user()->username }} </p>
 
                             <!-- Dropdown Menu -->
                             <div id="dropdown-menu" class="hidden opacity-0 w-[90%] py-2 border border-[#395EB4] bg-white shadow-dropdown rounded-3xl absolute -bottom-[135px] left-[60%] -translate-x-1/2 z-10  transition-all ease-linear duration-200">

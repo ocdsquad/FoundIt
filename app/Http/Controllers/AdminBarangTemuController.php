@@ -34,13 +34,13 @@ class AdminBarangTemuController extends Controller
         $data->is_verif = true;
         $data->save();
 
-        return redirect('/admin/barangtemu')->with('success', 'Berhasil Verifikasi Akun User');
+        return redirect('/admin/barangtemu');
     }
 
     public function tolak($id){
         $data = Barang::find($id);
         $data->is_tolak = true;
         $data->save();
-        return redirect('/admin/barangtemu')->with('success', 'Berhasil Verifikasi Akun User');
+        return redirect('/admin/barangtemu');
     }
 }

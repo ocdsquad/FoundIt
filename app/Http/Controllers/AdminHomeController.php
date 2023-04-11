@@ -25,13 +25,13 @@ class AdminHomeController extends Controller
 
         $data->is_verif = true;
         $data->save();
-        return redirect('/admin/home')->with('success', 'Berhasil Verifikasi Akun User');
+        return redirect('/admin/home');
     }
 
     public function tolak($id){
         $data = User::find($id);
         $data->is_tolak = true;
         $data->save();
-        return redirect('/admin/home')->with('success', 'Berhasil Verifikasi Akun User');
+        return redirect('/admin/home');
     }
 }

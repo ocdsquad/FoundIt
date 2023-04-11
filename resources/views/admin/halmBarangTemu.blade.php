@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;0,800;1,300&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <title>Data Barang Ditemukan</title>
 </head>
-@auth
+
 <body class="bg-background">
     @if(session()->has('barangHapus'))
         <script>
@@ -56,6 +56,7 @@
                             <div id="close-btn" class="relative">
                                 <img src="/img/close-btn.png" alt="closeBtn" class="w-6 absolute right-1 top-1 cursor-pointer">
                             </div>
+
                             <ul class="flex flex-col p-3">
                                 <li class="w-full mb-1 px-2 py-1 rounded-md "><a href="/admin/home" class="text-mons text-sm font-semibold cursor-pointer hover:bg-gray-200 block">Home</a></li>
                                  
@@ -170,7 +171,7 @@
                                     <td class="border text-center">{{ $barang -> id }}</td>
                                     <td class="border text-center">{{ $barang -> nama }}</td>
                                     <td class="border">
-                                        <img class="w-full h-full" src="{{ asset('storage/'.$barang->image) }}" width="300" alt="Gambar Barang">
+                                        <img src="{{ asset('storage/'.$barang->image) }}" width="300" alt="Gambar Barang" class="py-4 px-2 mx-auto">
                                     </td>
                                     <td class="border text-center">  {{ $barang -> category -> nama  }}
                                     </td>
@@ -217,10 +218,5 @@
         })
     </script>
 </body>
-@endauth
-
-
-
-
 
 </html>

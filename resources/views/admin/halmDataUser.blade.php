@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,700;0,800;1,300&family=Poppins:wght@500&display=swap" rel="stylesheet">
     <title>Halaman Data User</title>
 </head>
-@auth
+
 <body class="bg-background">
         @if(session()->has('userHapus'))
         <script>
@@ -159,5 +159,5 @@
         })
     </script>
 </body>
-@endauth
+
 </html>

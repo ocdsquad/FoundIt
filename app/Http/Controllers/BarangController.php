@@ -26,6 +26,10 @@ class BarangController extends Controller
         $barang->when($request->jenis, function($q) use ($request){
             return $q->where('category_id', $request->jenis);
         });
+
+        $barang->when($request->category, function($q) use ($request){
+            return $q->where('category_id', $request->category);
+        });
         
         $barang->when($request->tanggal, function($q) use ($request){
             return $q->whereDate('created_at', $request->tanggal.'%');

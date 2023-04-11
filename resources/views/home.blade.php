@@ -221,7 +221,7 @@
                         <!-- Elektronik -->
                         <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#8D72E1] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
                             
-                            <a href="/baranghilang?category=elektronik" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
+                            <a href="/baranghilang?category=1" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
                                 </svg>
@@ -235,7 +235,7 @@
                         <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#B9E0FF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
                             
 
-                            <a href="#" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
+                            <a href="/baranghilang?category=2" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <circle cx="7" cy="17" r="2" />  <circle cx="17" cy="17" r="2" />  <path d="M5 17h-2v-6l2-5h9l4 5h1a2 2 0 0 1 2 2v4h-2m-4 0h-6m-6 -6h15m-6 0v-5" /></svg>
 
                                 <span class="pb-3 text-sm text-center text-white font-poppins font-semibold sm:pl-1 sm:pb-0 md:pl-3 md:text-base xl:text-lg"> Kendaraan </span>
@@ -247,7 +247,7 @@
                         <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#8D9EFF] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
                             
 
-                            <a href="#" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
+                            <a href="/baranghilang?category=3" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
 
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">  <circle cx="12" cy="12" r="7" />  <polyline points="12 9 12 12 13.5 13.5" />  <path d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83" /></svg>
 
@@ -261,7 +261,7 @@
                         <div class="flex-shrink-0 w-[25%] h-[95px] mr-4 bg-[#244CA5] rounded-xl shadow-kategori sm:w-[23%] sm:mr-0 lg:w-[20%] xl:w-[18%] xl:h-[110px]">
                             
 
-                            <a href="/baranghilang" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
+                            <a href="/baranghilang?category=4" class="flex flex-col justify-between w-full h-full pl-2 pt-2 sm:pl-0 sm:pt-0 sm:flex-row sm:items-center sm:justify-center">
 
                                 <svg class="w-8 h-8 text-white lg:w-9 lg:h-9 xl:w-10 xl:h-10"  width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="2" />  <path d="M4 13h3l3 3h4l3 -3h3" /></svg>
 

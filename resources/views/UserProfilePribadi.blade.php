@@ -280,7 +280,7 @@
                                             <!-- Nama Barang -->
                                             <h1 class="mb-2 text-base font-poppins font-semibold"> {{ $barang->nama }} </h1>
                 
-                                            {{-- <!-- Location Barang -->
+                                            <!-- Location Barang -->
                                             <div class="flex items-center w-full mb-[5px]">
                                                 <span class="mr-1">
                                                     <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -288,8 +288,8 @@
                                                         </svg>                                    
                                                 </span> 
                 
-                                                <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base">  {{ $barang->lokasi }}</p>
-                                            </div> --}}
+                                                <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->lokasi }}</p>
+                                            </div>
                 
                                             <!-- Informasi Post -->
                                             <div class="flex items-center w-full mb-6">
@@ -360,7 +360,7 @@
                                             <!-- Nama Barang -->
                                             <h1 class="mb-2 text-base font-poppins font-semibold"> {{ $barang->nama }} </h1>
                 
-                                            {{-- <!-- Location Barang -->
+                                            <!-- Location Barang -->
                                             <div class="flex items-center w-full mb-[5px]">
                                                 <span class="mr-1">
                                                     <svg width="13" height="13" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -369,7 +369,7 @@
                                                 </span> 
                 
                                                 <p class="text-xs font-poppins font-normal xl:text-sm 2xl:text-base"> {{ $barang->lokasi }}</p>
-                                            </div> --}}
+                                            </div>
                 
                                             <!-- Informasi Post -->
                                             <div class="flex items-center w-full mb-6">
